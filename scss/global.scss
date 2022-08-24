@@ -33,6 +33,7 @@ main {
   color: #FFF;
   border: 1px solid utils.$col-primary;
   transition-duration: .25s;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     &:hover {
@@ -80,5 +81,41 @@ main {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.dsgvo-image-toggle {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-color: #FFF;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 15px rgba(0 0 0 / 15%);
+  z-index: 998;
+  transition-duration: .5s;
+
+  @media screen and (min-width: 768px) {
+    width: 25rem;
+    left: -100%;
+    bottom: 1rem;
+  }
+
+  &.show {
+    bottom: 0;
+
+    @media screen and (min-width: 768px) {
+      left: 1rem;
+      bottom: 1rem;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 }

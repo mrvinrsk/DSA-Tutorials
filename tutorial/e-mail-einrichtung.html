@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>E-Mail Einrichtung | by Marvin Roßkothen</title>
+    <title>E-Mail Einrichtung | by Marvin Roßkothen</title>
 
-        <link rel="stylesheet" href="../css/global.min.css">
-        <link rel="stylesheet" href="../css/tutorial.min.css">
+    <link rel="stylesheet" href="../css/global.min.css">
+    <link rel="stylesheet" href="../css/tutorial.min.css">
 
-        <script src='../js/jquery-3.6.0.min.js'></script>
-        <script src='../js/anime.min.js'></script>
-        <script src='../js/jquery.waypoints.min.js'></script>
-        <script src='../js/main.js'></script>
+    <script src='../js/jquery-3.6.0.min.js'></script>
+    <script src='../js/anime.min.js'></script>
+    <script src='../js/jquery.waypoints.min.js'></script>
+    <script src='../js/main.js'></script>
 
-        <script src='../js/tutorial.js'></script>
-    </head>
-    <body>
+    <script src='../js/tutorial.js'></script>
+</head>
+<body>
 
-        <main>
-            <div class='heading'>
-                <h1>E-Mail Einrichtung</h1>
-                <p class='short'>In diesem Tutorial beschreibe ich in simplen Schritten wie eine E-Mail-Einrichtung vorgenommen wird, dabei versuche ich alle üblichen Fälle und Probleme zu berücksichtigen.</p>
-            </div>
+<div id="loadwrap"></div>
 
-            <div class='content'>
-                <div class='dsgvo-image' data-src='https://via.placeholder.com/1920' data-alt='Test'></div>
-            </div>
-        </main>
+<main>
+    <div class='heading'>
+        <h1>E-Mail Einrichtung</h1>
+        <p class='short'>In diesem Tutorial beschreibe ich in simplen Schritten wie eine E-Mail-Einrichtung vorgenommen wird, dabei versuche ich alle üblichen Fälle und Probleme zu berücksichtigen.</p>
+    </div>
 
-    </body>
+    <div class='content'>
+        <div class='dsgvo-image' data-src='https://images.pexels.com/photos/193003/pexels-photo-193003.jpeg?cs=srgb&dl=pexels-torsten-dettlaff-193003.jpg&fm=jpg' data-alt='Test'></div>
+
+        <div>
+            <h2>Aller Anfang ist schwer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolorem enim mollitia nihil nostrum, praesentium sapiente voluptas! Amet consectetur ea, error nemo obcaecati perferendis similique.</p>
+        </div>
+
+        <div>
+            <h2>Das Kundengespräch</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam asperiores beatae dolor est ipsa laborum non. Alias cupiditate delectus dicta earum eius est iure, labore neque tempora ut! Aliquid amet, blanditiis consectetur culpa cumque dicta dignissimos eius eum facere harum illo illum inventore ipsam labore nesciunt perspiciatis quas quos soluta veritatis vitae! Beatae blanditiis eius fugiat sunt vel veritatis.</p>
+        </div>
+    </div>
+</main>
+
+<script>
+    $(function () {
+        $('#loadwrap').load("../element/image-toggle.html");
+    });
+</script>
+
+</body>
 </html>
