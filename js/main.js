@@ -1,7 +1,3 @@
-$(function () {
-    addLoading(true);
-});
-
 function addLoading(active = false) {
     if (document.querySelector('.loading-wrapper') == null) {
         const loadingWrapper = document.createElement('div');

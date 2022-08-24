@@ -27,7 +27,11 @@
             </div>
         </main>
 
-        <script src='js/loadtutorials.mjs'></script>
+        <script src='js/loadtutorials.mjs'>
+            $(function () {
+                addLoading(true);
+            });
+        </script>
         <script type='module'>
             loadTutorials(false);
         </script>
