@@ -1,4 +1,5 @@
 function loadTutorials(clear, search = null) {
+    let loaded = 0;
     addLoading(true);
     const container = document.querySelector('.tutorials');
 
@@ -51,10 +52,11 @@ function loadTutorials(clear, search = null) {
 
                 if (search === null || search === "" || json[i].tags.includes(search)) {
                     container.appendChild(card);
+                    loaded++;
                 }
             }
 
-            document.querySelector('main').innerHTML += "<span class='end'>Ende der Liste.</span>";
+            document.querySelector('main').innerHTML += `<span class='end'>Ende der Liste. Ergebnisse: ${loaded}</span>`;
         });
 
     removeLoading();
