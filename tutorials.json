@@ -9,20 +9,12 @@
     "file": "tutorial/e-mail-einrichtung.html"
   },
   {
-    "title": "Nicht für QM",
-    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten eines E-Mail-Postfachs für einen Kunden.",
+    "title": "Secure anlegen",
+    "description": "In diesem Tutorial wird das Anlegen eines Secure-Eintrags Schritt-für-Schritt erklärt.",
     "tags": [
-      "Was anderes"
+      "Intern",
+      "DSA Secure"
     ],
-    "file": "tutorial/e-mail-einrichtung.html"
-  },
-  {
-    "title": "Mehr für QM",
-    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten eines E-Mail-Postfachs für einen Kunden.",
-    "tags": [
-      "Was anderes",
-      "QM"
-    ],
-    "file": "tutorial/e-mail-einrichtung.html"
+    "file": "tutorial/secure-anlegen.html"
   }
 ]
