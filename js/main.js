@@ -40,9 +40,3 @@ function initSlideIn(selector) {
         });
     });
 }
-
-function toggleMediaInformation() {
-    if(document.querySelector('.dsgvo-image-toggle') != null) {
-        document.querySelector('.dsgvo-image-toggle').classList.toggle("show");
-    }
-}

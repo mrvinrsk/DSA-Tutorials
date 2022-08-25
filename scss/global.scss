@@ -15,10 +15,27 @@ h1, h2, h3, h4, h5, h6, a {
   color: utils.$col-primary;
 }
 
+body {
+  min-height: 100vh;
+}
+
 main {
-  width: min(90%, 55rem);
+  width: min(85%, 50rem);
   margin-inline: auto;
   padding-block: 5%;
+}
+
+ul {
+  list-style-position: inside;
+  margin-block: .75rem;
+
+  ul {
+    margin-left: 1.4em;
+  }
+}
+
+.strike {
+  text-decoration-line: line-through;
 }
 
 .heading {
@@ -81,41 +98,5 @@ main {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-.dsgvo-image-toggle {
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  background-color: #FFF;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 3px 15px rgba(0 0 0 / 15%);
-  z-index: 998;
-  transition-duration: .5s;
-
-  @media screen and (min-width: 768px) {
-    width: 25rem;
-    left: -100%;
-    bottom: 1rem;
-  }
-
-  &.show {
-    bottom: 0;
-
-    @media screen and (min-width: 768px) {
-      left: 1rem;
-      bottom: 1rem;
-    }
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 1.5rem;
   }
 }
