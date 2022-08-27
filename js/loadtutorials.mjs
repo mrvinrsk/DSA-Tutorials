@@ -1,6 +1,12 @@
-function loadTutorials(clear, search = null) {
+function filterTag(tag) {
+    console.log("Du möchtest suchen nach: " + tag);
+    loadTutorials(true, tag);
+}
+
+async function loadTutorials(clear, search = null) {
     let loaded = 0;
     addLoading(true);
+
     const container = document.querySelector('.tutorials');
 
     if (clear) {
@@ -8,16 +14,16 @@ function loadTutorials(clear, search = null) {
         if (document.querySelector('.end') && document.querySelector('.end') != null) {
             document.querySelector('.end').remove();
         }
+
+        document.querySelector('.search-information').innerHTML = "";
     }
 
-    fetch("tutorials.json")
+    await fetch("tutorials.json")
         .then(response => {
             return response.json();
         })
         .then(json => {
             for (let i = 0; i < json.length; i++) {
-                console.log(json[i]);
-
                 const card = document.createElement('div');
                 card.classList.add("tutorial-card");
 
@@ -58,6 +64,10 @@ function loadTutorials(clear, search = null) {
 
             document.querySelector('main').innerHTML += `<span class='end'>Ende der Liste. Ergebnisse: ${loaded}</span>`;
         });
+
+    if (search != null) {
+        document.querySelector('.search-information').innerHTML = `<span class="center-v search-info-text"><span>Die Suche nach '<span class="col-primary">${search}</span>' ergab ${loaded} Ergebnis${loaded !== 1 ? "se" : ""}.</span><a onclick="loadTutorials(true);" class="button inline icon-text"><span class="icon">close</span><span>Filter zurücksetzen</span></a></span>`;
+    }
 
     removeLoading();
 }
