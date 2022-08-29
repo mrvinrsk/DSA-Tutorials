@@ -16,5 +16,11 @@
       "DSA Secure"
     ],
     "file": "tutorial/secure-anlegen.html"
+  },
+  {
+    "title": "Matomo einbinden",
+    "description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
+    "tags": ["Onepage", "Website"],
+    "file": "tutorial/matomo-einbinden.html"
   }
 ]
