@@ -19,11 +19,6 @@ function removeLoading() {
     });
 }
 
-function filterTag(tag) {
-    console.log("Du möchtest suchen nach: " + tag);
-    loadTutorials(true, tag);
-}
-
 function initSlideIn(selector) {
     $(function () {
         $(selector).css("translateY", "25px");
@@ -31,12 +26,19 @@ function initSlideIn(selector) {
 
         $(selector).waypoint(function () {
             var CSStransforms = anime({
-                targets: this.element,
-                translateY: 0,
-                opacity: 1
+                targets: this.element, translateY: 0, opacity: 1
             });
         }, {
             offset: '100%'
         });
     });
+}
+
+function pulse(selector, hex) {
+    const element = document.querySelector(selector);
+    element.classList.add("pulse-short");
+
+    setTimeout(() => {
+        element.classList.remove("pulse-short");
+    }, 600);
 }

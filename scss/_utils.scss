@@ -30,3 +30,15 @@
 $col-primary: #cc0000;
 $col-gray: #edefef;
 $col-font: #555555;
+
+$colors: (
+        'primary': $col-primary,
+        'gray': $col-gray,
+        'font': $col-font
+);
+
+@each $name, $color in $colors {
+  .col-#{$name} {
+    color: $color;
+  }
+}

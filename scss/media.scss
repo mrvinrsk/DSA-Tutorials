@@ -1,5 +1,12 @@
 @use "utils";
 
+img[alt] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
 .dsgvo-media-toggle {
   position: fixed;
   bottom: -100%;
@@ -50,14 +57,13 @@
     align-items: center;
     background-color: utils.$col-primary;
     cursor: pointer;
-    padding: 1rem;
+    padding: 1rem 2rem;
 
     @media screen and (min-width: 768px) {
-      padding: 2.5rem;
+      padding: 2.5rem 5rem;
     }
 
     span {
-      word-break: break-all;
       color: utils.$col-gray;
     }
   }

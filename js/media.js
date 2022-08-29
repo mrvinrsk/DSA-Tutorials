@@ -24,29 +24,33 @@ function loadMedia() {
 
         if (src.startsWith('http') || src.startsWith('www.') || /[a-zA-Z]{1,}.(de|com|net|eu|co|tv|fr|nrw)/.test(src)) {
             let displaySrc = src;
-            if(displaySrc.length >= 65) {
+            if (displaySrc.length >= 65) {
                 displaySrc = displaySrc.substring(0, 65) + " <i>[...]</i>";
             }
             imageContainer.innerHTML += `<span class='image-source'>Quelle: <a title="${src}" href="${src}">${displaySrc}</a></span>`;
         }
-        imageContainer.innerHTML += `<img src='${src}' alt='${alt}'>`;
+        imageContainer.innerHTML += `<img src='${src}' alt='${alt}' loading='lazy'>`;
     });
 }
 
 function toggleMediaInformation() {
-    if(document.querySelector('.dsgvo-media-toggle') != null) {
+    if (document.querySelector('.dsgvo-media-toggle') != null) {
         document.querySelector('.dsgvo-media-toggle').classList.toggle("show");
     }
 }
 
 function hideMediaInformation() {
-    if(document.querySelector('.dsgvo-media-toggle') != null) {
+    if (document.querySelector('.dsgvo-media-toggle') != null) {
         document.querySelector('.dsgvo-media-toggle').classList.remove("show");
     }
 }
 
 function showMediaInformation() {
-    if(document.querySelector('.dsgvo-media-toggle') != null) {
-        document.querySelector('.dsgvo-media-toggle').classList.add("show");
+    if (document.querySelector('.dsgvo-media-toggle') != null) {
+        if (!document.querySelector('.dsgvo-media-toggle').classList.contains("show")) {
+            document.querySelector('.dsgvo-media-toggle').classList.add("show");
+        } else {
+            pulse('.dsgvo-media-toggle', '#cc0000');
+        }
     }
 }
