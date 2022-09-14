@@ -29,8 +29,9 @@
     transition-duration: .25s;
 
     &:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 5px 25px rgba(0 0 0 / 15%);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
+      border: 1px solid transparent;
     }
   }
 

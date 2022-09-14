@@ -1,12 +1,12 @@
 [
   {
-    "title": "E-Mail Einrichtung",
-    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten eines E-Mail-Postfachs für einen Kunden.",
+    "title": "Matomo einbinden",
+    "description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
     "tags": [
-      "QM",
-      "E-Mail"
+      "Onepage",
+      "Website"
     ],
-    "file": "tutorial/e-mail-einrichtung.html"
+    "file": "tutorial/matomo-einbinden.html"
   },
   {
     "title": "Secure anlegen",
@@ -18,9 +18,12 @@
     "file": "tutorial/secure-anlegen.html"
   },
   {
-    "title": "Matomo einbinden",
-    "description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
-    "tags": ["Onepage", "Website"],
-    "file": "tutorial/matomo-einbinden.html"
+    "title": "E-Mail Einrichtung",
+    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten eines E-Mail-Postfachs für einen Kunden.",
+    "tags": [
+      "QM",
+      "E-Mail"
+    ],
+    "file": "tutorial/e-mail-einrichtung.html"
   }
 ]

@@ -176,7 +176,7 @@ ul {
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation: loading-#{$i} 1.5s infinite;
+          animation: loading-#{$i} .85s infinite;
         }
       }
     }
@@ -189,7 +189,7 @@ ul {
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
 
   100% {
@@ -199,15 +199,15 @@ ul {
 
 @keyframes loading-2 {
   0% {
-    transform: rotate(0);
+    transform: scaleX(100%);
   }
 
   50% {
-    transform: rotate(90deg);
+    transform: scaleX(175%);
   }
 
   100% {
-    transform: rotate(180deg);
+    transform: scaleX(100%);
   }
 }
 
@@ -217,7 +217,7 @@ ul {
   }
 
   50% {
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   100% {
