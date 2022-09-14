@@ -2,14 +2,14 @@
 
 /* fallback */
 @font-face {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-style: normal;
   font-weight: 500;
-  src: url(../fonts/google-icons.woff2) format('woff2');
+  src: url(../fonts/google-icons.woff2) format("woff2");
 }
 
 .icon {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
@@ -20,8 +20,34 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -moz-font-feature-settings: 'liga';
+  -moz-font-feature-settings: "liga";
   -moz-osx-font-smoothing: grayscale;
+}
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+  margin-block: 1.75rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: .5em 1em;
+    }
+
+    thead th {
+      font-weight: 700;
+      background-color: utils.$col-primary;
+      color: utils.$col-gray;
+      text-align: left;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: transparentize(utils.$col-primary, .925);
+    }
+  }
 }
 
 * {
@@ -32,11 +58,34 @@
 
 :root {
   color: utils.$col-font;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, a {
+/* Hide animated elements on beginning */
+main.slide {
+  div:not(.ignore-animation):not(.dsgvo-media-toggle), ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
+    opacity: 0;
+  }
+}
+
+.dsgvo-media-toggle {
+  opacity: 1 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
   color: utils.$col-primary;
+}
+
+@media screen and (min-width: utils.$bp-tablet) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .15em;
+  }
 }
 
 body {
@@ -51,7 +100,7 @@ main {
 
 ul {
   list-style-position: inside;
-  margin-block: .75rem;
+  margin-block: 0.75rem;
 
   ul {
     margin-left: 1.4em;
@@ -72,27 +121,27 @@ ul {
 
 .button {
   display: inline-block;
-  padding: .35rem 1rem;
+  padding: 0.35rem 1rem;
   text-decoration: none;
   background-color: utils.$col-primary;
-  color: #FFF;
+  color: #fff;
   border: 1px solid utils.$col-primary;
-  transition-duration: .25s;
+  transition-duration: 0.25s;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
-    padding: .5rem 1.25rem;
+    padding: 0.5rem 1.25rem;
 
     &:hover {
-      background-color: #FFF;
+      background-color: #fff;
       color: utils.$col-primary;
     }
   }
 
   &.inline {
     display: inline;
-    padding: .15rem .5rem;
-    margin-inline: .5rem;
+    padding: 0.15rem 0.5rem;
+    margin-inline: 0.5rem;
   }
 }
 
@@ -108,7 +157,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition-duration: .25s;
+  transition-duration: 0.25s;
 
   &.show {
     opacity: 1;
@@ -116,7 +165,7 @@ ul {
 
   .loading-animation-wrapper {
     display: flex;
-    gap: .75rem;
+    gap: 0.75rem;
     flex-direction: column;
 
     div {
@@ -176,7 +225,6 @@ ul {
   }
 }
 
-
 @keyframes loading {
   0% {
     transform: rotate(0);
@@ -189,7 +237,7 @@ ul {
 .icon-text {
   display: flex;
   flex-direction: row;
-  gap: .25rem;
+  gap: 0.25rem;
   align-items: center;
 
   &.inline {
@@ -223,9 +271,9 @@ ul {
 }
 
 $pulseSpeed: (
-        'short': 1s,
-        'medium': 1.5s,
-        'long': 2s
+        "short": 1s,
+        "medium": 1.5s,
+        "long": 2s,
 );
 
 @each $name, $duration in $pulseSpeed {
@@ -233,4 +281,3 @@ $pulseSpeed: (
     animation: pulse $duration 0s 1 forwards;
   }
 }
-

@@ -1,7 +1,7 @@
 $(function () {
     let images = document.querySelectorAll('.dsgvo-media');
     images.forEach(image => {
-        image.innerHTML = `<div class='need-permission' onclick="showMediaInformation();"><span>Bitte aktiviere das Anzeigen von Bildern, um diesen Inhalt zu laden.</span></div>`;
+        image.innerHTML = `<div class='need-permission ignore-animation' onclick="showMediaInformation();"><span>Bitte aktiviere das Anzeigen von Bildern, um diesen Inhalt zu laden.</span></div>`;
     });
 });
 

@@ -37,6 +37,9 @@ $colors: (
         'font': $col-font
 );
 
+$bp-tablet: 768px;
+$bp-desktop: 1200px;
+
 @each $name, $color in $colors {
   .col-#{$name} {
     color: $color;

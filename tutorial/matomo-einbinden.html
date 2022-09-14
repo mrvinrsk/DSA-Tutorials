@@ -1,72 +1,97 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-        <title>E-Mail Einrichtung | by Marvin Roßkothen</title>
+    <title>E-Mail Einrichtung | by Marvin Roßkothen</title>
 
-        <link rel="stylesheet" href="../css/global.min.css">
-        <link rel="stylesheet" href="../css/tutorial.min.css">
-        <link rel="stylesheet" href="../css/media.min.css">
+    <link rel="stylesheet" href="../css/global.min.css"/>
+    <link rel="stylesheet" href="../css/tutorial.min.css"/>
+    <link rel="stylesheet" href="../css/media.min.css"/>
 
-        <script src='../js/jquery-3.6.0.min.js'></script>
-        <script src='../js/anime.min.js'></script>
-        <script src='../js/jquery.waypoints.min.js'></script>
-        <script src='../js/main.js'></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/anime.min.js"></script>
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/media.js"></script>
+    <script src="../js/slide.js"></script>
+</head>
+<body>
+<div id="loadwrap"></div>
 
-        <script src='../js/media.js'></script>
-    </head>
-    <body>
+<main class="slide">
+    <div class="heading">
+        <h1>Matomo einbinden</h1>
+        <p class="short">
+            Matomo wird verwendet um Seitenbesuche bzw. die Statistiken einer
+            Seite aufzuzeichnen. In diesem kurzen Beitrag erkläre ich, wie du
+            einen Matomo Schnipsel für deine Website erhälst.
+        </p>
+    </div>
 
-        <div id="loadwrap"></div>
+    <div class="content">
+        <div
+                class="dsgvo-media"
+                data-src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?cs=srgb&dl=pexels-lukas-669619.jpg&fm=jpg"
+                data-alt="Statistiken"
+        ></div>
 
-        <main>
-            <div class='heading'>
-                <h1>Matomo einbinden</h1>
-                <p class='short'>
-                    Matomo wird verwendet um Seitenbesuche bzw. die Statistiken einer Seite aufzuzeichnen. In diesem kurzen Beitrag erkläre ich, wie du einen Matomo Schnipsel für deine Website erhälst.
-                </p>
+        <div>
+            <h2>Den Schnipsel erhalten</h2>
+            <p>
+                Es ist sehr simpel den Schnipsel zu erhalten. Besuche dafür einfach
+                <a href="//dsa-analytics.de/" target="_blank">DSA Analytics</a> und
+                melde dich dort mit den Bekannten Daten an. Scrolle dann an's Ende
+                der Liste und klicke auf "Hinzufügen". Dort schreibst du die
+                folgenden Dinge:
+            </p>
+
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Einstellung</th>
+                        <th>Wert</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>"dsa_" + Kunden-URL</td>
+                    </tr>
+
+                    <tr>
+                        <td>URLs</td>
+                        <td>Kunden-URL mit http und https</td>
+                    </tr>
+
+                    <tr>
+                        <td>Ignorierte IPs</td>
+                        <td>87.140.116.131</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class='content'>
-                <div class='dsgvo-media' data-src='https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?cs=srgb&dl=pexels-lukas-669619.jpg&fm=jpg' data-alt='Statistiken'></div>
+            <p>
+                Klicke danach auf "Fertig" und klicke in der Übersicht im neuen
+                Eintrag auf "Tracking-Code anzeigen". Den dort kopierten
+                Tracking-Code fügst du einfach auf jeder Seite im Head-Bereich ein.
+            </p>
+        </div>
+    </div>
+</main>
 
-                <div>
-                    <h2>Den Schnipsel erhalten</h2>
-                    <p>
-                        Es ist sehr simpel den Schnipsel zu erhalten. Besuche dafür einfach <a href="//dsa-analytics.de/" target="_blank">DSA Analytics</a> und melde dich dort mit den Bekannten Daten an.
-                        Scrolle dann an's Ende der Liste und klicke auf "Hinzufügen". Dort schreibst du die folgenden Dinge:
-                    </p>
-
-                    <table>
-                        <tr>
-                            <td>Name</td>
-                            <td>"dsa_" + Kunden-URL</td>
-                        </tr>
-
-                        <tr>
-                            <td>URLs</td>
-                            <td>Kunden-URL mit http und https</td>
-                        </tr>
-
-                        <tr>
-                            <td>Ignorierte IPs</td>
-                            <td>87.140.116.131</td>
-                        </tr>
-                    </table>
-
-                    <p>Klicke danach auf "Fertig" und klicke in der Übersicht im neuen Eintrag auf "Tracking-Code anzeigen". Den dort kopierten Tracking-Code fügst du einfach auf jeder Seite im Head-Bereich ein.</p>
-                </div>
-            </div>
-        </main>
-
-        <script>
-            $(function () {
-                $('#loadwrap').load("../element/image-toggle.html");
-            });
-        </script>
-
-    </body>
+<script>
+    $(function () {
+        $("#loadwrap").load("../element/image-toggle.html");
+    });
+</script>
+</body>
 </html>
