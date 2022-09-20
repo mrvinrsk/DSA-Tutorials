@@ -1,0 +1,28 @@
+@use "utils";
+.short::before {
+  content: 'Zusammenfassung: ';
+  font-weight: 700;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .content {
+    gap: 3.75rem;
+  }
+}
