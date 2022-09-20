@@ -1,5 +1,15 @@
 [
   {
+    "title": "Empfohlene Frameworks",
+    "description": "Finde neue und hilfreiche Frameworks für die tägliche Arbeit.",
+    "tags": [
+      "Onepage",
+      "Website",
+      "Framework"
+    ],
+    "file": "resource/frameworks.html"
+  },
+  {
     "title": "Matomo einbinden",
     "description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
     "tags": [

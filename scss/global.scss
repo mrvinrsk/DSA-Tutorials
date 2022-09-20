@@ -78,8 +78,14 @@ h3,
 h4,
 h5,
 h6,
-a {
+a,
+.sublist-heading > span {
   color: utils.$col-primary;
+}
+
+.sublist-heading > span {
+  font-weight: 500;
+  font-size: 110%;
 }
 
 @media screen and (min-width: utils.$bp-tablet) {
@@ -100,9 +106,10 @@ main {
 
 ul {
   list-style-position: inside;
-  margin-block: 0.75rem;
+  margin-block: 0.9rem;
 
   ul {
+    margin-block: 0.25rem;
     margin-left: 1.4em;
   }
 }
