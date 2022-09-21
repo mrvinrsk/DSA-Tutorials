@@ -1,5 +1,13 @@
 [
   {
+    "title": "Empfohlene Tools",
+    "description": "Finde neue und hilfreiche Tools für die tägliche Arbeit.",
+    "tags": [
+      "Tools"
+    ],
+    "file": "resource/tools.html"
+  },
+  {
     "title": "Empfohlene Frameworks",
     "description": "Finde neue und hilfreiche Frameworks für die tägliche Arbeit.",
     "tags": [

@@ -25,7 +25,7 @@ async function loadTutorials(clear, search = null) {
         .then(json => {
             for (let i = 0; i < json.length; i++) {
                 const card = document.createElement('div');
-                card.classList.add("tutorial-card");
+                card.classList.add("tutorial-card", "card");
 
                 const title = document.createElement('h2');
                 title.classList.add("title");

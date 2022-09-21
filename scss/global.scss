@@ -99,7 +99,7 @@ body {
 }
 
 main {
-  width: min(85%, 50rem);
+  width: min(90%, 65rem);
   margin-inline: auto;
   padding-block: 5%;
 }
@@ -286,5 +286,29 @@ $pulseSpeed: (
 @each $name, $duration in $pulseSpeed {
   .pulse-#{$name} {
     animation: pulse $duration 0s 1 forwards;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: #FFF;
+  border: 1px solid utils.$col-gray;
+  border-radius: 5px;
+  padding: 1rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem;
+    transition-duration: .25s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
+      border: 1px solid transparent;
+    }
   }
 }

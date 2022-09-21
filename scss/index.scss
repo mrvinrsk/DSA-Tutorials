@@ -12,28 +12,7 @@
   gap: 1rem;
 }
 
-.tutorials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-}
-
-.tutorial-card {
-  background-color: #FFF;
-  border: 1px solid utils.$col-gray;
-  border-radius: 5px;
-  padding: 1rem;
-
-  @media screen and (min-width: 768px) {
-    padding: 2rem;
-    transition-duration: .25s;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
-      border: 1px solid transparent;
-    }
-  }
+.card {
 
   .button {
     margin-top: 1.5rem;
