@@ -1,4 +1,4 @@
-let index = 10;
+let index = 0;
 
 let congratulations = [
     'Schon fertig!',
@@ -27,13 +27,17 @@ function getProgress(checklist) {
 }
 
 function updateList(checklist) {
-    if (checklist.querySelector('.progress')) {
-        checklist.querySelector('.progress').remove();
-    }
-
-    const progress = document.createElement('span');
+    const progress = (checklist.querySelector('.progress') ? checklist.querySelector('.progress') : document.createElement('span'));
     progress.classList.add('progress');
     progress.innerHTML = `${getProgress(checklist)}`;
+
+    if (finished(checklist)) {
+        progress.classList.add('finished');
+        checklist.querySelector('.checks').classList.add('finished');
+    } else {
+        progress.classList.remove('finished');
+        checklist.querySelector('.checks').classList.remove('finished');
+    }
 
     const firstCheck = checklist.firstChild;
     checklist.insertBefore(progress, firstCheck);
@@ -50,8 +54,14 @@ $(function () {
                 checkbox.addEventListener('change', () => {
                     updateList(checklist);
 
-                    if (typeof party !== 'undefined') {
-                        if (finished(checklist)) {
+                    if (finished(checklist)) {
+                        if (!isInView(checklist.querySelector('.progress'))) {
+                            $('html,body').animate({
+                                scrollTop: $(checklist.querySelector('.progress')).offset().top - 200
+                            }, 500);
+                        }
+
+                        if (typeof party !== 'undefined') {
                             let sw = window.innerWidth;
                             let particleCount = [100, 150];
 
@@ -63,6 +73,8 @@ $(function () {
                                 count: party.variation.range(particleCount[0], particleCount[1]),
                                 size: party.variation.range(0.75, 1.25),
                                 spread: party.variation.range(20, 40),
+                                speed: party.variation.range(300, 500),
+                                shapes: ["square", "rectangle"],
                                 color: () =>
                                     party.random.pick([
                                         party.Color.fromHex("#cc0000"),

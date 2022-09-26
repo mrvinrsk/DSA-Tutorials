@@ -131,12 +131,26 @@ ul li div {
     font-weight: 600;
     color: utils.$col-primary;
     margin-bottom: 1em;
+    transition-duration: .25s;
+
+    &.finished {
+      color: utils.$col-gray;
+      background-color: utils.$col-primary;
+      margin-bottom: 0;
+      padding: .5em 1em;
+    }
   }
 
   .checks {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    transition-duration: .25s;
+
+    &.finished {
+      padding: 1rem;
+      background-color: utils.$col-gray;
+    }
   }
 
   .checklist-section {
