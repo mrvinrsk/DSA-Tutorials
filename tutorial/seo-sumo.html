@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+                name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>SEO / SUMO | by Marvin Roßkothen</title>
+
+        <link rel="stylesheet" href="../css/global.min.css" />
+        <link rel="stylesheet" href="../css/tutorial.min.css" />
+        <link rel="stylesheet" href="../css/media.min.css" />
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/anime.min.js"></script>
+        <script src="../js/jquery.waypoints.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/media.js"></script>
+        <script src="../js/slide.js"></script>
+        <script src="../js/checklist.js"></script>
+    </head>
+    <body>
+        <div id="loadwrap"></div>
+
+        <main class="slide">
+            <div class="heading">
+                <h1>SEO / SUMO</h1>
+                <p class="short">
+                    Matomo wird verwendet um Seitenbesuche bzw. die Statistiken einer
+                    Seite aufzuzeichnen. In diesem kurzen Beitrag erkläre ich, wie du
+                    einen Matomo Schnipsel für deine Website erhälst.
+                </p>
+            </div>
+
+            <div class="content">
+                <div
+                        class="dsgvo-media"
+                        data-src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=1"
+                        data-src-mobile="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=768&dpr=1"
+                        data-alt="SEO Bild"
+                ></div>
+
+                <div>
+                    <h2>Die ultimative Checklist</h2>
+                    <p>
+                        Hier findest du alle erforderlichen Schritte zur Bearbeitung deines Projektes. Kannst alles abhaken, so kannst'e nix vergessen, praktisch 'wa?
+                        <strong>Achtung:</strong> Wenn du die Seite neulädst werden alle Checkboxen zurückgesetzt.
+                    </p>
+
+                    <div class="checklist ignore-animation" data-show-completion='true'>
+
+                        <div class='checks'>
+                            <div class='checklist-section'>
+                                <h3>Head</h3>
+
+                                <div>
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Seitentitel: individuell pro Seite, max. 55 Zeichen (<a href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Description: individuell pro Seite, max. 155 Zeichen (<a href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Keywords: individuell pro Seite, relevantes Keyword zuerst, 5-6 Stk.</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Meta-Robots: Auf jeder Seite (<a href='https://seo-gold.com/meta-robots-seo-tutorial/meta-name-robots-content-index-follow/' target='_blank'>index, follow</a>)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Meta-Angaben: Unnötige Meta-Tags (author, Revisit-After, etc.) entfernen, "OG" bestehen lassen</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class='checklist-section'>
+                                <h3>Body</h3>
+
+                                <div>
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Keyworddichte <a href='https://www.internetmarketingninjas.com/tools/keyword-density/' target='_blank'>messen</a></span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>CSS auslagern (<a href='https://codebeautify.org/cssvalidate' target='_blank'>validieren</a> u. <a href='https://10015.io/tools/css-minifier' target='_blank'>komprimieren</a>)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>JavaScript auslagern (<a href='https://10015.io/tools/javascript-minifier' target='_blank'>komprimieren</a>)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Linktitel anpassen (max. 55 Zeichen), kurz u. prägnant</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>HTML <a href='https://jsonformatter.org/html-validator' target='_blank'>validieren</a></span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Jede Seite muss eine individuelle H1-Überschrift haben</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Keine IDs o. Klassen mit den Namen "SEO", "Sumo", oder Keywords</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Alt-Attribut für Bilder, umbenennen (keine Unterstriche / Leerzeichen), Title-Attribut setzen</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Überschriften-Hierarchie prüfen (H1–H6)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Auflistungen als Liste (ul / ol) einsetzen</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class='checklist-section'>
+                                <h3>Landingpages</h3>
+
+                                <div>
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Namen nach Syntax: "werbeagentur-oberhausen.html"</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Landingpage auf allen Seiten verlinken</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Text einfügen u. gestalten</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Bilder verwenden</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class='checklist-section'>
+                                <h3>Sonstiges</h3>
+
+                                <div>
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Flache Ordnerstrukturen schaffen</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Eindeutige URLs (leistungen.html, kontakt.html, etc.)</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Robots.txt prüfen / hinzufügen</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>htaccess hinzufügen u. Wirkung testen (weiterleitung von Domain ohne 'www.' zu Domain mit 'www.'</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Seite bei den <a href='https://search.google.com/search-console/' target='_blank'>Google-Webmastertools</a> eintragen u. verifizieren</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Sitemap.xml <a href='https://www.xml-sitemaps.com' target='_blank'>erzeugen</a> u. über <a href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einreichen</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Wenn HTML-Dateinamen geändert wurden: Alten Namen per Robots.txt aussperren, 301 Weiterleitung per .htaccess</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Für gelöschte Seiten bei <a href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einen Antrag auf Entfernung einreichen</span>
+                                    </div>
+
+                                    <div class='check'>
+                                        <input type='checkbox' />
+                                        <span>Seiten <a href='https://www.deadlinkchecker.com' target='_blank'>auf defekte Links prüfen</a> und ggf. beheben</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Zum Download</h2>
+                    <p>
+                        Hier findest du Materialien, welche du ggf. zur Bearbeitung benötigst.
+                    </p>
+
+                    <div class='dl-list'>
+                        <a class='button small' href='../_.htaccess' target='_blank' download>.htaccess</a>
+                        <a class='button small' href='../_robots.txt' target='_blank' download>robots.txt</a>
+                    </div>
+                    <span class='notice'><strong>Achtung:</strong> Bei den Dateinamen der heruntergeladenen Dateien muss jeweils der Unterstrich ("_") entfernt werden.</span>
+                </div>
+
+                <div>
+                    <h2>Danach...</h2>
+                    <p>
+                        Wenn du die Checkliste abgearbeitet hast, kannst du <a href='https://www.seobility.net/de/seocheck/' target='_blank'>hier</a> zur Sicherheit nochmal einen oberflächlichen SEO-Check ausführen um zu schauen, ob du nichts vergessen hast.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            $(function () {
+                $("#loadwrap").load("../element/image-toggle.html");
+            });
+        </script>
+    </body>
+</html>

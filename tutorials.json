@@ -1,5 +1,14 @@
 [
   {
+    "title": "SEO / SUMO",
+    "description": "Eine Erklärung und Checkliste für das Bearbeiten von SEOs und SUMOs.",
+    "tags": [
+      "SEO/SUMO",
+      "Checkliste"
+    ],
+    "file": "tutorial/seo-sumo.html"
+  },
+  {
     "title": "Empfohlene Tools",
     "description": "Finde neue und hilfreiche Tools für die tägliche Arbeit.",
     "tags": [

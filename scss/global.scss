@@ -63,8 +63,10 @@
 
 /* Hide animated elements on beginning */
 main.slide {
-  div:not(.ignore-animation):not(.dsgvo-media-toggle), ul, ol, li, article, h1, h2, h3, h4, h5, h6 {
-    opacity: 0;
+  .content {
+    > div:not(.ignore-animation):not(.dsgvo-media-toggle), > ul, > ol, > li, > article, > h1, > h2, > h3, > h4, > h5, > h6 {
+      opacity: 0;
+    }
   }
 }
 
@@ -128,7 +130,7 @@ ul {
 
 .button {
   display: inline-block;
-  padding: 0.35rem 1rem;
+  padding: .35em 1em;
   text-decoration: none;
   background-color: utils.$col-primary;
   color: #fff;
@@ -145,11 +147,19 @@ ul {
     }
   }
 
+  &.small {
+    padding: .25em .75em;
+  }
+
   &.inline {
     display: inline;
     padding: 0.15rem 0.5rem;
     margin-inline: 0.5rem;
   }
+}
+
+.notice {
+  color: lighten(utils.$col-font, 20%);
 }
 
 .loading-wrapper {
