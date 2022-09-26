@@ -6,6 +6,13 @@ let congratulations = [
     'Weiter geht\'s!'
 ];
 
+function finished(checklist) {
+    let checked = checklist.querySelectorAll('input[type=checkbox]:checked').length;
+    let total = checklist.querySelectorAll('input[type=checkbox]').length;
+
+    return checked === total;
+}
+
 function getProgress(checklist) {
     let checked = checklist.querySelectorAll('input[type=checkbox]:checked').length;
     let total = checklist.querySelectorAll('input[type=checkbox]').length;
@@ -42,6 +49,31 @@ $(function () {
             checklist.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
                 checkbox.addEventListener('change', () => {
                     updateList(checklist);
+
+                    if (typeof party !== 'undefined') {
+                        if (finished(checklist)) {
+                            let sw = window.innerWidth;
+                            let particleCount = [100, 150];
+
+                            if (sw <= 768) {
+                                particleCount = [50, 75];
+                            }
+
+                            party.confetti(checklist, {
+                                count: party.variation.range(particleCount[0], particleCount[1]),
+                                size: party.variation.range(0.75, 1.25),
+                                spread: party.variation.range(20, 40),
+                                color: () =>
+                                    party.random.pick([
+                                        party.Color.fromHex("#cc0000"),
+                                        party.Color.fromHex("#e60000"),
+                                        party.Color.fromHex("#b30000"),
+                                        party.Color.fromHex("#b31212"),
+                                        party.Color.fromHex("#cc3d3d"),
+                                    ])
+                            });
+                        }
+                    }
                 });
             });
         }
