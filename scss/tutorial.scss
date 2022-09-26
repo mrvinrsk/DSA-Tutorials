@@ -147,6 +147,31 @@ ul li div {
     gap: 1rem;
     transition-duration: .25s;
 
+    span {
+      position: relative;
+      z-index: 2;
+      transition-duration: .25s;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: utils.$col-primary;
+        left: 0;
+        top: 50%;
+        transition-duration: .25s;
+      }
+    }
+
+    input[type=checkbox]:checked + span {
+      color: lighten(utils.$col-font, 10%);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
     &.finished {
       padding: 1rem;
       background-color: utils.$col-gray;
