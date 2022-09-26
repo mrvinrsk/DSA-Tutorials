@@ -152,6 +152,10 @@ ul li div {
       z-index: 2;
       transition-duration: .25s;
 
+      &:hover::after {
+        opacity: .15;
+      }
+
       &::after {
         position: absolute;
         content: '';
