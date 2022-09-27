@@ -83,7 +83,7 @@ function importProgress(checklist) {
             checklist.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
                 if (ids.includes(checkbox.id)) {
                     checkbox.checked = true;
-                }else {
+                } else {
                     checkbox.checked = false;
                 }
             });
@@ -110,14 +110,14 @@ function exportProgress(checklist) {
 }
 
 function updateList(checklist) {
-    if(checklist.hasAttribute('data-show-completion')) {
+    if (checklist.hasAttribute('data-show-completion')) {
         const progress = (checklist.querySelector('.progress') ? checklist.querySelector('.progress') : document.createElement('span'));
         progress.classList.add('progress');
         progress.innerHTML = `${getProgress(checklist)}`;
 
         if (finished(checklist)) {
             progress.classList.add('finished');
-        }else {
+        } else {
             progress.classList.remove('finished');
         }
 
@@ -165,26 +165,51 @@ $(function () {
                 checkbox.addEventListener('change', () => {
                     updateList(checklist);
 
+                    if (checkbox.checked) {
+                        if(!finished(checklist)) {
+                            if (typeof party !== 'undefined') {
+                                let sw = window.innerWidth;
+                                let particleCount = [5, 10];
+
+                                party.confetti(checkbox, {
+                                    count: party.variation.range(particleCount[0], particleCount[1]),
+                                    size: party.variation.range(0.5, .75),
+                                    spread: party.variation.range(5, 10),
+                                    speed: party.variation.range(300, 400),
+                                    shapes: ["square", "rectangle"],
+                                    color: () =>
+                                        party.random.pick([
+                                            party.Color.fromHex("#cc0000"),
+                                            party.Color.fromHex("#e60000"),
+                                            party.Color.fromHex("#b30000"),
+                                            party.Color.fromHex("#b31212"),
+                                            party.Color.fromHex("#cc3d3d"),
+                                        ])
+                                });
+                            }
+                        }
+                    }
+
                     if (finished(checklist)) {
                         if (!isInView(checklist.querySelector('.progress'))) {
                             $('html,body').animate({
                                 scrollTop: $(checklist.querySelector('.progress')).offset().top - 200
-                            }, 500);
+                            }, checklist.querySelectorAll('input[type=checkbox]').length * 25);
                         }
 
                         if (typeof party !== 'undefined') {
                             let sw = window.innerWidth;
-                            let particleCount = [100, 150];
+                            let particleCount = [150, 200];
 
                             if (sw <= 768) {
-                                particleCount = [50, 75];
+                                particleCount = [75, 95];
                             }
 
                             party.confetti(checklist, {
                                 count: party.variation.range(particleCount[0], particleCount[1]),
-                                size: party.variation.range(0.75, 1.25),
-                                spread: party.variation.range(20, 40),
-                                speed: party.variation.range(300, 500),
+                                size: party.variation.range(0.35, 1.75),
+                                spread: party.variation.range(6, 20),
+                                speed: party.variation.range(500, 800),
                                 shapes: ["square", "rectangle"],
                                 color: () =>
                                     party.random.pick([

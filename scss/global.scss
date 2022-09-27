@@ -162,6 +162,13 @@ ul {
   color: lighten(utils.$col-font, 20%);
 }
 
+code {
+  padding: .25em .65em;
+  font-family: monospace;
+  cursor: pointer;
+  background-color: utils.$col-gray;
+}
+
 .loading-wrapper {
   position: fixed;
   z-index: 999;
