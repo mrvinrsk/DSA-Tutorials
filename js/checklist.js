@@ -202,7 +202,7 @@ $(function () {
                             let particleCount = [150, 200];
 
                             if (sw <= 768) {
-                                particleCount = [75, 95];
+                                particleCount = [25, 35];
                             }
 
                             party.confetti(checklist, {

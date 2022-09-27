@@ -198,7 +198,19 @@ ul li div {
   .check {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    align-items: center;
+    gap: .75rem;
+
+    input {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+
+      @media screen and (utils.$bp-desktop) {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 }
 
