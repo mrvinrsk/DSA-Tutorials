@@ -60,12 +60,11 @@ ul li div {
   gap: .5rem;
 
   @media screen and (min-width: utils.$bp-tablet) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.25rem;
   }
 
   @media screen and (min-width: utils.$bp-desktop) {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
   }
 
@@ -132,7 +131,12 @@ ul li div {
     font-weight: 600;
     color: utils.$col-primary;
     margin-bottom: 1em;
+    width: 100%;
     transition-duration: .25s;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      width: unset;
+    }
 
     &.finished {
       color: utils.$col-gray;

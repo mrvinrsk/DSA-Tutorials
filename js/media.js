@@ -20,10 +20,11 @@ function loadMedia(reload = false) {
 
             let mobileMax = (imageContainer.dataset.mobileMax != null ? imageContainer.dataset.mobileMax : 768);
 
-            if (window.innerWidth <= mobileMax) {
-                src = imageContainer.dataset.srcMobile;
+            if (imageContainer.dataset.srcMobile) {
+                if (window.innerWidth <= mobileMax) {
+                    src = imageContainer.dataset.srcMobile;
+                }
             }
-
 
             if (imageContainer.dataset.alt != null) {
                 alt = imageContainer.dataset.alt;

@@ -169,21 +169,22 @@ $(function () {
                         if(!finished(checklist)) {
                             if (typeof party !== 'undefined') {
                                 let sw = window.innerWidth;
-                                let particleCount = [5, 10];
+                                let particleCount = [7, 12];
 
                                 party.confetti(checkbox, {
                                     count: party.variation.range(particleCount[0], particleCount[1]),
-                                    size: party.variation.range(0.5, .75),
-                                    spread: party.variation.range(5, 10),
-                                    speed: party.variation.range(300, 400),
+                                    size: party.variation.range(.7, .9),
+                                    spread: party.variation.range(7, 15),
+                                    speed: party.variation.range(200, 300),
                                     shapes: ["square", "rectangle"],
                                     color: () =>
                                         party.random.pick([
                                             party.Color.fromHex("#cc0000"),
-                                            party.Color.fromHex("#e60000"),
-                                            party.Color.fromHex("#b30000"),
-                                            party.Color.fromHex("#b31212"),
-                                            party.Color.fromHex("#cc3d3d"),
+                                            party.Color.fromHex("#ff5e5e"),
+                                            party.Color.fromHex("#8d1111"),
+                                            party.Color.fromHex("#858585"),
+                                            party.Color.fromHex("#c4c4c4"),
+                                            party.Color.fromHex("#3f3f3f"),
                                         ])
                                 });
                             }
@@ -202,22 +203,23 @@ $(function () {
                             let particleCount = [150, 200];
 
                             if (sw <= 768) {
-                                particleCount = [25, 35];
+                                particleCount = [45, 65];
                             }
 
                             party.confetti(checklist, {
                                 count: party.variation.range(particleCount[0], particleCount[1]),
-                                size: party.variation.range(0.35, 1.75),
-                                spread: party.variation.range(6, 20),
-                                speed: party.variation.range(500, 800),
+                                size: party.variation.range(0.5, 1.75),
+                                spread: party.variation.range(2, 10),
+                                speed: party.variation.range(400, 700),
                                 shapes: ["square", "rectangle"],
                                 color: () =>
                                     party.random.pick([
                                         party.Color.fromHex("#cc0000"),
-                                        party.Color.fromHex("#e60000"),
-                                        party.Color.fromHex("#b30000"),
-                                        party.Color.fromHex("#b31212"),
-                                        party.Color.fromHex("#cc3d3d"),
+                                        party.Color.fromHex("#ff5e5e"),
+                                        party.Color.fromHex("#8d1111"),
+                                        party.Color.fromHex("#858585"),
+                                        party.Color.fromHex("#c4c4c4"),
+                                        party.Color.fromHex("#3f3f3f"),
                                     ])
                             });
                         }
