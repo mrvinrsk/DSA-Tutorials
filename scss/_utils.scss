@@ -42,7 +42,7 @@ $colors: (
 );
 
 $bp-tablet: 768px;
-$bp-desktop: 1200px;
+$bp-desktop: 1300px;
 
 @each $name, $color in $colors {
   .col-#{$name} {

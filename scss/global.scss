@@ -104,10 +104,30 @@ body {
   min-height: 100vh;
 }
 
-main {
-  width: min(90%, 65rem);
+main, html .center, body.tutorial .content, body.tutorial .heading-content {
+  width: min(90%, 60rem);
   margin-inline: auto;
   padding-block: 5%;
+}
+
+html body.tutorial .heading-content, html body.tutorial .content {
+  padding: 0;
+}
+
+body.tutorial main {
+  padding-top: 0;
+  width: 100%;
+
+  .heading {
+    padding-top: 5%;
+    padding-bottom: 2rem;
+    background-color: utils.$col-primary;
+    color: utils.$col-white;
+
+    h1 {
+      color: utils.$col-white;
+    }
+  }
 }
 
 ul {
@@ -116,7 +136,7 @@ ul {
 
   ul {
     margin-block: 0.25rem;
-    margin-left: 1.4em;
+    margin-left: 0.4em;
   }
 }
 
@@ -152,6 +172,7 @@ ul {
       position: absolute;
       content: attr(data-hover-text);
       color: utils.$col-font;
+      font-weight: 600;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -194,8 +215,11 @@ ul {
 code {
   padding: .25em .65em;
   font-family: monospace;
-  cursor: pointer;
   background-color: utils.$col-gray;
+
+  &:not(.no-copy) {
+    cursor: pointer;
+  }
 }
 
 .loading-wrapper {
@@ -370,39 +394,64 @@ ul {
   }
 }
 
+@mixin tooltip {
+  position: fixed;
+  z-index: 999;
+  content: attr(data-tooltip);
+  font-size: .9rem;
+  color: utils.$col-font;
+  background-color: utils.$col-white-higher;
+  bottom: 0;
+  /*left: 50%;*/
+  right: 0;
+  min-width: 265px;
+  max-width: 750px;
+  padding: 1rem;
+  border-radius: 10px 0 0 0;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 0 50px rgba(0 0 0 / 10%);
+  transform: translateY(20px);
+  border-top: 2px solid utils.$col-primary;
+  border-left: 2px solid utils.$col-primary;
+  transition-duration: .25s;
+}
+
+@mixin tooltip-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (hover: hover) {
   html .tooltip {
     position: relative;
     cursor: help !important;
 
     &::before {
-      position: fixed;
-      z-index: 999;
-      content: attr(data-tooltip);
-      font-size: .9rem;
-      color: utils.$col-font;
-      background-color: utils.$col-white-higher;
-      bottom: 0;
-      /*left: 50%;*/
-      right: 0;
-      min-width: 265px;
-      max-width: 750px;
-      padding: 1rem;
-      border-radius: 10px 0 0 0;
-      pointer-events: none;
-      opacity: 0;
-      box-shadow: 0 0 50px rgba(0 0 0 / 10%);
-      transform: translateY(20px);
-      border-top: 2px solid utils.$col-primary;
-      border-left: 2px solid utils.$col-primary;
-      transition-duration: .25s;
+      @include tooltip;
     }
 
     &:hover {
       &::before {
-        opacity: 1;
-        transform: translateY(0);
+        @include tooltip-show;
       }
+    }
+  }
+}
+
+.copy-button {
+  position: relative;
+  text-decoration: underline;
+  color: utils.$col-primary;
+  cursor: copy;
+
+  &::before {
+    @include tooltip;
+  }
+
+  &.copied {
+    &::before {
+      @include tooltip-show;
     }
   }
 }

@@ -101,3 +101,21 @@ function pulse(selector, hex) {
         element.classList.remove("pulse-short");
     }, 600);
 }
+
+function copyFileText(filePath) {
+    $.ajax({
+        url: filePath,
+        success: (result) => {
+            copyTextToClipboard(result);
+        }
+    });
+}
+
+function copyButtonFile(copyButton, filePath) {
+    copyFileText(filePath);
+
+    copyButton.classList.add("copied");
+    setTimeout(() => {
+        copyButton.classList.remove("copied");
+    }, 2000);
+}

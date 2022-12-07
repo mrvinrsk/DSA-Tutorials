@@ -1,9 +1,14 @@
 <div class="dsgvo-media-toggle show ignore-animation">
     <h3>Medien Information</h3>
-    <p>Damit du alle Medien sehen kannst, klicke bitte auf "Akzeptieren". Die Seite ist auch ohne besagte Medien vollständig nutzbar, Sie können die Nutzung der Seite allerdings stark vereinfachen. Bitte beachte, dass besagte Inhalte zum großen Teil extern gehostet werden und wir keinen Einfluss auf diese haben. Du kannst dieses Fenster jederzeit wieder anzeigen, indem du auf ein ungeladenes Medium klickst.</p>
+    <p>
+        Damit du alle Medien sehen kannst, klicke bitte auf "Akzeptieren".
+        Die Medien sind nicht verpflichtend, aber sie können zum Verständnis beitragen.
+        Sämtliche dieser Medien werden <span class='tooltip' data-tooltip='"Extern gehostet" bedeutet, dass die Bilder von einem fremden Server geladen werden, welcher so uU. an private Daten, wie beispielsweise deine IP-Adresse gelangen kann.' style='text-decoration: underline;'>extern gehostet</span>. Mit dem akzeptieren erklärst du dich bereit, diese Bilder
+        zu laden und einen <span class='tooltip' data-tooltip='Ein Cookie ist eine Browser-seitige Speicherung eines Wertes, in diesem Fall, dass du Bilder angezeigt bekommen möchtest, zum Zweck, diese Entscheidung nicht immer wieder manuell bestätigen zu müssen. Cookies können auf Wunsch manuell in den Browser-Einstellungen gelöscht werden.' style='text-decoration: underline;'>Cookie</span> für deine Auswahl zu speichern.
+    </p>
 
     <div class="buttons">
-        <a class="button" onclick="toggleMediaInformation();">Verstecken</a>
+        <a class="button tooltip" onclick="toggleMediaInformation();" data-tooltip='Du kannst das Popup jederzeit wieder anzeigen lassen, indem du auf ein blockiertes Medium klickst.'>Verstecken</a>
         <a class="button" onclick="loadMedia(); toggleMediaInformation();">Akzeptieren</a>
     </div>
 </div>

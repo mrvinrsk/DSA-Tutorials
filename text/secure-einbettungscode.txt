@@ -1,0 +1,63 @@
+Sehr geehrter || [NAME] ||,
+Sie haben uns mit dsa-Secure beauftragt, Ihre Seite den neusten Datenschutz-Vorgaben anzupassen. Für den abschließenden Arbeitsschritt benötigen wir Ihre Mitarbeit. Wir konnten Sie bislang nicht erreichen, um den letzten Schritt für Sie umzusetzen.
+Das ist jedoch kein Problem. Sie können den Code einfach selber einbauen. Hierfür gibt es verschiedene Möglichkeiten:
+
+- Iframe (eingebettet in Ihrer Webseite)
+- JavaScript-Popup (als Popup über Ihrer Webseite)
+
+Wir empfehlen eine zeitnahe Einbindung und stehen Ihnen selbstverständlich weiterhin mit Rat und Tat zur Seite. Die Quelltexte finden Sie nun hier angegeben:
+
+
+Einbettung des Kontaktformulars
+
+Einbettung via iframe:
+|| [Kontaktformular iframe Code] ||
+
+Einbettung via JS-Popup:
+Im Head-Bereich der Seite:
+<script src='https://dsa-secure.de/dsa-secure/cdn/openDsaSecurePop.js'></script>
+
+Im Body-Bereich der Seite, an der Stelle an der der Link dargestellt werden soll:
+|| [Kontaktformular Popup Code] ||
+
+---
+
+Einbettung des Kontaktformulars für Text-E-Mailadressen
+
+Einbettung via JS-Popup:
+Im Head-Bereich der Seite:
+<script src='https://dsa-secure.de/dsa-secure/cdn/openDsaSecurePop.js'></script>
+
+Im Body-Bereich der Seite, an der Stelle an der der Link dargestellt werden soll:
+|| [Mailto Popup Code] ||
+
+---
+
+Einbettung des Datenschutzes
+
+Einbettung via iframe:
+Im Body-Bereich der Seite, an der Stelle an der der Datenschutztext dargestellt werden soll:
+|| [Datenschutz iframe Code] ||
+
+Einbettung via JS-Popup
+Im Head-Bereich der Seite, an der Stelle an der der Link dargestellt werden soll:
+<script src='https://dsa-secure.de/dsa-secure/cdn/openDsaSecurePop.js'></script>
+
+Im Body-Bereich der Seite
+|| [Datenschutz Popup Code] ||
+
+---
+
+Sollten in Zukunft Veränderungen an Ihrer Webseite vorgenommen werden,
+benötigen wir darüber umgehend Ihre Rückmeldung. Zu solchen Änderungen
+gehören Plug-Ins, wie Google Maps, Facebook-Like-Button, Newsletter und
+vieles mehr.
+
+Ohne Zugangsmöglichkeiten zu Ihrer Website ist es uns leider nicht möglich Ihr Impressum für Sie zu pflegen.
+
+Sollten Sie anhand unseres Fragebogens bezüglich Ihres Impressums noch ergänzende oder neue Angaben haben,
+sollten diese von Ihnen nachgepflegt werden.
+
+
+Sagen Sie uns einfach Bescheid, wenn sich etwas an Ihrer
+Webseite ändert - wir passen daraufhin die Datenschutzerklärung umgehend an.

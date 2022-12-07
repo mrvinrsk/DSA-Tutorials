@@ -46,7 +46,14 @@ img[alt] {
 .dsgvo-media {
   position: relative;
   width: 100%;
-  background-image: utils.$col-gray;
+  background: utils.$col-gray;
+  border-radius: 10px;
+  overflow: hidden;
+
+
+  &.margin {
+    margin-block: 1rem;
+  }
 
   .need-permission {
     width: 100%;
@@ -54,12 +61,13 @@ img[alt] {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: utils.$col-primary;
     cursor: pointer;
-    padding: 1rem 2rem;
+    padding: .75rem 1.5rem;
 
     @media screen and (min-width: 768px) {
-      padding: 2.5rem 5rem;
+      padding: 1.5rem 2.75rem;
     }
 
     span {

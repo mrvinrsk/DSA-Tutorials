@@ -38,16 +38,10 @@ async function loadTutorials(clear, search = null) {
                     const card = document.createElement('div');
                     card.classList.add("tutorial-card", "card");
 
-                    if (json[i].unavailable !== null && json[i].unavailable !== 'undefined' && json[i].unavailable === true) {
-                        card.classList.add("unavailable", "tooltip");
-                        card.setAttribute("data-tooltip", "Dieser Artikel ist aktuell nicht verfügbar.");
-                        unavailable++;
-                    }
-
                     const titleContainer = document.createElement('div');
                     titleContainer.classList.add("title-container");
 
-                    const title = document.createElement('span');
+                    const title = document.createElement('h2');
                     title.classList.add("title");
                     title.textContent = json[i].title;
 
@@ -132,6 +126,12 @@ async function loadTutorials(clear, search = null) {
                     if (search === null || search === "" || json[i].tags.includes(search)) {
                         container.appendChild(card);
                         loaded++;
+
+                        if (json[i].unavailable !== null && json[i].unavailable !== 'undefined' && json[i].unavailable === true) {
+                            card.classList.add("unavailable", "tooltip");
+                            card.setAttribute("data-tooltip", "Dieser Artikel ist aktuell nicht verfügbar.");
+                            unavailable++;
+                        }
                     }
                 }
             }

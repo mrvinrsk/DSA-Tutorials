@@ -1,5 +1,5 @@
 $(function () {
-    document.querySelectorAll('code').forEach(code => {
+    document.querySelectorAll('code:not(.no-copy)').forEach(code => {
         code.addEventListener('click', () => {
             copyTextToClipboard(code.textContent);
             alert("Du hast den Code kopiert.");
@@ -39,4 +39,12 @@ $(function () {
 
         i++;
     });
+
+    if (localStorage.getItem("media") == null || localStorage.getItem("media") !== "yes") {
+        let c = document.createElement('div');
+        c.classList.add('mediatogglecontainer');
+        document.body.appendChild(c);
+
+        $('.mediatogglecontainer').load("../element/media-toggle.html");
+    }
 });

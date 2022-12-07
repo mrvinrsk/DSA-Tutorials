@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Secure Einbettungscode erstellen | by Marvin Roßkothen</title>
+
+        <link rel="stylesheet" href="../css/global.min.css">
+        <link rel="stylesheet" href="../css/tutorial.min.css">
+        <link rel="stylesheet" href="../css/media.min.css">
+
+        <script src='../js/jquery-3.6.0.min.js'></script>
+        <script src='../js/main.js'></script>
+        <script src='../js/tutorial.js'></script>
+        <script src='../js/anime.min.js' async></script>
+        <script src='../js/jquery.waypoints.min.js' async></script>
+        <script src='../js/media.js' async></script>
+        <!-- <script src='../js/slide.js' async></script> -->
+    </head>
+    <body class="tutorial">
+
+
+        <main class="slide">
+            <div class='heading'>
+                <div class='heading-content'>
+                    <h1>Secure Einbettungscode erstellen</h1>
+                    <p class='short'>
+                        Sollten wir vom Kunden keine FTP-Zugangsdaten haben, muss Secure vom Kunden selbst eingebunden werden.
+                        Dazu schicken wir die einzelnen benötigten Code-Schnipsel an den Kunden – in diesem Tutorial erkläre ich, wie genau du das tust.
+                    </p>
+                </div>
+            </div>
+
+            <div class='content'>
+                <div class='dsgvo-media' data-src='https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' data-src-mobile='https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=750&dpr=1' data-alt='Datenschutz'></div>
+
+                <div>
+                    <h2>Secure anlegen</h2>
+                    <p>
+                        Zuerst musst du überprüfen, ob bereits ein Secure für den Kunden angelegt wurde, wenn dem nicht so ist, musst du diesen Schritt leider selbst übernehmen.
+                        Wie du das tust, erfährst du <a href='secure-anlegen.html' target='_blank'>hier</a>.
+                    </p>
+                </div>
+
+                <div>
+                    <h2>Code-Schnipsel kopieren</h2>
+                    <p>
+                        Nun kannst du die Code-Schnipsel kopieren, indem du auf das zugehörige Icon im Dashboard klickst (siehe Bild)
+                    </p>
+
+                    <div
+                            class="dsgvo-media margin"
+                            data-src="../images/secure-quelltext-anzeigen.jpg"
+                            data-alt="Secure Dashboard"
+                            data-fitting='contain'
+                            data-width='200'
+                            data-height='150'
+                    ></div>
+                </div>
+
+                <div>
+                    <h2>Einbettungscode erstellen</h2>
+                    <p>
+                        Der "Einbettungscode" ist im Prinzip einfach nur eine E-Mail an den Kunden, welche die Schnipsel und eine Erklärung über deren Einbindung enthält.
+                        Diese Erklärung kannst du kopieren, indem du <span class='copy-button' onclick='copyButtonFile(this, "../text/secure-einbettungscode.txt");' data-tooltip='Kopiert!'>hier</span> klickst.
+                        <br>
+                        <br>
+                        Diesen Einbettungscode sendest du an den Bearbeiter des Projektes, damit dieser ihn an den Kunden weiterleiten kann.
+                        Achte dabei darauf, dass du an alle Änderungen denkst; alle Dinge, die geändert werden müssen sind folgenderweise markiert: <code class='no-copy'>|| [BEISPIEL] ||</code>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
