@@ -1,3 +1,18 @@
+$(function() {
+    let tooltips = document.querySelectorAll('.tooltip');
+    let notTooltips = document.querySelectorAll('*:not(.tooltip)');
+
+    tooltips.forEach(tooltip => {
+        tooltip.addEventListener('mouseenter', (event) => {
+            console.log(tooltip);
+
+            notTooltips.forEach(ntt => {
+                ntt.style.background = "red";
+            });
+        });
+    });
+});
+
 function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
     textArea.value = text;

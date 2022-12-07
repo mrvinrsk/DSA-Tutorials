@@ -6,6 +6,10 @@ let congratulations = [
     'Weiter geht\'s!'
 ];
 
+function hasChild(parent, selector) {
+    return parent.querySelector(selector) !== null;
+}
+
 function finished(checklist) {
     let checked = checklist.querySelectorAll('input[type=checkbox]:checked').length;
     let total = checklist.querySelectorAll('input[type=checkbox]').length;
@@ -134,9 +138,17 @@ function updateList(checklist) {
 
 $(function () {
     document.querySelectorAll('.checklist').forEach(checklist => {
+        checklist.querySelectorAll('.check').forEach(check => {
+            if(hasChild(check, '.explanation')) {
+                check.classList.add('has-explanation');
+            }
+        });
+
         let cb_i = 0;
         checklist.id = 'checklist-' + (++index);
-        checklist.innerHTML += "<div class='dl-list'></div>";
+        checklist.innerHTML += "<div class='download'><p><strong>Achtung:</strong> Dein Fortschritt geht beim Neuladen" +
+            " der Seite verloren, daher solltest du hin und wieder über den Button deinen Zwischenstand speichern.</p><div" +
+            " class='dl-list'></div></div>";
 
         checklist.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
             checkbox.id = `check-${(++cb_i)}`;
@@ -166,7 +178,7 @@ $(function () {
                     updateList(checklist);
 
                     if (checkbox.checked) {
-                        if(!finished(checklist)) {
+                        if (!finished(checklist)) {
                             if (typeof party !== 'undefined') {
                                 let sw = window.innerWidth;
                                 let particleCount = [7, 12];

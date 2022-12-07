@@ -1,5 +1,33 @@
 [
   {
+    "title": "Secure Einbettungscode erstellen",
+    "description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
+    "tags": [
+      "Intern",
+      "DSA Secure",
+      "Web"
+    ],
+    "file": "tutorial/neuro-erstellen.html"
+  },
+  {
+    "title": "Neuro-Analyse",
+    "description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
+    "tags": [
+      "Print",
+      "Neuro"
+    ],
+    "file": "tutorial/neuro-erstellen.html",
+    "beta": true
+  },
+  {
+    "title": "Reinzeichnung",
+    "description": "Eine Checkliste für das Vorbereiten von Dateien für den Druck.",
+    "tags": [
+      "Print"
+    ],
+    "file": "tutorial/reinzeichnung.html"
+  },
+  {
     "title": "SEO / SUMO",
     "description": "Eine Erklärung und Checkliste für das Bearbeiten von SEOs und SUMOs.",
     "tags": [
@@ -20,8 +48,7 @@
     "title": "Empfohlene Frameworks",
     "description": "Finde neue und hilfreiche Frameworks für die tägliche Arbeit.",
     "tags": [
-      "Onepage",
-      "Website",
+      "Web",
       "Framework"
     ],
     "file": "resource/frameworks.html"
@@ -30,8 +57,7 @@
     "title": "Matomo einbinden",
     "description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
     "tags": [
-      "Onepage",
-      "Website"
+      "Web"
     ],
     "file": "tutorial/matomo-einbinden.html"
   },
@@ -40,9 +66,11 @@
     "description": "In diesem Tutorial wird das Anlegen eines Secure-Eintrags Schritt-für-Schritt erklärt.",
     "tags": [
       "Intern",
-      "DSA Secure"
+      "DSA Secure",
+      "Web"
     ],
-    "file": "tutorial/secure-anlegen.html"
+    "file": "tutorial/secure-anlegen.html",
+    "unavailable": true
   },
   {
     "title": "E-Mail Einrichtung",

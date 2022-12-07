@@ -152,32 +152,27 @@ ul li div {
     gap: 1rem;
     transition-duration: .25s;
 
-    span {
-      position: relative;
-      z-index: 2;
+    .check {
       transition-duration: .25s;
 
-      &:hover::after {
-        opacity: .15;
-      }
-
-      &::after {
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 2px;
-        background-color: utils.$col-primary;
-        left: 0;
-        top: 50%;
+      > * {
         transition-duration: .25s;
       }
     }
 
-    input[type=checkbox]:checked + span {
-      color: lighten(utils.$col-font, 10%);
+    img {
+      transition-duration: .25s;
+    }
 
-      &::after {
-        width: 100%;
+    input[type=checkbox]:checked + div {
+      color: lighten(utils.$col-font, 25);
+
+      img {
+        filter: grayscale(.5) saturate(.5);
+      }
+
+      em {
+        color: lighten(desaturate(darken(utils.$col-primary, 5), 40), 50);
       }
     }
 
@@ -202,7 +197,7 @@ ul li div {
   .check {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: .75rem;
 
     input {
@@ -218,9 +213,92 @@ ul li div {
   }
 }
 
+.checklist .explanation {
+  margin-top: .5rem;
+  margin-bottom: .75rem;
+  padding: .5rem .75rem;
+  background-color: darken(utils.$col-white, 3);
+  border-left: 3px solid utils.$col-primary;
+
+  em {
+    color: darken(utils.$col-primary, 5);
+  }
+
+  .dsgvo-media {
+    margin-block: .5rem;
+    max-width: 100%;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      width: 300px;
+    }
+
+    @media screen and (min-width: utils.$bp-desktop) {
+      width: 450px;
+    }
+  }
+}
+
 .dl-list {
   display: flex;
   flex-direction: row;
   gap: .25em;
   margin-block: 1rem;
+}
+
+.download {
+  margin-top: 2rem;
+
+  .dl-list {
+    margin-top: .5rem;
+  }
+}
+
+$breadcrumbs-gap: .5rem;
+.breadcrumb {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: $breadcrumbs-gap * 1.25;
+  margin-block: $breadcrumbs-gap * 1.75;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    flex-direction: row;
+    gap: $breadcrumbs-gap * 3;
+  }
+
+  > .breadcrumb-links {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $breadcrumbs-gap;
+    font-style: italic;
+    color: utils.$col-primary;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      padding-block: .25em;
+    }
+  }
+
+  span:not(:last-child)::after {
+    display: inline-block;
+    content: "»";
+    margin-left: $breadcrumbs-gap;
+    color: utils.$col-font;
+  }
+}
+
+.breadcrumb-copy {
+  padding: .25em .75em;
+  background-color: utils.$col-gray;
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h2 + strong {
+  display: block;
+  margin-bottom: .75rem;
 }

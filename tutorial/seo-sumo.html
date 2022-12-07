@@ -19,7 +19,7 @@
         <script src="../js/jquery.waypoints.min.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/media.js"></script>
-        <script src="../js/slide.js"></script>
+        <!-- <script src='../js/slide.js' async></script> -->
 
         <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
         <script src="../js/checklist.js"></script>
@@ -71,11 +71,6 @@
 
                                     <div class='check'>
                                         <input type='checkbox' />
-                                        <span>Keywords: individuell pro Seite, relevantes Keyword zuerst, 5-6 Stk.</span>
-                                    </div>
-
-                                    <div class='check'>
-                                        <input type='checkbox' />
                                         <span>Meta-Robots: Auf jeder Seite (<a href='https://seo-gold.com/meta-robots-seo-tutorial/meta-name-robots-content-index-follow/' target='_blank'>index, follow</a>)</span>
                                     </div>
 
@@ -90,11 +85,6 @@
                                 <h3>Body</h3>
 
                                 <div>
-                                    <div class='check'>
-                                        <input type='checkbox' />
-                                        <span>Keyworddichte <a href='https://www.internetmarketingninjas.com/tools/keyword-density/' target='_blank'>messen</a> - max. 3–7%</span>
-                                    </div>
-
                                     <div class='check'>
                                         <input type='checkbox' />
                                         <span>CSS auslagern (<a href='https://validator.w3.org/' target='_blank'>validieren</a> u. <a href='https://10015.io/tools/css-minifier' target='_blank'>komprimieren</a>)</span>
@@ -112,7 +102,7 @@
 
                                     <div class='check'>
                                         <input type='checkbox' />
-                                        <span>HTML <a href='https://jsonformatter.org/html-validator' target='_blank'>validieren</a></span>
+                                        <span>HTML <a href='https://validator.w3.org/' target='_blank'>validieren</a></span>
                                     </div>
 
                                     <div class='check'>
@@ -248,7 +238,7 @@
         <script src='../js/tutorial.js'></script>
         <script>
             $(function () {
-                $("#loadwrap").load("../element/image-toggle.html");
+                $('#loadwrap').load("../element/media-toggle.html");
             });
         </script>
     </body>

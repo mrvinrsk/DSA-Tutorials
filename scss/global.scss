@@ -8,6 +8,10 @@
   src: url(../fonts/google-icons.woff2) format("woff2");
 }
 
+html, body {
+  background-color: utils.$col-white;
+}
+
 .icon {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
@@ -62,13 +66,13 @@
 }
 
 /* Hide animated elements on beginning */
-main.slide {
+/*main.slide {
   .content {
     > div:not(.ignore-animation):not(.dsgvo-media-toggle), > ul, > ol, > li, > article, > h1, > h2, > h3, > h4, > h5, > h6 {
       opacity: 0;
     }
   }
-}
+}*/
 
 .dsgvo-media-toggle {
   opacity: 1 !important;
@@ -129,21 +133,46 @@ ul {
 }
 
 .button {
+  position: relative;
   display: inline-block;
   padding: .35em 1em;
   text-decoration: none;
+  overflow: hidden;
   background-color: utils.$col-primary;
   color: #fff;
-  border: 1px solid utils.$col-primary;
+  border: 2px solid utils.$col-primary;
+  border-radius: 3px;
   transition-duration: 0.25s;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
     padding: 0.5rem 1.25rem;
 
+    &::after {
+      position: absolute;
+      content: attr(data-hover-text);
+      color: utils.$col-font;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transform: translateY(50%);
+      opacity: 0;
+      transition-duration: .25s;
+    }
+
     &:hover {
-      background-color: #fff;
-      color: utils.$col-primary;
+      background-color: utils.$col-white;
+      color: utils.$col-white;
+
+      &::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -312,20 +341,68 @@ $pulseSpeed: (
   gap: 1rem;
 }
 
-.card {
-  background-color: #FFF;
-  border: 1px solid utils.$col-gray;
-  border-radius: 5px;
-  padding: 1rem;
+kbd {
+  border: 1px solid #e0e0e0;
+  padding: .05em .2em;
+  border-radius: 3px;
+  margin-inline: .25em;
+  background: inherit;
+  box-shadow: 0 3px 5px rgba(0 0 0 / 7.5%);
+}
 
-  @media screen and (min-width: 768px) {
-    padding: 2rem;
-    transition-duration: .25s;
+.imp {
+  color: #cc0000;
+  font-weight: 800;
+}
+
+blockquote {
+  font-family: "Fira Code", monospaced, monospace;
+  color: lighten(desaturate(utils.$col-primary, 45%), 25%);
+  display: inline-block;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+
+  li {
+    margin-left: 1em;
+  }
+}
+
+@media (hover: hover) {
+  html .tooltip {
+    position: relative;
+    cursor: help !important;
+
+    &::before {
+      position: fixed;
+      z-index: 999;
+      content: attr(data-tooltip);
+      font-size: .9rem;
+      color: utils.$col-font;
+      background-color: utils.$col-white-higher;
+      bottom: 0;
+      /*left: 50%;*/
+      right: 0;
+      min-width: 265px;
+      max-width: 750px;
+      padding: 1rem;
+      border-radius: 10px 0 0 0;
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: 0 0 50px rgba(0 0 0 / 10%);
+      transform: translateY(20px);
+      border-top: 2px solid utils.$col-primary;
+      border-left: 2px solid utils.$col-primary;
+      transition-duration: .25s;
+    }
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
-      border: 1px solid transparent;
+      &::before {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }
