@@ -1,5 +1,16 @@
 [
   {
+    "title": "Detaileinträge löschen",
+    "description": "Wie man Detaileinträge löscht – hauptsächlich in Verbindung mit Kündigungen.",
+    "tags": [
+      "Intern",
+      "QM",
+      "Detaileintrag"
+    ],
+    "file": "tutorial/detaileintrag-loeschen.html",
+    "unavailable": true
+  },
+  {
     "title": "Secure Einbettungscode erstellen",
     "description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
     "tags": [

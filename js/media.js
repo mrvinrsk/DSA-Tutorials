@@ -1,37 +1,72 @@
-$(function () {
+$(async function () {
+    document.addEventListener('dsgvomediarendered', (event) => {
+        console.log("Media rendered: ", event.detail.mediaList);
+
+        document.addEventListener('resize', () => {
+            updateMediaSizes();
+        });
+    });
+
     let images = document.querySelectorAll('.dsgvo-media');
 
-    images.forEach(image => {
+    await images.forEach(image => {
         image.innerHTML = `<div class='need-permission ignore-animation' onclick="showMediaInformation();"><span>Bitte aktiviere das Anzeigen von Bildern, um diesen Inhalt zu laden.</span></div>`;
 
-        let height = '200';
+        let height = 'unset';
+        let maxHeight = 'unset';
         let width = '100%';
 
         if (image.dataset.height) {
             height = image.dataset.height;
         }
-
-        if (image.dataset.width) {
-            width = image.dataset.width;
-        }
-
         let h = height;
         if (h.replace(/\d+/g, '') === '') {
             height += 'px';
         }
 
+        if (image.dataset.maxHeight) {
+            maxHeight = image.dataset.maxHeight;
+        }
+        let mh = maxHeight;
+        if (mh.replace(/\d+/g, '') === '') {
+            maxHeight += 'px';
+        }
+
+
+        if (image.dataset.width) {
+            width = image.dataset.width;
+        }
         let w = width;
         if (w.replace(/\d+/g, '') === '') {
             width += 'px';
         }
 
+
         image.style.height = height;
+        image.style.maxHeight = height;
         image.style.width = width;
 
-        if (!(image.dataset.src.startsWith('http') || image.dataset.src.startsWith('www.') || /[a-zA-Z]{1,}.(de|com|net|eu|co|tv|fr|nrw)/.test(image.dataset.src))) {
-            loadSingleMedia(image);
+        if (!(image.dataset.src.startsWith('http') || image.dataset.src.startsWith('www.') || /[a-zA-Z]{1,}\.(de|com|net|eu|co|tv|fr|nrw)/.test(image.dataset.src))) {
+            loadSingleMedia(image, true);
+            console.log(image.dataset.src, "is local");
+        } else {
+            console.log(image.dataset.src, "isn't local");
         }
+
+        image.classList.add('rendered');
     });
+
+    let rendered = document.querySelectorAll('.dsgvo-media.rendered');
+    document.documentElement.dispatchEvent(new CustomEvent("dsgvomediarendered", {
+            detail: {
+                mediaList: rendered,
+                media: rendered.length
+            },
+            bubbles: true,
+            cancelable: false,
+            composed: false
+        })
+    );
 
     try {
         if (localStorage.getItem("media") !== null && localStorage.getItem("media") === "yes") {
@@ -39,12 +74,24 @@ $(function () {
                 loadMedia(false);
             }, 250);
         }
-    } catch(f) {
+    } catch (f) {
         console.log(f);
     }
 });
 
-function loadSingleMedia(imageContainer) {
+function updateMediaSizes() {
+    document.querySelectorAll('.dsgvo-media').forEach(media => {
+        media.style.removeProperty("height");
+
+        if (media.clientHeight >= media.dataset.maxHeight) {
+            media.style.height = `${media.dataset.maxHeight}px`;
+        } else {
+            media.style.removeProperty("height");
+        }
+    });
+}
+
+function loadSingleMedia(imageContainer, mediaSizes = false) {
     imageContainer.innerHTML = "";
 
     let src = "../images/no-src.png";
@@ -67,7 +114,7 @@ function loadSingleMedia(imageContainer) {
     }
 
 
-    if (src.startsWith('http') || src.startsWith('www.') || /[a-zA-Z]{1,}.(de|com|net|eu|co|tv|fr|nrw)/.test(src)) {
+    if (src.startsWith('http') || src.startsWith('www.') || /[a-zA-Z]{1,}\.(de|com|net|eu|co|tv|fr|nrw)/.test(src)) {
         let displaySrc = src;
         if (displaySrc.length >= 65) {
             displaySrc = displaySrc.substring(0, 65) + " <i>[...]</i>";
@@ -88,6 +135,12 @@ function loadSingleMedia(imageContainer) {
     }
     imageContainer.innerHTML += `<img src='${src}' alt='${alt}' loading='lazy'>`;
     imageContainer.querySelector('img').style.objectFit = imageContainer.dataset.fitting;
+
+    imageContainer.classList.add('loaded');
+
+    if (mediaSizes) {
+        updateMediaSizes();
+    }
 }
 
 function loadMedia(reload = false) {
@@ -101,6 +154,7 @@ function loadMedia(reload = false) {
     }
 
     localStorage.setItem("media", "yes");
+    updateMediaSizes();
 }
 
 $(function () {
