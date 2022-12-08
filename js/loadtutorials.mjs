@@ -21,12 +21,21 @@ async function loadTutorials(clear, search = null) {
 
     let allTags = [];
 
-    if (document.querySelector(".search-buttons")) {
-        document.querySelector(".search-buttons").remove();
+    if (document.querySelector(".search-buttons-container")) {
+        document.querySelector(".search-buttons-container").remove();
     }
+
+    const searchButtonsContainer = document.createElement('div');
+    searchButtonsContainer.classList.add("search-buttons-container");
+
+    const searchButtonsInfo = document.createElement('span');
+    searchButtonsInfo.textContent = "Nach Tag Filtern:";
+
+    searchButtonsContainer.appendChild(searchButtonsInfo);
 
     const searchButtons = document.createElement('div');
     searchButtons.classList.add("search-buttons");
+    searchButtonsContainer.appendChild(searchButtons);
 
     await fetch("tutorials.json")
         .then(response => {
@@ -145,7 +154,7 @@ async function loadTutorials(clear, search = null) {
         });
 
     if (search != null) {
-        document.querySelector('.search-information').innerHTML = `<span class="center-v search-info-text"><span>Die Suche nach '<span class="col-primary">${search}</span>' ergab ${loaded} Ergebnis${loaded !== 1 ? "se" : ""}.</span><a onclick="loadTutorials(true);" class="button inline icon-text" data-hover-text='Zurücksetzen'><span class="icon">close</span><span>Filter zurücksetzen</span></a></span>`;
+        document.querySelector('.search-information').innerHTML = `<span class="search-info-text"><span>Die Suche nach '<span class="col-primary">${search}</span>' ergab ${loaded} Ergebnis${loaded !== 1 ? "se" : ""}.</span><a onclick="loadTutorials(true);" class="button inline icon-text" data-hover-text='Zurücksetzen'><span class="icon">close</span><span>Filter zurücksetzen</span></a></span>`;
     }
 
     allTags.sort().forEach(tag => {
@@ -165,7 +174,7 @@ async function loadTutorials(clear, search = null) {
     });
 
     if(search == null) {
-        document.querySelector('main').insertBefore(searchButtons, document.querySelector('.tutorials'));
+        document.querySelector('main').insertBefore(searchButtonsContainer, document.querySelector('.tutorials'));
     }
 
 

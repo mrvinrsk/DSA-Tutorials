@@ -155,7 +155,8 @@ ul {
 .button {
   position: relative;
   display: inline-block;
-  padding: .35em 1em;
+  text-align: center;
+  padding: utils.$btn-padding;
   text-decoration: none;
   overflow: hidden;
   background-color: utils.$col-primary;
@@ -252,8 +253,10 @@ code {
       animation: pulseWhite 1s ease-in-out forwards infinite;
 
       @for $i from 1 through 3 {
+        $l: ($i / 2) * 1s;
+
         &:nth-child(#{$i}) {
-          animation: loading-#{$i} .85s infinite;
+          animation: loading-1 $l infinite;
         }
       }
     }
@@ -262,15 +265,15 @@ code {
 
 @keyframes loading-1 {
   0% {
-    transform: translateY(0px);
+    transform: scaleX(50%);
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: scaleX(100%);
   }
 
   100% {
-    transform: translateY(0px);
+    transform: scaleX(50%);
   }
 }
 
@@ -280,25 +283,11 @@ code {
   }
 
   50% {
-    transform: scaleX(175%);
+    transform: scaleX(200%);
   }
 
   100% {
     transform: scaleX(100%);
-  }
-}
-
-@keyframes loading-3 {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(0px);
   }
 }
 
@@ -452,6 +441,18 @@ ul {
   &.copied {
     &::before {
       @include tooltip-show;
+    }
+  }
+}
+
+.underline {
+  text-decoration: underline;
+
+  &.no-mobile {
+    text-decoration: none;
+
+    @media screen and (hover: hover) {
+      text-decoration: underline;
     }
   }
 }
