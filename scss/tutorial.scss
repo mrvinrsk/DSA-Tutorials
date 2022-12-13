@@ -168,6 +168,17 @@ ul li div {
       transition-duration: .25s;
     }
 
+    .explanation {
+      overflow: hidden;
+      transition-duration: .25s;
+    }
+
+    input[type=checkbox]:checked + div .explanation {
+      padding: 0;
+      margin: 0;
+      max-height: 0;
+    }
+
     input[type=checkbox]:checked + div {
       color: lighten(utils.$col-font, 25);
 
