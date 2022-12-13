@@ -263,6 +263,12 @@ code {
   }
 }
 
+.is-target {
+  border: 2px solid utils.$col-primary !important;
+  padding: 1rem !important;
+  margin-block: 1rem;
+}
+
 @keyframes loading-1 {
   0% {
     transform: scaleX(50%);

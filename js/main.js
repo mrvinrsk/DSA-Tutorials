@@ -119,3 +119,14 @@ function copyButtonFile(copyButton, filePath) {
         copyButton.classList.remove("copied");
     }, 2000);
 }
+
+$(function() {
+    let hash = window.location.hash;
+    let targetEl = document.querySelector(hash);
+
+    if(targetEl) {
+        let height = targetEl.clientHeight * 3.75;
+        window.scrollTo(0, (targetEl.offsetTop + (window.innerHeight >= height ? height:(height*1.1))));
+        targetEl.classList.add('is-target');
+    }
+});
