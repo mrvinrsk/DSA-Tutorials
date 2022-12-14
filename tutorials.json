@@ -11,7 +11,7 @@
   },
   {
     "title": "Secure Einbettungscode erstellen",
-    "description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
+    "description": "Eine simple Erklärung, wie man einen Einbettungscode erhält.",
     "tags": [
       "Intern",
       "DSA Secure",
@@ -24,7 +24,8 @@
     "description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
     "tags": [
       "Print",
-      "Neuro"
+      "Neuro",
+      "Checkliste"
     ],
     "file": "tutorial/neuro-erstellen.html",
     "beta": true
@@ -33,7 +34,8 @@
     "title": "Reinzeichnung",
     "description": "Eine Checkliste für das Vorbereiten von Dateien für den Druck.",
     "tags": [
-      "Print"
+      "Print",
+      "Checkliste"
     ],
     "file": "tutorial/reinzeichnung.html"
   },
