@@ -138,7 +138,7 @@ async function loadTutorials(clear, search = null) {
 
                         if (json[i].unavailable !== null && json[i].unavailable !== 'undefined' && json[i].unavailable === true) {
                             card.classList.add("unavailable");
-                            card.setAttribute('data-toggle-popup', 'code_copied');
+                            card.setAttribute('data-toggle-popup', 'unavailable');
                             unavailable++;
                         }
                     }
@@ -176,7 +176,6 @@ async function loadTutorials(clear, search = null) {
     if(search == null) {
         document.querySelector('main').insertBefore(searchButtonsContainer, document.querySelector('.tutorials'));
     }
-
 
     removeLoading();
 }
