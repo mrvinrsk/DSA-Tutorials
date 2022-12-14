@@ -178,18 +178,24 @@ ul li div {
       position: relative;
       width: 20px;
       height: 20px;
+      top: 2px;
+      border-radius: 3px;
 
-      background-color: utils.$col-gray;
+      background-color: utils.$col-white-element;
       flex-shrink: 0;
+      overflow: hidden;
       transition-duration: .1s;
 
       &::after {
         position: absolute;
         content: "";
-        width: 80%;
-        height: 80%;
+        border-radius: 3px;
+        overflow: hidden;
+        width: 60%;
+        height: 60%;
         background-color: utils.$col-primary;
         transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
         top: 50%;
         left: 50%;
         pointer-events: none;
@@ -206,6 +212,7 @@ ul li div {
 
         &::after {
           transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
         }
       }
     }
@@ -242,14 +249,7 @@ ul li div {
     gap: .75rem;
 
     input {
-      width: 24px;
-      height: 24px;
       flex-shrink: 0;
-
-      @media screen and (utils.$bp-desktop) {
-        width: 18px;
-        height: 18px;
-      }
     }
   }
 }
