@@ -177,5 +177,6 @@ async function loadTutorials(clear, search = null) {
         document.querySelector('main').insertBefore(searchButtonsContainer, document.querySelector('.tutorials'));
     }
 
+    reload();
     removeLoading();
 }
