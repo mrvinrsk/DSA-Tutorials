@@ -19,10 +19,17 @@
         <script src="../js/jquery.waypoints.min.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/media.js"></script>
+        <script src="../js/popups.js"></script>
         <!-- <script src='../js/slide.js' async></script> -->
     </head>
     <body class="tutorial">
-
+        <div class='popups'>
+            <div class='popup' id='login'>
+                <h3>Zugangsdaten für <a href='https://dsa-analytics.de/'>dsa-analytics.de</a></h3>
+                <p><strong>Nutzername:</strong> dsa-admin</p>
+                <p><strong>Passwort:</strong> M4t-CC!_iODp.w2tV</p>
+            </div>
+        </div>
 
         <main class="slide">
             <div class="heading">
@@ -48,7 +55,7 @@
                     <p>
                         Es ist sehr simpel den Schnipsel zu erhalten. Besuche dafür einfach
                         <a href="//dsa-analytics.de/" target="_blank">DSA Analytics</a> und
-                        melde dich dort mit den <span class='tooltip underline no-mobile' data-tooltip='dsa-admin:M4t-CC!_iODp.w2tV'>Zugangsdaten</span> an. Scrolle dann an's Ende
+                        melde dich dort mit den <span data-toggle-popup='login'>Zugangsdaten</span> an. Scrolle dann an's Ende
                         der Liste und klicke auf "Hinzufügen". Dort schreibst du die
                         folgenden Dinge:
                     </p>

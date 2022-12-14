@@ -137,8 +137,8 @@ async function loadTutorials(clear, search = null) {
                         loaded++;
 
                         if (json[i].unavailable !== null && json[i].unavailable !== 'undefined' && json[i].unavailable === true) {
-                            card.classList.add("unavailable", "tooltip");
-                            card.setAttribute("data-tooltip", "Dieser Artikel ist aktuell nicht verfügbar.");
+                            card.classList.add("unavailable");
+                            card.setAttribute('data-toggle-popup', 'code_copied');
                             unavailable++;
                         }
                     }
