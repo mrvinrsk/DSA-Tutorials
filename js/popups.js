@@ -22,17 +22,14 @@ function reload() {
         });
 
         let added = [];
-        console.log("Found popup togglers:", document.querySelectorAll("[data-toggle-popup]"));
         document.querySelectorAll("[data-toggle-popup]:not(.popup-toggle)").forEach((toggle) => {
 
             function clickListener() {
                 let selector = ".popup#" + toggle.getAttribute("data-toggle-popup");
-                console.log("Searching:", selector);
 
                 let popup = document.querySelector(selector);
 
                 if (popup) {
-                    console.log("Popup found");
                     popup.classList.toggle("show");
 
                     if (popup.classList.contains("show")) {
@@ -40,8 +37,6 @@ function reload() {
                         document.body.classList.add('popup-shown');
                         document.querySelector('.popups').classList.add('show');
                     }
-                } else {
-                    console.log("Can't find popup");
                 }
             }
 
