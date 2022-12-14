@@ -15,11 +15,12 @@
         <link rel="stylesheet" href="../css/media.min.css" />
 
         <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/tutorial.js"></script>
         <script src="../js/anime.min.js"></script>
         <script src="../js/jquery.waypoints.min.js"></script>
         <script src="../js/main.js"></script>
+        <script src="../js/tutorial.js"></script>
         <script src="../js/media.js"></script>
+        <script src="../js/popups.js"></script>
         <!-- <script src='../js/slide.js' async></script> -->
 
         <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
@@ -52,11 +53,10 @@
                     <p>Die Vorlagen für eine Neuro-Analyse befinden sich im Design-Ordner unter diesem Pfad:</p>
 
                     <!-- /Volumes/Design/!00_Kunden/!_dsa-neuro -->
-                    <div class='breadcrumb' data-copy data-custom-copy='/Volumes/Design/!00_Kunden/!_dsa-neuro'>
+                    <div class='breadcrumb no-underline' data-copy data-custom-copy='/Volumes/Design/!00_Kunden'>
                         <div class='breadcrumb-links'>
                             <span>Design</span>
                             <span>!00_Kunden</span>
-                            <span>!_dsa-neuro</span>
                         </div>
                     </div>
 
@@ -83,12 +83,12 @@
 
                                 <div>
                                     <div class='check'>
-                                        <input type='checkbox' />
+                                        <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <strong class='imp'>Name und Firmierung des Kunden ändern (Deckblatt und erste Seite)</strong>
                                     </div>
 
                                     <div class='check'>
-                                        <input type='checkbox' />
+                                        <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>Texte einfügen
                                             <div class='explanation'>
                                                 <ul>
@@ -105,16 +105,26 @@
                                     </div>
 
                                     <div class='check'>
-                                        <input type='checkbox' />
+                                        <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>Endcheck</div>
                                     </div>
 
                                     <div class='check'>
-                                        <input type='checkbox' />
+                                        <div class="checkbox-wrapper"><input type='checkbox'></div>
+                                        <div>Druckfertige PDF erstellen (s. <a href='reinzeichnung.html#pdf-preset' target='_blank'>Reinzeichnung</a>)</div>
+                                    </div>
+
+                                    <div class='check'>
+                                        <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>In den Druck schicken (<a href='https://www.wir-machen-druck.de/' target='_blank'>www.wir-machen-druck.de</a>)
                                             <div class='explanation'>
+                                                <strong>Einstellungen bei wir-machen-druck:</strong>
                                                 <ul>
-                                                    <li>PDF exportieren (s. <a href='reinzeichnung.html#pdf-preset' target='_blank'>Reinzeichnung</a>)</li>
+                                                    <li><strong>Produkt:</strong> Broschüre mit Drahtheftung (A4, 16 seitig)</li>
+                                                    <li><strong>Sorte:</strong> 170g innen (matt) & 170g außen (matt)</li>
+                                                    <li><strong>Absenderadresse:</strong> Castro López</li>
+                                                    <li><strong>Lieferadresse:</strong> Wenn nichts anderes in der Internen steht, die Adresse aus dem CRM.</li>
+                                                    <li><strong>Zahlung:</strong> Vorkasse, oder, wenn eilig PayPal und Sven benachrichtigen</li>
                                                 </ul>
                                             </div>
                                         </div>

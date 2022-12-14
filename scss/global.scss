@@ -36,6 +36,16 @@ html, body {
   table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+
+    tbody tr :is(td, th):first-child {
+      border-left: 7px solid utils.$col-primary;
+    }
+
+    tbody tr :is(td, th):last-child {
+      border-right: 5px solid utils.$col-primary;
+    }
 
     th, td {
       padding: .5em 1em;
@@ -50,6 +60,17 @@ html, body {
 
     tbody tr:nth-child(even) {
       background-color: transparentize(utils.$col-primary, .925);
+    }
+
+    tfoot {
+      &.auto-generated {
+        background-color: utils.$col-primary;
+
+        td {
+          padding: 0;
+          height: 15px;
+        }
+      }
     }
   }
 }
@@ -184,6 +205,7 @@ ul {
       pointer-events: none;
       transform: translateY(50%);
       opacity: 0;
+      background-color: utils.$col-white-higher;
       transition-duration: .25s;
     }
 
@@ -462,3 +484,5 @@ ul {
     }
   }
 }
+
+@import "popups";

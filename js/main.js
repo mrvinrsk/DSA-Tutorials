@@ -120,13 +120,27 @@ function copyButtonFile(copyButton, filePath) {
     }, 2000);
 }
 
-$(function() {
+$(function () {
+    /* Highlight anchor */
     let hash = window.location.hash;
-    let targetEl = document.querySelector(hash);
 
-    if(targetEl) {
-        let height = targetEl.clientHeight * 3.75;
-        window.scrollTo(0, (targetEl.offsetTop + (window.innerHeight >= height ? height:(height*1.1))));
-        targetEl.classList.add('is-target');
+    if (hash) {
+        let targetEl = document.querySelector(hash);
+
+        if (targetEl) {
+            let height = targetEl.clientHeight * 3.75;
+            window.scrollTo(0, (targetEl.offsetTop + (window.innerHeight >= height ? height : (height * 1.1))));
+            targetEl.classList.add('is-target');
+        }
     }
+
+    document.querySelectorAll('.table table').forEach(table => {
+        if (!table.querySelector('tfoot')) {
+            const foot = document.createElement('tfoot');
+            foot.classList.add('auto-generated');
+            let tds = table.querySelector('tr').querySelectorAll('td, th').length;
+            foot.innerHTML = "<tr><td colspan='" + tds + "'></td></tr>";
+            table.appendChild(foot);
+        }
+    });
 });

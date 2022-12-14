@@ -19,6 +19,14 @@
         <script src='../js/media.js' async></script>
     </head>
     <body class="tutorial">
+        <div class='popups'>
+            <div class='popup' id='login'>
+                <h3>Einloggdaten für <a href='https://www.deutsche-stadtauskunft.com' target='_blank'>deutsche-stadtauskunft.de</a></h3>
+                <p><strong>Nutzername:</strong> sabrina</p>
+                <p><strong>Passwort:</strong> sabrina2015</p>
+            </div>
+        </div>
+
         <main class="slide">
             <div class='heading'>
                 <div class='heading-content'>
@@ -37,7 +45,7 @@
                         Das Löschen eines Detaileintrages ist ganz einfach.
                         <br>
                         <br>
-                        Rufe dazu einfach <a href='https://www.deutsche-stadtauskunft.com/admin_panel/index.php' target='_blank'>deutsche-stadtauskunft.com/admin_panel</a> auf, melde dich mit den <span class='tooltip underline no-mobile' data-tooltip='sabrina:sabrina2015'>Einloggdaten</span> an.
+                        Rufe dazu einfach <a href='https://www.deutsche-stadtauskunft.com/admin_panel/index.php' target='_blank'>deutsche-stadtauskunft.com/admin_panel</a> auf, melde dich mit den <span data-toggle-popup='login'>Einloggdaten</span> an.
                         Dort klickst du dann unter "Einträge" auf "editieren" (siehe Bild)
                     </p>
 
@@ -71,5 +79,6 @@
             </div>
         </main>
 
+        <script src='../js/popups.js' defer async></script>
     </body>
 </html>

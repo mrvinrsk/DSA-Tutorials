@@ -16,6 +16,13 @@
         <script src='js/main.js'></script>
     </head>
     <body>
+        <div class='popups'>
+            <div class='popup' id='code_copied'>
+                <h3>Deaktiviert</h3>
+                <p>Der angeforderte Artikel ist aktuell leider nicht verfügbar, versuche es bald erneut.</p>
+            </div>
+        </div>
+
         <main>
             <div class='heading'>
                 <h1>DSA-Tutorials</h1>
@@ -41,7 +48,10 @@
 
             <h4>Geändert</h4>
             <ul>
-                <li>-</li>
+                <li>Checklist-Boxen Design geändert</li>
+                <li>Neutralere Farben (UX)</li>
+                <li>Bessere Popups (z.B. beim Kopieren von Code & Zugangsdaten)</li>
+                <li>Table-Styling</li>
             </ul>
 
             <h4>Entfernt</h4>
@@ -58,5 +68,7 @@
         <script type='module'>
             loadTutorials(false);
         </script>
+
+        <script src='js/popups.js' defer async></script>
     </body>
 </html>

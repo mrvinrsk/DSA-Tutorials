@@ -76,6 +76,7 @@ ul li div {
     border-radius: 5px;
     border: 1px solid #dadada;
     padding: 1rem;
+    background-color: utils.$col-white-element;
 
     h3 {
       margin-bottom: .5em;
@@ -113,7 +114,7 @@ ul li div {
         .tool-description {
           margin-top: .35rem;
           padding: .25em .75em;
-          background: #F5F5F5;
+          background: utils.$col-white-higher;
           border-left: 3px solid utils.$col-primary;
 
           ul {
@@ -170,25 +171,50 @@ ul li div {
 
     .explanation {
       overflow: hidden;
-      transition-duration: .25s;
+      transition-duration: .5s;
     }
 
-    input[type=checkbox]:checked + div .explanation {
-      padding: 0;
-      margin: 0;
-      max-height: 0;
+    .checkbox-wrapper {
+      position: relative;
+      width: 20px;
+      height: 20px;
+
+      background-color: utils.$col-gray;
+      flex-shrink: 0;
+      transition-duration: .1s;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 80%;
+        height: 80%;
+        background-color: utils.$col-primary;
+        transform: translate(-50%, -50%) scale(0);
+        top: 50%;
+        left: 50%;
+        pointer-events: none;
+        transition-duration: .1s;
+      }
+
+
+      &.checked {
+        + div .explanation {
+          padding-block: 0;
+          max-height: 0;
+          margin: 0;
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
     }
 
-    input[type=checkbox]:checked + div {
-      color: lighten(utils.$col-font, 25);
-
-      img {
-        filter: grayscale(.5) saturate(.5);
-      }
-
-      em {
-        color: lighten(desaturate(darken(utils.$col-primary, 5), 40), 50);
-      }
+    input[type=checkbox] {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      opacity: 0;
     }
 
     &.finished {
@@ -232,7 +258,7 @@ ul li div {
   margin-top: .5rem;
   margin-bottom: .75rem;
   padding: .5rem .75rem;
-  background-color: darken(utils.$col-white, 3);
+  background-color: utils.$col-gray;
   border-left: 3px solid utils.$col-primary;
 
   em {

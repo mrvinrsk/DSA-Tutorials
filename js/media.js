@@ -1,6 +1,6 @@
 $(async function () {
     document.addEventListener('dsgvomediarendered', (event) => {
-        console.log("Media rendered: ", event.detail.mediaList);
+        // console.log("Media rendered: ", event.detail.mediaList);
 
         document.addEventListener('resize', () => {
             updateMediaSizes();
@@ -47,10 +47,8 @@ $(async function () {
         image.style.width = width;
 
         if (!(image.dataset.src.startsWith('http') || image.dataset.src.startsWith('www.') || /[a-zA-Z]{1,}\.(de|com|net|eu|co|tv|fr|nrw)/.test(image.dataset.src))) {
+            // Local image, else external
             loadSingleMedia(image, true);
-            console.log(image.dataset.src, "is local");
-        } else {
-            console.log(image.dataset.src, "isn't local");
         }
 
         image.classList.add('rendered');

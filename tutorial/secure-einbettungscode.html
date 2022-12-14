@@ -13,13 +13,19 @@
 
         <script src='../js/jquery-3.6.0.min.js'></script>
         <script src='../js/main.js'></script>
+<script src='../js/popups.js'></script>
         <script src='../js/tutorial.js'></script>
         <script src='../js/anime.min.js' async></script>
         <script src='../js/jquery.waypoints.min.js' async></script>
         <script src='../js/media.js' async></script>
     </head>
     <body class="tutorial">
-
+        <div class='popups'>
+            <div class='popup' id='copied_embed'>
+                <h3>Kopiert</h3>
+                <p>Du hast den Einbettungscode erfolgreich kopiert.</p>
+            </div>
+        </div>
 
         <main class="slide">
             <div class='heading'>
@@ -63,7 +69,7 @@
                     <h2>Einbettungscode erstellen</h2>
                     <p>
                         Der "Einbettungscode" ist im Prinzip einfach nur eine E-Mail an den Kunden, welche die Schnipsel und eine Erklärung über deren Einbindung enthält.
-                        Diese Erklärung kannst du kopieren, indem du <span class='copy-button' onclick='copyButtonFile(this, "../text/secure-einbettungscode.txt");' data-tooltip='Kopiert!'>hier</span> klickst.
+                        Diese Erklärung kannst du kopieren, indem du <span data-toggle-popup='copied_embed' onclick='copyButtonFile(this, "../text/secure-einbettungscode.txt");'>hier</span> klickst.
                         <br>
                         <br>
                         Diesen Einbettungscode sendest du an den Bearbeiter des Projektes, damit dieser ihn an den Kunden weiterleiten kann.
