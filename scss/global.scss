@@ -12,6 +12,14 @@ html, body {
   background-color: utils.$col-white;
 }
 
+p, a, span {
+  line-height: 160%;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    line-height: 150%;
+  }
+}
+
 .icon {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
