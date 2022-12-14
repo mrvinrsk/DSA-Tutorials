@@ -67,7 +67,7 @@ p, a, span {
     }
 
     tbody tr:nth-child(even) {
-      background-color: transparentize(utils.$col-primary, .925);
+      background-color: transparentize(utils.$col-primary, .95);
     }
 
     tfoot {
