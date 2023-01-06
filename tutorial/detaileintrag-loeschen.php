@@ -2,21 +2,21 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
         <title>Detaileintrag löschen | by Marvin Roßkothen</title>
 
-        <link rel="stylesheet" href="../css/global.min.css">
-        <link rel="stylesheet" href="../css/tutorial.min.css">
-        <link rel="stylesheet" href="../css/media.min.css">
+        <link href="../css/global.min.css" rel="stylesheet">
+        <link href="../css/tutorial.min.css" rel="stylesheet">
+        <link href="../css/media.min.css" rel="stylesheet">
 
         <script src='../js/jquery-3.6.0.min.js'></script>
         <script src='../js/main.js'></script>
         <script src='../js/tutorial.js'></script>
-        <script src='../js/anime.min.js' async></script>
-        <script src='../js/jquery.waypoints.min.js' async></script>
-        <script src='../js/media.js' async></script>
+        <script async src='../js/anime.min.js'></script>
+        <script async src='../js/jquery.waypoints.min.js'></script>
+        <script async src='../js/media.js'></script>
     </head>
     <body class="tutorial">
         <div class='popups'>
@@ -38,7 +38,7 @@
             </div>
 
             <div class='content'>
-                <div class='dsgvo-media' data-src='../images/deutsche-stadtauskunft.svg' data-alt='deutsche-stadtauskunft.com' data-fitting='cover'></div>
+                <div class='dsgvo-media' data-alt='deutsche-stadtauskunft.com' data-fitting='cover' data-src='../images/deutsche-stadtauskunft.svg'></div>
 
                 <div>
                     <p>
@@ -51,23 +51,23 @@
 
                     <div
                             class="dsgvo-media margin"
-                            data-src="../images/deutsche-stadtauskunft-eintraege-editieren.jpg"
-                            data-max-height='200'
                             data-alt="Einträge Menü"
                             data-fitting='contain'
+                            data-max-height='200'
+                            data-src="../images/deutsche-stadtauskunft-eintraege-editieren.jpg"
                     ></div>
 
                     <p>
                         Dort suchst du einfach nach dem Kunden – per Kundennummer oder Name. Dort kannst du dann einfach den Eintrag löschen.
                     </p>
 
-                    <div class='dsgvo-media margin' data-src='../images/deutsche-stadtauskunft-eintrag-loeschen.jpg' data-max-height='200' data-alt='Eintrag Verwaltung' data-fitting='contain'></div>
+                    <div class='dsgvo-media margin' data-alt='Eintrag Verwaltung' data-fitting='contain' data-max-height='200' data-src='../images/deutsche-stadtauskunft-eintrag-loeschen.jpg'></div>
 
                     <p>
                         Dann nur noch bestätigen.
                     </p>
 
-                    <div class='dsgvo-media margin' data-src='../images/deutsche-stadtauskunft-eintrag-loeschen-bestaetigen.jpg' data-max-height='200' data-alt='Löschen bestätigen' data-fitting='contain'></div>
+                    <div class='dsgvo-media margin' data-alt='Löschen bestätigen' data-fitting='contain' data-max-height='200' data-src='../images/deutsche-stadtauskunft-eintrag-loeschen-bestaetigen.jpg'></div>
                 </div>
 
                 <div>
@@ -79,6 +79,6 @@
             </div>
         </main>
 
-        <script src='../js/popups.js' defer async></script>
+        <script async defer src='../js/popups.js'></script>
     </body>
 </html>

@@ -44,6 +44,7 @@
             <h4>Hinzugefügt</h4>
             <ul>
                 <li>Checklist-Erklärung wird bei fertigstellung versteckt</li>
+                <li>Securecheck-Generator hinzugefügt</li>
             </ul>
 
             <h4>Geändert</h4>
@@ -52,6 +53,8 @@
                 <li>Neutralere Farben (UX)</li>
                 <li>Bessere Popups (z.B. beim Kopieren von Code & Zugangsdaten)</li>
                 <li>Table-Styling</li>
+                <li>Tutorial-Tags werden alphabetisch sortiert</li>
+                <li>Mehr Platz für Tutorials auf der Startseite</li>
             </ul>
 
             <h4>Entfernt</h4>

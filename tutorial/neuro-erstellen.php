@@ -3,16 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta
-                name="viewport"
                 content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+                name="viewport"
         />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
 
         <title>Zielgruppen-Analyse erstellen | by Marvin Roßkothen</title>
 
-        <link rel="stylesheet" href="../css/global.min.css" />
-        <link rel="stylesheet" href="../css/tutorial.min.css" />
-        <link rel="stylesheet" href="../css/media.min.css" />
+        <link href="../css/global.min.css" rel="stylesheet" />
+        <link href="../css/tutorial.min.css" rel="stylesheet" />
+        <link href="../css/media.min.css" rel="stylesheet" />
 
         <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="../js/anime.min.js"></script>
@@ -40,10 +40,10 @@
             <div class="content">
                 <div
                         class="dsgvo-media"
-                        data-src="https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427_960_720.jpg"
+                        data-alt="SEO Bild"
                         data-custom-attribution="https://pixabay.com/photos/digital-marketing-technology-1433427/"
                         data-custom-attribution-link="https://pixabay.com/photos/digital-marketing-technology-1433427/"
-                        data-alt="SEO Bild"
+                        data-src="https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427_960_720.jpg"
                 ></div>
 
                 <div>

@@ -2,22 +2,22 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
         <title>Secure Einbettungscode erstellen | by Marvin Roßkothen</title>
 
-        <link rel="stylesheet" href="../css/global.min.css">
-        <link rel="stylesheet" href="../css/tutorial.min.css">
-        <link rel="stylesheet" href="../css/media.min.css">
+        <link href="../css/global.min.css" rel="stylesheet">
+        <link href="../css/tutorial.min.css" rel="stylesheet">
+        <link href="../css/media.min.css" rel="stylesheet">
 
         <script src='../js/jquery-3.6.0.min.js'></script>
         <script src='../js/main.js'></script>
-<script src='../js/popups.js'></script>
+        <script src='../js/popups.js'></script>
         <script src='../js/tutorial.js'></script>
-        <script src='../js/anime.min.js' async></script>
-        <script src='../js/jquery.waypoints.min.js' async></script>
-        <script src='../js/media.js' async></script>
+        <script async src='../js/anime.min.js'></script>
+        <script async src='../js/jquery.waypoints.min.js'></script>
+        <script async src='../js/media.js'></script>
     </head>
     <body class="tutorial">
         <div class='popups'>
@@ -39,7 +39,7 @@
             </div>
 
             <div class='content'>
-                <div class='dsgvo-media' data-src='https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' data-src-mobile='https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=750&dpr=1' data-alt='Datenschutz'></div>
+                <div class='dsgvo-media' data-alt='Datenschutz' data-src='https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' data-src-mobile='https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=750&dpr=1'></div>
 
                 <div>
                     <h2>Secure anlegen</h2>
@@ -57,11 +57,11 @@
 
                     <div
                             class="dsgvo-media margin"
-                            data-src="../images/secure-quelltext-anzeigen.jpg"
                             data-alt="Secure Dashboard"
                             data-fitting='contain'
-                            data-width='200'
                             data-height='150'
+                            data-src="../images/secure-quelltext-anzeigen.jpg"
+                            data-width='200'
                     ></div>
                 </div>
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="https://azubis.dsa-vorschau.de" id="77d0c628-9465-4094-86a6-9dc97abc93a1" port="22" nameFormat="DESCRIPTIVE" username="kunden_888888_azubis" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" id="e9066d03-a794-4559-922b-96c1ef34ea81" customName="Azubis" nameFormat="CUSTOM" useOpenSSHConfig="true">
+        <option name="customName" value="Azubis" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

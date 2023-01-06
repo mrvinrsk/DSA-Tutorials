@@ -120,6 +120,12 @@ function copyButtonFile(copyButton, filePath) {
     }, 2000);
 }
 
+function checkHTML(html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.children.length > 0;
+}
+
+
 $(function () {
     /* Highlight anchor */
     let hash = window.location.hash;
@@ -142,5 +148,14 @@ $(function () {
             foot.innerHTML = "<tr><td colspan='" + tds + "'></td></tr>";
             table.appendChild(foot);
         }
+    });
+
+    document.querySelectorAll("input[pattern]").forEach(input => {
+        input.addEventListener("keypress", (event) => {
+            let txt = String.fromCharCode(event.which);
+            let ok = new RegExp(input.pattern).test(txt);
+
+            if (!ok) event.preventDefault();
+        });
     });
 });

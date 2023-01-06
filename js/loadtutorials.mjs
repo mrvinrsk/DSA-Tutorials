@@ -108,7 +108,7 @@ async function loadTutorials(clear, search = null) {
 
                     const tagsCont = document.createElement('div');
                     tagsCont.classList.add("tags");
-                    json[i].tags.forEach(tag => {
+                    json[i].tags.sort().forEach(tag => {
                         tagsCont.innerHTML += `<span class='tag' onclick='filterTag("${tag}");'>${tag}</span>`;
 
                         if (!allTags.includes(tag)) {
@@ -123,7 +123,7 @@ async function loadTutorials(clear, search = null) {
                     if (json[i].unavailable !== null && json[i].unavailable !== 'undefined' && json[i].unavailable === true) {
                         button.href = "#";
                     } else {
-                        button.href = json[i].file;
+                        button.href = json[i].permaLink;
                     }
                     button.textContent = "Tutorial anzeigen";
 
@@ -137,7 +137,7 @@ async function loadTutorials(clear, search = null) {
                         loaded++;
 
                         if (json[i].unavailable !== null && json[i].unavailable !== 'undefined' && json[i].unavailable === true) {
-                            card.classList.add("unavailable");
+                            card.classList.add("unavailable", "no-underline");
                             card.setAttribute('data-toggle-popup', 'unavailable');
                             unavailable++;
                         }

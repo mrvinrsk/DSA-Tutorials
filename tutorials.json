@@ -1,5 +1,16 @@
 [
   {
+    "title": "Securecheck durchführen",
+    "description": "Was vor dem Upload einer Website zu beachten ist.",
+    "tags": [
+      "Intern",
+      "Web",
+      "Checkliste"
+    ],
+    "file": "tutorial/securecheck.php",
+    "permaLink": "tutorial/securecheck"
+  },
+  {
     "title": "Detaileinträge löschen",
     "description": "Wie man Detaileinträge löscht – hauptsächlich in Verbindung mit Kündigungen.",
     "tags": [
@@ -7,7 +18,8 @@
       "QM",
       "Detaileintrag"
     ],
-    "file": "tutorial/detaileintrag-loeschen.html"
+    "file": "tutorial/detaileintrag-loeschen.php",
+    "permaLink": "tutorial/detaileintrag-loeschen"
   },
   {
     "title": "Secure Einbettungscode erstellen",
@@ -17,7 +29,8 @@
       "DSA Secure",
       "Web"
     ],
-    "file": "tutorial/secure-einbettungscode.html"
+    "file": "tutorial/secure-einbettungscode.php",
+    "permaLink": "tutorial/secure-einbettungscode"
   },
   {
     "title": "Neuro-Analyse",
@@ -27,8 +40,9 @@
       "Neuro",
       "Checkliste"
     ],
-    "file": "tutorial/neuro-erstellen.html",
-    "beta": true
+    "file": "tutorial/neuro-erstellen.php",
+    "beta": true,
+    "permaLink": "tutorial/neuro-erstellen"
   },
   {
     "title": "Reinzeichnung",
@@ -37,7 +51,8 @@
       "Print",
       "Checkliste"
     ],
-    "file": "tutorial/reinzeichnung.html"
+    "file": "tutorial/reinzeichnung.php",
+    "permaLink": "tutorial/reinzeichnung"
   },
   {
     "title": "SEO / SUMO",
@@ -46,7 +61,8 @@
       "SEO/SUMO",
       "Checkliste"
     ],
-    "file": "tutorial/seo-sumo.html"
+    "file": "tutorial/seo-sumo.php",
+    "permaLink": "tutorial/seo"
   },
   {
     "title": "Empfohlene Tools",
@@ -54,7 +70,8 @@
     "tags": [
       "Tools"
     ],
-    "file": "resource/tools.html"
+    "file": "resource/tools.php",
+    "permaLink": "resource/tools"
   },
   {
     "title": "Empfohlene Frameworks",
@@ -63,7 +80,8 @@
       "Web",
       "Framework"
     ],
-    "file": "resource/frameworks.html"
+    "file": "resource/frameworks.php",
+    "permaLink": "resource/frameworks"
   },
   {
     "title": "Matomo einbinden",
@@ -71,7 +89,8 @@
     "tags": [
       "Web"
     ],
-    "file": "tutorial/matomo-einbinden.html"
+    "file": "tutorial/matomo-einbinden.php",
+    "permaLink": "tutorial/matomo"
   },
   {
     "title": "Secure anlegen",
@@ -81,8 +100,9 @@
       "DSA Secure",
       "Web"
     ],
-    "file": "tutorial/secure-anlegen.html",
-    "unavailable": true
+    "file": "tutorial/secure-anlegen.php",
+    "unavailable": true,
+    "permaLink": "tutorial/secure-anlegen"
   },
   {
     "title": "E-Mail Einrichtung",
@@ -91,6 +111,7 @@
       "QM",
       "E-Mail"
     ],
-    "file": "tutorial/e-mail-einrichtung.html"
+    "file": "tutorial/e-mail-einrichtung.php",
+    "permaLink": "tutorial/email"
   }
 ]

@@ -184,7 +184,8 @@ $(function () {
                         if (!finished(checklist)) {
                             if (typeof party !== 'undefined') {
                                 let sw = window.innerWidth;
-                                let particleCount = [7, 12];
+                                let particleCount = [4, 7];
+
 
                                 party.confetti(checkbox, {
                                     count: party.variation.range(particleCount[0], particleCount[1]),
@@ -195,11 +196,6 @@ $(function () {
                                     color: () =>
                                         party.random.pick([
                                             party.Color.fromHex("#cc0000"),
-                                            party.Color.fromHex("#ff5e5e"),
-                                            party.Color.fromHex("#8d1111"),
-                                            party.Color.fromHex("#858585"),
-                                            party.Color.fromHex("#c4c4c4"),
-                                            party.Color.fromHex("#3f3f3f"),
                                         ])
                                 });
                             }
@@ -215,10 +211,10 @@ $(function () {
 
                         if (typeof party !== 'undefined') {
                             let sw = window.innerWidth;
-                            let particleCount = [150, 200];
+                            let particleCount = [100, 135];
 
                             if (sw <= 768) {
-                                particleCount = [45, 65];
+                                particleCount = [35, 55];
                             }
 
                             party.confetti(checklist, {

@@ -1,0 +1,10 @@
+RewriteEngine On
+
+#location of your website
+RewriteBase /tutorials
+
+#if the file exists, deliver it
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.+)$ routing.php?uri=$1 [QSA,L]

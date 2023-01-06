@@ -131,7 +131,7 @@ function loadSingleMedia(imageContainer, mediaSizes = false) {
     } else {
         imageContainer.innerHTML += `<span class='image-source'>Quelle: Internes Bild</span>`;
     }
-    imageContainer.innerHTML += `<img src='${src}' alt='${alt}' loading='lazy'>`;
+    imageContainer.innerHTML += `<img src='${src}' alt='${alt}' style='object-position: ${(imageContainer.dataset.position ? imageContainer.dataset.position : "center")}' loading='lazy'>`;
     imageContainer.querySelector('img').style.objectFit = imageContainer.dataset.fitting;
 
     imageContainer.classList.add('loaded');

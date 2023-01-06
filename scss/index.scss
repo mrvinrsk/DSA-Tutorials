@@ -8,6 +8,10 @@
   }
 }
 
+html main, html .center {
+  width: min(90%, 100rem);
+}
+
 html .search-info-text {
   display: flex;
   flex-direction: column;
@@ -224,7 +228,7 @@ html .search-info-text {
     margin-bottom: 2rem;
   }
 
-  @media screen and (min-width: 1700px) {
+  @media screen and (min-width: 2300px) {
     position: fixed;
     right: 0;
     top: 50%;

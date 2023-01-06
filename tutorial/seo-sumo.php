@@ -3,16 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta
-                name="viewport"
                 content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+                name="viewport"
         />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
 
         <title>SEO / SUMO | by Marvin Roßkothen</title>
 
-        <link rel="stylesheet" href="../css/global.min.css" />
-        <link rel="stylesheet" href="../css/tutorial.min.css" />
-        <link rel="stylesheet" href="../css/media.min.css" />
+        <link href="../css/global.min.css" rel="stylesheet" />
+        <link href="../css/tutorial.min.css" rel="stylesheet" />
+        <link href="../css/media.min.css" rel="stylesheet" />
 
         <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="../js/tutorial.js"></script>
@@ -40,9 +40,9 @@
             <div class="content">
                 <div
                         class="dsgvo-media"
+                        data-alt="SEO Bild"
                         data-src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=1"
                         data-src-mobile="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=768&dpr=1"
-                        data-alt="SEO Bild"
                 ></div>
 
                 <div>
@@ -220,8 +220,8 @@
                     </p>
 
                     <div class='dl-list'>
-                        <a data-hover-text='Download' class='button small' href='../_.htaccess' target='_blank' download>.htaccess</a>
-                        <a data-hover-text='Download' class='button small' href='../_robots.txt' target='_blank' download>robots.txt</a>
+                        <a class='button small' data-hover-text='Download' download href='../_.htaccess' target='_blank'>.htaccess</a>
+                        <a class='button small' data-hover-text='Download' download href='../_robots.txt' target='_blank'>robots.txt</a>
                     </div>
                     <span class='notice'><strong>Achtung:</strong> Bei den Dateinamen der heruntergeladenen Dateien muss jeweils der Unterstrich ("_") entfernt werden.</span>
                 </div>
