@@ -26,6 +26,7 @@
         <script src="../js/checklist.js"></script>
     </head>
     <body class="tutorial">
+        <div class='back icon-text'><span class='icon'>arrow_back</span><span>Zurück</span></div>
 
 
         <main class="slide">
@@ -33,7 +34,8 @@
                 <div class='heading-content'>
                     <h1>Reinzeichnung</h1>
                     <p class="short">
-                        Im Laufe der Reinzeichnung bereitest du eine InDesign-Datei auf den Druck vor und exportierst sie als druckfertige PDF.
+                        Im Laufe der Reinzeichnung bereitest du eine InDesign-Datei auf den Druck vor und exportierst sie als
+                        druckfertige PDF.
                         Dieses Tutorial deckt den gesamten Vorgang von Vorbereitung bis Nacharbeit nach dem Druckauftrag.
                     </p>
                 </div>
@@ -51,7 +53,8 @@
                 <div>
                     <h2>Alles nach Plan</h2>
                     <p>
-                        Hier findest du alle erforderlichen Schritte zur Bearbeitung deines Projektes. Kannst alles abhaken, so kannst'e nix vergessen, praktisch 'wa?
+                        Hier findest du alle erforderlichen Schritte zur Bearbeitung deines Projektes. Kannst alles abhaken, so
+                        kannst'e nix vergessen, praktisch 'wa?
                     </p>
 
                     <div class="checklist ignore-animation" data-name='reinzeichnung' data-show-completion>
@@ -63,7 +66,9 @@
                                 <div>
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <div>Textfelder und Rahmen anpassen (Anklicken und <kbd>Alt</kbd>+<kbd>cmd</kbd>+<kbd>C</kbd> drücken)</div>
+                                        <div>Textfelder und Rahmen anpassen (Anklicken und
+                                            <kbd>Alt</kbd>+<kbd>cmd</kbd>+<kbd>C</kbd> drücken)
+                                        </div>
                                     </div>
 
                                     <div class='check'>
@@ -86,7 +91,8 @@
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>Nicht verwendete Farben löschen
                                             <div class='explanation'>
-                                                Im Fenster "Farbfelder" unter Optionen "alle nicht verwendeten anzeigen" und dann löschen
+                                                Im Fenster "Farbfelder" unter Optionen "alle nicht verwendeten anzeigen" und dann
+                                                löschen
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +116,8 @@
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>Alle Bilder einbetten
                                             <div class='explanation'>
-                                                Im Fenster "Verknüpfungen" das Bild auswählen und <em>Rechtsklick > Verknüpfung einbetten</em>
+                                                Im Fenster "Verknüpfungen" das Bild auswählen und <em>Rechtsklick > Verknüpfung
+                                                                                                      einbetten</em>
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +126,8 @@
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>Schriften in Pfade umwandeln
                                             <div class='explanation'>
-                                                <p><strong>Tipp:</strong> Vorher am besten die Seite duplizieren, falls zukünftig Änderungen vorgenommen werden sollen.</p>
+                                                <p><strong>Tipp:</strong> Vorher am besten die Seite duplizieren, falls zukünftig
+                                                                          Änderungen vorgenommen werden sollen.</p>
                                                 <p>Textfeld markieren und <em>Schrift > in Pfade umwandeln</em> auswählen.</p>
                                             </div>
                                         </div>
@@ -130,8 +138,10 @@
                                         <div>Als PDF exportieren
                                             <div class='explanation'>
                                                 <p>PDF-Vorgabe: PDF/x-3:2002</p>
-                                                <p>Marken und Anschnitt: "<em>Anschnittseinstellungen des Dokuments verwenden</em>"</p>
-                                                <p>Ausgabe-Farbe-Ziel: ISO coated v2 300% und "<em>in Zielprofil konvertieren</em>" auswählen</p>
+                                                <p>Marken und Anschnitt: "<em>Anschnittseinstellungen des Dokuments verwenden</em>"
+                                                </p>
+                                                <p>Ausgabe-Farbe-Ziel: ISO coated v2 300% und "<em>in Zielprofil konvertieren</em>"
+                                                   auswählen</p>
                                                 <p>Erweiterungen: Schriftart auf 1% stellen</p>
                                                 <p><strong>Tipp:</strong> Vorlage mit diesen Einstellungen erstellen</p>
                                             </div>
@@ -145,7 +155,9 @@
                                                 <ul>
                                                     <li>Flyer (DIN A6)
                                                         <ul>
-                                                            <li>Auflage: meistens 1.000 Stk. – die genaue Anzahl steht je in der Internen</li>
+                                                            <li>Auflage: meistens 1.000 Stk. – die genaue Anzahl steht je in der
+                                                                Internen
+                                                            </li>
                                                             <li>Ausführung: Flyer</li>
                                                             <li>Endformat: DIN A6 quer</li>
                                                             <li>Seitenzahl: 2 Seiten</li>

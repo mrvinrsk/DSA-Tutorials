@@ -23,6 +23,7 @@
         <!-- <script src='../js/slide.js' async></script> -->
     </head>
     <body class="tutorial">
+        <div class='back icon-text'><span class='icon'>arrow_back</span><span>Zurück</span></div>
         <div class='popups'>
             <div class='popup' id='login'>
                 <h3>Zugangsdaten für <a href='https://dsa-analytics.de/'>dsa-analytics.de</a></h3>

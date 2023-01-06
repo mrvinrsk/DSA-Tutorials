@@ -1,0 +1,24 @@
+@use "utils";
+
+html, body {
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: min(90%, 40rem);
+  height: 100vh;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+p {
+  color: utils.$col-font-light;
+}

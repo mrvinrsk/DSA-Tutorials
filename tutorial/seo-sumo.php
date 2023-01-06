@@ -31,7 +31,8 @@
                 <div class='heading-content'>
                     <h1>SEO / SUMO</h1>
                     <p class="short">
-                        Eine SEO wird durchgeführt, um den Pagespeed zu verbessern und somit in den Suchergebnissen bei Google und Co. höher platziert zu werden.
+                        Eine SEO wird durchgeführt, um den Pagespeed zu verbessern und somit in den Suchergebnissen bei Google und
+                        Co. höher platziert zu werden.
                         Hier erfährst du, wie du Sie durchführst.
                     </p>
                 </div>
@@ -48,8 +49,10 @@
                 <div>
                     <h2>Die ultimative Checklist</h2>
                     <p>
-                        Hier findest du alle erforderlichen Schritte zur Bearbeitung deines Projektes. Kannst alles abhaken, so kannst'e nix vergessen, praktisch 'wa?
-                        <strong>Achtung:</strong> Wenn du die Seite neulädst werden alle Checkboxen zurückgesetzt, daher solltest du deinen Fortschritt ab und zu, über den untenstehenden Button, speichern.
+                        Hier findest du alle erforderlichen Schritte zur Bearbeitung deines Projektes. Kannst alles abhaken, so
+                        kannst'e nix vergessen, praktisch 'wa?
+                        <strong>Achtung:</strong> Wenn du die Seite neulädst werden alle Checkboxen zurückgesetzt, daher solltest
+                        du deinen Fortschritt ab und zu, über den untenstehenden Button, speichern.
                     </p>
 
                     <div class="checklist ignore-animation" data-name='seocheck' data-show-completion>
@@ -61,17 +64,21 @@
                                 <div>
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Seitentitel: individuell pro Seite, max. 55 Zeichen (<a href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
+                                        <span>Seitentitel: individuell pro Seite, max. 55 Zeichen (<a
+                                                    href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
                                     </div>
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Description: individuell pro Seite, max. 155 Zeichen (<a href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
+                                        <span>Description: individuell pro Seite, max. 155 Zeichen (<a
+                                                    href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
                                     </div>
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Meta-Robots: Auf jeder Seite (<a href='https://seo-gold.com/meta-robots-seo-tutorial/meta-name-robots-content-index-follow/' target='_blank'>index, follow</a>)</span>
+                                        <span>Meta-Robots: Auf jeder Seite (<a
+                                                    href='https://seo-gold.com/meta-robots-seo-tutorial/meta-name-robots-content-index-follow/'
+                                                    target='_blank'>index, follow</a>)</span>
                                     </div>
 
                                     <div class='check'>
@@ -87,12 +94,15 @@
                                 <div>
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>CSS auslagern (<a href='https://validator.w3.org/' target='_blank'>validieren</a> u. <a href='https://10015.io/tools/css-minifier' target='_blank'>komprimieren</a>)</span>
+                                        <span>CSS auslagern (<a href='https://validator.w3.org/' target='_blank'>validieren</a> u. <a
+                                                    href='https://10015.io/tools/css-minifier'
+                                                    target='_blank'>komprimieren</a>)</span>
                                     </div>
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>JavaScript auslagern (<a href='https://10015.io/tools/javascript-minifier' target='_blank'>komprimieren</a>)</span>
+                                        <span>JavaScript auslagern (<a href='https://10015.io/tools/javascript-minifier'
+                                                                       target='_blank'>komprimieren</a>)</span>
                                     </div>
 
                                     <div class='check'>
@@ -189,7 +199,8 @@
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Sitemap.xml <a href='https://www.xml-sitemaps.com' target='_blank'>erzeugen</a> u. über <a href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einreichen</span>
+                                        <span>Sitemap.xml <a href='https://www.xml-sitemaps.com' target='_blank'>erzeugen</a> u. über <a
+                                                    href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einreichen</span>
                                     </div>
 
                                     <div class='check'>
@@ -199,7 +210,8 @@
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Für gelöschte Seiten bei <a href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einen Antrag auf Entfernung einreichen</span>
+                                        <span>Für gelöschte Seiten bei <a href='https://search.google.com/search-console/'
+                                                                          target='_blank'>Webmastertools</a> einen Antrag auf Entfernung einreichen</span>
                                     </div>
 
                                     <div class='check'>
@@ -220,7 +232,8 @@
                     </p>
 
                     <div class='dl-list'>
-                        <a class='button small' data-hover-text='Download' download href='../_.htaccess' target='_blank'>.htaccess</a>
+                        <a class='button small' data-hover-text='Download' download href='../_.htaccess'
+                           target='_blank'>.htaccess</a>
                         <a class='button small' data-hover-text='Download' download href='../_robots.txt' target='_blank'>robots.txt</a>
                     </div>
                     <span class='notice'><strong>Achtung:</strong> Bei den Dateinamen der heruntergeladenen Dateien muss jeweils der Unterstrich ("_") entfernt werden.</span>
@@ -229,7 +242,9 @@
                 <div>
                     <h2>Danach...</h2>
                     <p>
-                        Wenn du die Checkliste abgearbeitet hast, kannst du <a href='https://www.seobility.net/de/seocheck/' target='_blank'>hier</a> zur Sicherheit nochmal einen oberflächlichen SEO-Check ausführen um zu schauen, ob du nichts vergessen hast.
+                        Wenn du die Checkliste abgearbeitet hast, kannst du <a href='https://www.seobility.net/de/seocheck/'
+                                                                               target='_blank'>hier</a> zur Sicherheit nochmal
+                        einen oberflächlichen SEO-Check ausführen um zu schauen, ob du nichts vergessen hast.
                     </p>
                 </div>
             </div>

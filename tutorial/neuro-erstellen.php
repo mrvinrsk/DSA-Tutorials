@@ -27,12 +27,14 @@
         <script src="../js/checklist.js"></script>
     </head>
     <body class="tutorial">
+        <div class='back icon-text'><span class='icon'>arrow_back</span><span>Zurück</span></div>
         <main class="slide">
             <div class="heading">
                 <div class='heading-content'>
                     <h1>Zielgruppen-Analyse erstellen</h1>
                     <p class="short">
-                        Mithilfe dieses Tutorials erstellst du eine InDesign-Datei für eine Zielgruppen-Analyse und schickst eine PDF davon in den Druck.
+                        Mithilfe dieses Tutorials erstellst du eine InDesign-Datei für eine Zielgruppen-Analyse und schickst eine
+                        PDF davon in den Druck.
                     </p>
                 </div>
             </div>
@@ -84,7 +86,8 @@
                                 <div>
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <strong class='imp'>Name und Firmierung des Kunden ändern (Deckblatt und erste Seite)</strong>
+                                        <strong class='imp'>Name und Firmierung des Kunden ändern (Deckblatt und erste
+                                                            Seite)</strong>
                                     </div>
 
                                     <div class='check'>
@@ -98,7 +101,9 @@
                                                         <blockquote>111111-Vorlage-viel-Text.indd</blockquote>
                                                         verwenden.
                                                     </li>
-                                                    <li>Schlüsselwörter in den Texten hervorheben (Einfärben und <strong>Fett</strong>)</li>
+                                                    <li>Schlüsselwörter in den Texten hervorheben (Einfärben und
+                                                        <strong>Fett</strong>)
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -111,7 +116,9 @@
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <div>Druckfertige PDF erstellen (s. <a href='reinzeichnung.html#pdf-preset' target='_blank'>Reinzeichnung</a>)</div>
+                                        <div>Druckfertige PDF erstellen (s. <a href='reinzeichnung.html#pdf-preset'
+                                                                               target='_blank'>Reinzeichnung</a>)
+                                        </div>
                                     </div>
 
                                     <div class='check'>
@@ -123,8 +130,12 @@
                                                     <li><strong>Produkt:</strong> Broschüre mit Drahtheftung (A4, 16 seitig)</li>
                                                     <li><strong>Sorte:</strong> 170g innen (matt) & 170g außen (matt)</li>
                                                     <li><strong>Absenderadresse:</strong> Castro López</li>
-                                                    <li><strong>Lieferadresse:</strong> Wenn nichts anderes in der Internen steht, die Adresse aus dem CRM.</li>
-                                                    <li><strong>Zahlung:</strong> Vorkasse, oder, wenn eilig PayPal und Sven benachrichtigen</li>
+                                                    <li><strong>Lieferadresse:</strong> Wenn nichts anderes in der Internen steht,
+                                                                                        die Adresse aus dem CRM.
+                                                    </li>
+                                                    <li><strong>Zahlung:</strong> Vorkasse, oder, wenn eilig PayPal und Sven
+                                                                                  benachrichtigen
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -1,5 +1,16 @@
 [
   {
+    "title": "E-Mail Signatur",
+    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten einer E-Mail-Signatur für einen Kunden.",
+    "tags": [
+      "QM",
+      "E-Mail"
+    ],
+    "file": "tutorial/e-mail-signatur.php",
+    "permaLink": "tutorial/email-signatur",
+    "unavailable": true
+  },
+  {
     "title": "Securecheck durchführen",
     "description": "Was vor dem Upload einer Website zu beachten ist.",
     "tags": [
@@ -112,6 +123,6 @@
       "E-Mail"
     ],
     "file": "tutorial/e-mail-einrichtung.php",
-    "permaLink": "tutorial/email"
+    "permaLink": "tutorial/email-einrichten"
   }
 ]

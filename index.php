@@ -61,16 +61,49 @@ if (isset($_GET["tag"])) {
             <div class='tutorials grid'>
                 <!-- JS -->
                 <?php
-                foreach ($data as $entry) {
+                foreach ($data
+
+                         as $entry) {
+                    $hasSpecialTags = false;
+                    if ($entry['beta'] !== null && $entry['beta'] ||
+                        $entry['deprecated'] !== null && $entry['deprecated'] ||
+                        $entry['needsUpdate'] !== null && $entry['needsUpdate']) {
+                        $hasSpecialTags = true;
+                    }
+
                     if (strlen($filter) == 0 || in_array($filter, $entry["tags"])) {
                         ?>
-                        <div class="tutorial-card card">
+                        <div class="tutorial-card<?php echo($hasSpecialTags ? ' has-special-tags' : '') ?> card<?php echo($entry['unavailable'] !== null
+                        && $entry['unavailable'] ?
+                            ' unavailable' : '') ?>"<?php echo($entry['unavailable'] !== null && $entry['unavailable'] ? 'data-toggle-popup="unavailable"':''); ?>>
+
+
+                            <?php if ($hasSpecialTags) { ?>
+                                <div class='title-tags'>
+                                    <?php if ($entry['beta'] !== null && $entry['beta']) { ?>
+                                        <span class='tooltip title-tag beta' data-tooltip='Dieser Artikel ist noch in der Beta-Version
+                                und könnte noch Fehler beinhalten.'>Beta</span>
+                                    <?php } ?>
+
+                                    <?php if ($entry['deprecated'] !== null && $entry['deprecated']) { ?>
+                                        <span class='tooltip title-tag deprecated' data-tooltip='Dieser Artikel ist veraltet
+                                        und wird ggf. in naher Zukunft entfernt.'>Veraltet</span>
+                                    <?php } ?>
+
+                                    <?php if ($entry['needsUpdate'] !== null && $entry['needsUpdate']) { ?>
+                                        <span class='tooltip title-tag needsUpdate'
+                                              data-tooltip='Dieser Artikel benötigt ein Update, da er veraltet ist.'>Inaktuell</span>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+
                             <div class="title-container"><h2 class="title"><?php echo $entry["title"] ?></h2></div>
                             <p class="description"><?php echo $entry["description"] ?></p>
                             <div class="tags">
                                 <?php foreach ($entry["tags"] as $tag) { ?>
-                                    <span class="tag" onclick="window.location = location.pathname + '?tag=<?php echo $tag; ?>';
-                                            "><?php
+                                    <span class="tag"
+                                          onclick="window.location = location.pathname + '?tag=<?php echo $tag; ?>';
+                                                  "><?php
                                         echo $tag; ?></span>
                                 <?php } ?>
                             </div>
@@ -88,6 +121,7 @@ if (isset($_GET["tag"])) {
             <ul>
                 <li>Checklist-Erklärung wird bei fertigstellung versteckt</li>
                 <li>Securecheck-Generator hinzugefügt</li>
+                <li>Zurückbutton auf den Tutorial-Seiten</li>
             </ul>
 
             <h4>Geändert</h4>

@@ -10,4 +10,6 @@ $data = json_decode($json, true);
 foreach ($data as $entry) {
     $route->add($entry["permaLink"], $entry["file"]);
 }
+
+$route->notFound("errors/404.php");
 ?>

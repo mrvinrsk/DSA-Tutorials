@@ -2,7 +2,8 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+              name="viewport">
         <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
         <title>Detaileintrag löschen | by Marvin Roßkothen</title>
@@ -19,9 +20,12 @@
         <script async src='../js/media.js'></script>
     </head>
     <body class="tutorial">
+        <div class='back icon-text'><span class='icon'>arrow_back</span><span>Zurück</span></div>
+
         <div class='popups'>
             <div class='popup' id='login'>
-                <h3>Einloggdaten für <a href='https://www.deutsche-stadtauskunft.com' target='_blank'>deutsche-stadtauskunft.de</a></h3>
+                <h3>Einloggdaten für <a href='https://www.deutsche-stadtauskunft.com'
+                                        target='_blank'>deutsche-stadtauskunft.de</a></h3>
                 <p><strong>Nutzername:</strong> sabrina</p>
                 <p><strong>Passwort:</strong> sabrina2015</p>
             </div>
@@ -32,20 +36,23 @@
                 <div class='heading-content'>
                     <h1>Detaileintrag löschen</h1>
                     <p class='short'>
-                        In diesem Tutorial beschreibe ich in simplen Schritten wie eine E-Mail-Einrichtung vorgenommen wird, dabei versuche ich alle üblichen Fälle und Probleme zu berücksichtigen.
+                        In diesem Tutorial beschreibe ich in simplen Schritten wie eine E-Mail-Einrichtung vorgenommen wird, dabei
+                        versuche ich alle üblichen Fälle und Probleme zu berücksichtigen.
                     </p>
                 </div>
             </div>
 
             <div class='content'>
-                <div class='dsgvo-media' data-alt='deutsche-stadtauskunft.com' data-fitting='cover' data-src='../images/deutsche-stadtauskunft.svg'></div>
+                <div class='dsgvo-media' data-alt='deutsche-stadtauskunft.com' data-fitting='cover'
+                     data-src='../images/deutsche-stadtauskunft.svg'></div>
 
                 <div>
                     <p>
                         Das Löschen eines Detaileintrages ist ganz einfach.
                         <br>
                         <br>
-                        Rufe dazu einfach <a href='https://www.deutsche-stadtauskunft.com/admin_panel/index.php' target='_blank'>deutsche-stadtauskunft.com/admin_panel</a> auf, melde dich mit den <span data-toggle-popup='login'>Einloggdaten</span> an.
+                        Rufe dazu einfach <a href='https://www.deutsche-stadtauskunft.com/admin_panel/index.php' target='_blank'>deutsche-stadtauskunft.com/admin_panel</a>
+                        auf, melde dich mit den <span data-toggle-popup='login'>Einloggdaten</span> an.
                         Dort klickst du dann unter "Einträge" auf "editieren" (siehe Bild)
                     </p>
 
@@ -58,22 +65,27 @@
                     ></div>
 
                     <p>
-                        Dort suchst du einfach nach dem Kunden – per Kundennummer oder Name. Dort kannst du dann einfach den Eintrag löschen.
+                        Dort suchst du einfach nach dem Kunden – per Kundennummer oder Name. Dort kannst du dann einfach den
+                        Eintrag löschen.
                     </p>
 
-                    <div class='dsgvo-media margin' data-alt='Eintrag Verwaltung' data-fitting='contain' data-max-height='200' data-src='../images/deutsche-stadtauskunft-eintrag-loeschen.jpg'></div>
+                    <div class='dsgvo-media margin' data-alt='Eintrag Verwaltung' data-fitting='contain' data-max-height='200'
+                         data-src='../images/deutsche-stadtauskunft-eintrag-loeschen.jpg'></div>
 
                     <p>
                         Dann nur noch bestätigen.
                     </p>
 
-                    <div class='dsgvo-media margin' data-alt='Löschen bestätigen' data-fitting='contain' data-max-height='200' data-src='../images/deutsche-stadtauskunft-eintrag-loeschen-bestaetigen.jpg'></div>
+                    <div class='dsgvo-media margin' data-alt='Löschen bestätigen' data-fitting='contain' data-max-height='200'
+                         data-src='../images/deutsche-stadtauskunft-eintrag-loeschen-bestaetigen.jpg'></div>
                 </div>
 
                 <div>
                     <h2>Verbleibende Dateien löschen</h2>
                     <p>
-                        Zu guter letzt musst du noch die Dateien, die nicht gelöscht werden konnten manuell löschen. Suche dazu im <a href='http://172.17.0.12:3000/' target='_blank'>Zugangsdatentool</a> nach <code>deutsche-stadtauskunft.com</code> und nutze die aktuellen Zugangsdaten, um dich per FTP zu verbinden.
+                        Zu guter letzt musst du noch die Dateien, die nicht gelöscht werden konnten manuell löschen. Suche dazu im
+                        <a href='http://172.17.0.12:3000/' target='_blank'>Zugangsdatentool</a> nach <code>deutsche-stadtauskunft.com</code>
+                        und nutze die aktuellen Zugangsdaten, um dich per FTP zu verbinden.
                     </p>
                 </div>
             </div>

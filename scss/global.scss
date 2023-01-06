@@ -529,6 +529,18 @@ ul {
   }
 }
 
+.back {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  padding: .5rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparentize(utils.$col-white-element, .3);
+  color: utils.$col-primary;
+  backdrop-filter: blur(5px);
+}
+
 .buttons {
   display: flex;
   flex-direction: row;

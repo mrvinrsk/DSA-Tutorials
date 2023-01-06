@@ -27,19 +27,25 @@
         <script src="../js/checklist.js"></script>
     </head>
     <body class="tutorial">
+        <div class='back icon-text'><span class='icon'>arrow_back</span><span>Zurück</span></div>
 
         <div class='popups'>
             <div class='popup' id='reliability'>
                 <h3>Zuverlässigkeit des internen Validators</h3>
-                <p>Aufgrund seiner Schlichtheit ist der Validator nicht zu 100% verlässlich, so wurden bereits folgende Probleme entdeckt:</p>
+                <p>Aufgrund seiner Schlichtheit ist der Validator nicht zu 100% verlässlich, so wurden bereits folgende Probleme
+                   entdeckt:</p>
 
                 <h4>Code wird als valide angezeigt, obwohl...</h4>
                 <ul style='display: flex; flex-direction: column; gap: .35em;'>
                     <li>es keinen <code class='no-copy inline'>&lt;title&gt;</code> Tag gibt.</li>
-                    <li>bspw. ein <code class='no-copy inline'>&lt;h1&gt;</code> Tag einen schließenden <code class='no-copy'>&lt;/h2&gt;</code> Tag hat.</li>
+                    <li>bspw. ein <code class='no-copy inline'>&lt;h1&gt;</code> Tag einen schließenden <code class='no-copy'>&lt;/h2&gt;</code>
+                        Tag hat.
+                    </li>
                 </ul>
 
-                <p>Daher sollte der interne Validator nur im Notfall oder für einen oberflächlichen Check verwendet werden, alternativ steht der W3Schools Validator <a href='https://validator.w3.org/#validate_by_input' target='_blank'>hier</a> zur Verfügung.</p>
+                <p>Daher sollte der interne Validator nur im Notfall oder für einen oberflächlichen Check verwendet werden,
+                   alternativ steht der W3Schools Validator <a href='https://validator.w3.org/#validate_by_input' target='_blank'>hier</a>
+                   zur Verfügung.</p>
             </div>
         </div>
 
@@ -77,19 +83,29 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='HTML validieren' id='html-validation-check'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='HTML validieren' id='html-validation-check'>
+                                            <input type='checkbox'></div>
                                         <div>HTML validieren
                                             <div class='explanation'>
                                                 <h3>Validierung durchführen</h3>
                                                 <p>
-                                                    Die Validierung kannst du entweder mit dem <a href='https://validator.w3.org/#validate_by_input' target='_blank'>Validator von W3Schools</a>, oder direkt hier durchführen.
-                                                    Bitte beachte, dass dieser Check keine Warnings (z.B. fehlende Überschriften in <code class='no-copy inline'>&lt;section&gt;</code>) berücksichtigt. Dieser Check ist <span class='tooltip' data-toggle-popup='reliability' data-tooltip='Mehr Informationen'>nicht zu 100% zuverlässig</span>.
+                                                    Die Validierung kannst du entweder mit dem <a
+                                                            href='https://validator.w3.org/#validate_by_input' target='_blank'>Validator
+                                                                                                                               von
+                                                                                                                               W3Schools</a>,
+                                                    oder direkt hier durchführen.
+                                                    Bitte beachte, dass dieser Check keine Warnings (z.B. fehlende Überschriften
+                                                    in <code class='no-copy inline'>&lt;section&gt;</code>) berücksichtigt. Dieser
+                                                    Check ist <span class='tooltip' data-toggle-popup='reliability'
+                                                                    data-tooltip='Mehr Informationen'>nicht zu 100% zuverlässig</span>.
                                                 </p>
 
-                                                <textarea id='html-validate' oninput='updateHTMLValidate();' placeholder='Code einfügen...' style='margin-bottom: 0;'></textarea>
+                                                <textarea id='html-validate' oninput='updateHTMLValidate();'
+                                                          placeholder='Code einfügen...' style='margin-bottom: 0;'></textarea>
                                                 <p>Status: <span class='waiting' id='html-status'></span></p>
                                                 <br>
-                                                <p>Errors <strong>müssen</strong> behoben werden, Warnings sind nicht zwingend notwendig.</p>
+                                                <p>Errors <strong>müssen</strong> behoben werden, Warnings sind nicht zwingend
+                                                   notwendig.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -97,17 +113,25 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Externe Links prüfen'><input type='checkbox'></div>
-                                        <div>Funktionieren alle <a href='https://www.deadlinkchecker.com/' target='_blank'>externen Links</a>?</div>
+                                        <div class="checkbox-wrapper" data-missing='Externe Links prüfen'><input type='checkbox'>
+                                        </div>
+                                        <div>Funktionieren alle <a href='https://www.deadlinkchecker.com/' target='_blank'>externen
+                                                                                                                           Links</a>?
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Parallaxe müssen mobile background-position: scroll sein'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='Parallaxe müssen mobile background-position: scroll sein'><input
+                                                    type='checkbox'></div>
                                         <div>Parallaxe auf mobile prüfen
                                             <div class='explanation'>
-                                                <p>Parallaxe (<code class='no-copy inline'>background-position: fixed;</code>) funktionieren am Handy nicht, daher muss für mobile Geräte die <code class='no-copy inline'>background-position</code> auf <code class='no-copy inline'>scroll</code> gesetzt werden.</p>
+                                                <p>Parallaxe (<code class='no-copy inline'>background-position: fixed;</code>)
+                                                   funktionieren am Handy nicht, daher muss für mobile Geräte die <code
+                                                            class='no-copy inline'>background-position</code> auf <code
+                                                            class='no-copy inline'>scroll</code> gesetzt werden.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -115,49 +139,59 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='JavaScript-Elemente (Popups, Accordions, Buttons, etc.) prüfen'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='JavaScript-Elemente (Popups, Accordions, Buttons, etc.) prüfen'><input
+                                                    type='checkbox'></div>
                                         <div>Funktionieren alle JavaScript-Elemente (Popups, Accordions, Buttons, etc.)?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Fehler in der Konsole'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Fehler in der Konsole'><input type='checkbox'>
+                                        </div>
                                         <div>Prüfen, ob es Fehler in der Konsole gibt.</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Plugins (Maps, Cookies, YouTube, etc.) richtig einbauen'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='Plugins (Maps, Cookies, YouTube, etc.) richtig einbauen'><input
+                                                    type='checkbox'></div>
                                         <div>Alle Plugins korrekt eingebunden (Maps, Cookies, YouTube, etc.)?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Matomo auf jeder Unterseite einbinden'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Matomo auf jeder Unterseite einbinden'><input
+                                                    type='checkbox'></div>
                                         <div>Matomo eingebunden</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Externe Links mit target="_blank" öffnen'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Externe Links mit target="_blank" öffnen'>
+                                            <input type='checkbox'></div>
                                         <div>Werden alle externen Links in neuem Tab geöffnet?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Favicon & Apple-Touch-Icon einbinden'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Favicon & Apple-Touch-Icon einbinden'><input
+                                                    type='checkbox'></div>
                                         <div>Favicon & Apple-Touch-Icon eingebunden?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='.htaccess, 404-Seite und robots.txt einbinden'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='.htaccess, 404-Seite und robots.txt einbinden'><input type='checkbox'>
+                                        </div>
                                         <div>.htaccess, 404-Seite und robots.txt eingebunden?</div>
                                     </div>
                                 </div>
@@ -168,29 +202,26 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Alle Stock-Bilder lizensieren'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Alle Stock-Bilder lizensieren'><input
+                                                    type='checkbox'></div>
                                         <div>Bilder gekauft?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Bilder als .jpg oder bestenfalls als .webp einbinden'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='Bilder als .jpg oder bestenfalls als .webp einbinden'><input
+                                                    type='checkbox'></div>
                                         <div>Angemessenes Format?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Bildquellen im Impressum eintragen'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Bildquellen im Impressum eintragen'><input
+                                                    type='checkbox'></div>
                                         <div>Bildquellen im Impressum</div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Bilder als .jpg oder bestenfalls als .webp einbinden'><input type='checkbox'></div>
-                                        <div>Angemessenes Format?</div>
                                     </div>
                                 </div>
                             </div>
@@ -200,24 +231,30 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Datenschutz und/oder Impressum fehlt'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Datenschutz und/oder Impressum fehlt'><input
+                                                    type='checkbox'></div>
                                         <div>Datenschutz & Impressum eingebunden?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Impressum unvollständig'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Impressum unvollständig'><input
+                                                    type='checkbox'></div>
                                         <div>Impressum vollständig</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Datenschutz und/oder Impressum fehlt'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Datenschutz und/oder Impressum fehlt'><input
+                                                    type='checkbox'></div>
                                         <div>Datenschutz & Impressum immer sichtbar?
                                             <div class='explanation'>
-                                                <p><strong>Abklären:</strong> Laut einigen Quellen scheint dies nicht nötig zu sein, solange beides mit max. 2 Klicks erreichbar, an geläufigen Positionen eingebunden und nicht versteckt ist.</p>
+                                                <p><strong>Abklären:</strong> Laut einigen Quellen scheint dies nicht nötig zu
+                                                                              sein, solange beides mit max. 2 Klicks erreichbar,
+                                                                              an geläufigen Positionen eingebunden und nicht
+                                                                              versteckt ist.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -225,10 +262,15 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Fonts lokal einbinden (https://gwfh.mranftl.com/fonts)'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='Fonts lokal einbinden (https://gwfh.mranftl.com/fonts)'><input
+                                                    type='checkbox'></div>
                                         <div>Alle Fonts lokal eingebunden?
                                             <div class='explanation'>
-                                                <p>Fonts dürfen dank der DSGVO nicht mehr, ohne Einwilligung vom Nutzer, von externen Servern geladen werden. Daher müssen wir auf die Nutzung von Adobe Fonts verzichten und Google Fonts <a href='https://gwfh.mranftl.com/fonts' target='_blank'>lokal</a> einbinden.</p>
+                                                <p>Fonts dürfen dank der DSGVO nicht mehr, ohne Einwilligung vom Nutzer, von
+                                                   externen Servern geladen werden. Daher müssen wir auf die Nutzung von Adobe
+                                                   Fonts verzichten und Google Fonts <a href='https://gwfh.mranftl.com/fonts'
+                                                                                        target='_blank'>lokal</a> einbinden.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -240,14 +282,17 @@
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Lektorat veranlassen'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper" data-missing='Lektorat veranlassen'><input type='checkbox'>
+                                        </div>
                                         <div>Lektorat erledigt?</div>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div class='check'>
-                                        <div class="checkbox-wrapper" data-missing='Mailto, Datenschutzerklärung und Kontaktformular stylen'><input type='checkbox'></div>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='Mailto, Datenschutzerklärung und Kontaktformular stylen'><input
+                                                    type='checkbox'></div>
                                         <div>Mailto, Datenschutzerklärung und Kontaktformular gestyled?</div>
                                     </div>
                                 </div>
@@ -259,7 +304,8 @@
                 <div>
                     <h2>Einfach runterladen</h2>
                     <p>
-                        Machst du einen Securecheck <strong>für</strong> jemanden und hast keine Lust den Securecheck noch separat zu verschriftlichen?
+                        Machst du einen Securecheck <strong>für</strong> jemanden und hast keine Lust den Securecheck noch separat
+                        zu verschriftlichen?
                         Dann kannst du dir hier einfach einen aus deinen Angaben in der Checkliste generieren lassen.
                     </p>
 
