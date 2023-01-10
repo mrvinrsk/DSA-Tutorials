@@ -1,5 +1,16 @@
 [
   {
+    "title": "Secure in Baukästen",
+    "description": "Hier lernst du, wie du dsaSecure in einem Baukasten-System einbinden kannst.",
+    "tags": [
+      "Intern",
+      "DSA Secure",
+      "Web"
+    ],
+    "file": "tutorial/secure-baukasten.php",
+    "permaLink": "tutorial/secure-baukasten"
+  },
+  {
     "title": "E-Mail Signatur",
     "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten einer E-Mail-Signatur für einen Kunden.",
     "tags": [

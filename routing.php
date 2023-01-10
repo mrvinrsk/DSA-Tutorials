@@ -8,7 +8,7 @@ $json = file_get_contents('tutorials.json');
 $data = json_decode($json, true);
 
 foreach ($data as $entry) {
-    $route->add($entry["permaLink"], $entry["file"]);
+    $route->add("/" . $entry["permaLink"], $entry["file"]);
 }
 
 $route->notFound("errors/404.php");

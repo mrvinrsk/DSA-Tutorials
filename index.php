@@ -75,7 +75,7 @@ if (isset($_GET["tag"])) {
                         ?>
                         <div class="tutorial-card<?php echo($hasSpecialTags ? ' has-special-tags' : '') ?> card<?php echo($entry['unavailable'] !== null
                         && $entry['unavailable'] ?
-                            ' unavailable' : '') ?>"<?php echo($entry['unavailable'] !== null && $entry['unavailable'] ? 'data-toggle-popup="unavailable"':''); ?>>
+                            ' unavailable' : '') ?>"<?php echo($entry['unavailable'] !== null && $entry['unavailable'] ? 'data-toggle-popup="unavailable"' : ''); ?>>
 
 
                             <?php if ($hasSpecialTags) { ?>
@@ -107,7 +107,8 @@ if (isset($_GET["tag"])) {
                                         echo $tag; ?></span>
                                 <?php } ?>
                             </div>
-                            <a class="button" data-hover-text="Lesen" href="tutorial/securecheck">Tutorial anzeigen</a>
+                            <a class="button" data-hover-text="Lesen" href="<?php echo $entry['permaLink']; ?>">
+                                Tutorial anzeigen</a>
                         </div>
                     <?php }
                 } ?>
