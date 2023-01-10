@@ -52,14 +52,40 @@
                 ></div>
 
                 <div>
-                    <h2>Das Einbauen</h2>
-                    <p>Wie du wahrscheinlich weißt, benötigen die Secure Plugins jQuery, dies kannst du über diesen Link
-                       einfügen: <code class='inline'>&lt;script src="https://dsa-secure.de/cdn/jquery.min.js"&gt;&lt;/script&gt;
-                        </code></p>
+                    <h2>Vorbereitung</h2>
+                    <p>
+                        Wie du wahrscheinlich weißt, benötigen die Secure Plugins jQuery, dies kannst du über diesen Link
+                        einfügen:
+                    </p>
+
+                    <code>&lt;script src="https://dsa-secure.de/cdn/jquery.min.js"&gt;&lt;/script&gt;</code>
+
+                    <p>
+                        Füge den Tag dazu einfach im Head der jeweiligen Seite ein. Wie du das in einzelnen Baukasten-Systemen
+                        tust, kannst du hier sehen:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <a href='https://www.ionos
+                        .de/hilfe/websites-e-shops/akkordeons-zu-mywebsite-now/bearbeitung-von-mywebsite-now-inhalten
+                        /verwendung-von-html-und-javascript/?utm_source=search&utm_medium=global&utm_term=script&utm_campaign
+                        =HELP_CENTER&utm_content=/hilfe/websites-e-shops/mywebsite-creator/#c208289' target='_blank'>IONOS
+                                                                                                           MyWebsite</a>
+                        </li>
+
+                        <li>
+                            <a href='https://mrvirk.com/how-to-add-code-to-head-tag-in-wordpress.html'
+                               target='_blank'>Wordpress</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Die Plugins</h2>
 
                     <p>Die Links für die Dateien der Plugins sind die folgenden:</p>
-                    <p>JS: <code class='inline'>&lt;script src="https://dsa-secure.de/cdn/dsa-secure-plugin.min.js"&gt;&lt;
-                                                /script&gt;
+                    <p>JS: <code class='inline'>&lt;script src="https://dsa-secure.de/cdn/dsa-secure-plugin.min.js"&gt;&lt;/script&gt;
                         </code></p>
                     <p>CSS: <code class='inline'>&lt;link rel="stylesheet" type="text/css"
                                                  href="https://dsa-secure.de/cdn/dsa-secure-plugin.min.css"&gt;</code></p>

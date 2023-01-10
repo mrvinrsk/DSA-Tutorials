@@ -12,6 +12,15 @@ if (isset($_GET["tag"])) {
     }
 }
 
+$tags = array();
+foreach ($data as $entry) {
+    foreach ($entry["tags"] as $tag) {
+        if (!in_array($tag, $tags)) {
+            $tags[] = $tag;
+        }
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -48,15 +57,46 @@ if (isset($_GET["tag"])) {
                 </p>
             </div>
 
-            <?php if (strlen($filter) > 0) { ?>
-                <div class='search-information'>
-                <span class="search-info-text"><span>Die Suche nach '<span class="col-primary"><?php echo $filter; ?></span>'
-                                                     ergab <?php echo $results . " " . ($results == 1 ? "Ergebnis" : "Ergebnisse")
-                        ?></span>
-                    <a onclick="window.location = location.pathname;" class="button inline icon-text"
-                       data-hover-text='Zurücksetzen'><span class="icon">close</span><span>Filter zurücksetzen</span></a></span>
+            <div class='search-buttons-container'>
+                <span>Nach Tag filtern:
+                    <?php
+                    if ($filter) {
+                        echo "<span class='active-filter'>$filter <span class='results'>($results " . ($results == 1 ? "Ergebnis" : "Ergebnisse") . ")</span></span>";
+                    }
+                    ?>
+                </span>
+
+                <div class='search-buttons'>
+                    <?php foreach ($tags as $tag) {
+                        if (!$filter) {
+                            ?>
+
+                            <a href='?tag=<?php echo $tag; ?>' class='tag icon-text'><span><?php echo
+                                    $tag;
+                                    ?></span></a>
+
+                            <?php
+                        } else { ?>
+
+                            <a href='<?php
+
+                            if (!($filter && strcmp($filter, $tag))) {
+                                echo "./";
+                            } else {
+                                echo "?tag=$tag";
+                            }
+
+                            ?>' class='tag icon-text'>
+                                <?php if (!($filter && strcmp($filter, $tag))) { ?>
+                                    <span class='icon'>close</span>
+                                <?php } ?>
+                                <span><?php echo $tag; ?></span>
+                            </a>
+
+                        <?php }
+                    } ?>
                 </div>
-            <?php } ?>
+            </div>
 
             <div class='tutorials grid'>
                 <!-- JS -->
@@ -101,10 +141,7 @@ if (isset($_GET["tag"])) {
                             <p class="description"><?php echo $entry["description"] ?></p>
                             <div class="tags">
                                 <?php foreach ($entry["tags"] as $tag) { ?>
-                                    <span class="tag"
-                                          onclick="window.location = location.pathname + '?tag=<?php echo $tag; ?>';
-                                                  "><?php
-                                        echo $tag; ?></span>
+                                    <a href='?tag=<?php echo $tag; ?>' class="tag"><?php echo $tag; ?></a>
                                 <?php } ?>
                             </div>
                             <a class="button" data-hover-text="Lesen" href="<?php echo $entry['permaLink']; ?>">

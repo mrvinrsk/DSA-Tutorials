@@ -273,8 +273,11 @@ ul {
 }
 
 code {
-  padding: .25em .65em;
+  padding: .25em 1.5em;
   font-family: monospace;
+  display: block;
+  border-radius: 10px;
+  margin-block: 1rem;
   background-color: utils.$col-gray;
 
   &:not(.no-copy) {
@@ -282,7 +285,10 @@ code {
   }
 
   &.inline {
-    background: desaturate(lighten(utils.$col-font, 25%), 5%);
+    margin: 0;
+    display: inline-block;
+    padding: 0 .5rem;
+    border-radius: 6px;
   }
 }
 
@@ -590,6 +596,37 @@ ul {
 
     @media screen and (hover: hover) {
       text-decoration: underline;
+    }
+  }
+}
+
+.click-show {
+  > span {
+    color: utils.$col-primary;
+    font-weight: 600;
+    cursor: pointer;
+
+    &::before {
+      color: utils.$col-primary;
+      content: "+";
+      margin-right: .75ch;
+    }
+  }
+
+  > div {
+    margin-top: 1rem;
+    display: none;
+  }
+
+  &.show {
+    > span {
+      &::before {
+        content: "-";
+      }
+    }
+
+    div {
+      display: block;
     }
   }
 }

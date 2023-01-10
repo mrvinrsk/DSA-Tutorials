@@ -125,6 +125,29 @@ function checkHTML(html) {
     return doc.body.children.length > 0;
 }
 
+function reloadClickShows() {
+    document.querySelectorAll(".click-show").forEach(clickShow => {
+        if (!clickShow.classList.contains("initialized")) {
+            if (clickShow.classList.contains("show")) {
+                clickShow.querySelector("span").innerHTML = clickShow.dataset.opened || "Schließen";
+            } else {
+                clickShow.querySelector("span").innerHTML = clickShow.dataset.closed || "Öffnen";
+            }
+
+            clickShow.addEventListener("click", () => {
+                clickShow.classList.toggle("show");
+
+                if (clickShow.classList.contains("show")) {
+                    clickShow.querySelector("span").innerHTML = clickShow.dataset.opened || "Schließen";
+                } else {
+                    clickShow.querySelector("span").innerHTML = clickShow.dataset.closed || "Öffnen";
+                }
+            });
+
+            clickShow.classList.add("initialized");
+        }
+    });
+}
 
 $(function () {
     /* Highlight anchor */
@@ -164,4 +187,6 @@ $(function () {
             history.back();
         });
     }
+
+    reloadClickShows();
 });

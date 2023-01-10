@@ -33,8 +33,16 @@ html .search-info-text {
   }
 }
 
+.active-filter {
+  color: utils.$col-primary;
+
+  .results {
+    color: utils.$col-font-light;
+  }
+}
+
 .search-buttons-container {
-  span {
+  > span {
     display: inline-block;
     margin-bottom: .5rem;
   }
@@ -43,6 +51,7 @@ html .search-info-text {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    gap: .25rem;
     overflow-x: auto;
     overflow-y: visible;
     margin-bottom: 1rem;
@@ -53,7 +62,7 @@ html .search-info-text {
     }
 
     .tag {
-      padding: .5em 1em;
+      padding: .2em 1em;
 
       &.active {
         cursor: not-allowed;
@@ -174,24 +183,25 @@ html .search-info-text {
   }
 
   .button {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
   }
 
   .tags {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: .5rem;
-    margin-top: .5rem;
+    gap: .25rem;
+    margin-top: .75rem;
   }
 }
 
 .tag, .title-tag {
-  font-size: 80%;
-  border-radius: 100px;
+  font-size: 70%;
+  border-radius: 3px;
   border: 1px solid utils.$col-primary;
   color: utils.$col-primary;
-  padding: .15rem .5rem;
+  padding: 0 .75rem;
+  text-decoration: none;
 
   @media screen and (min-width: 768px) {
     transition-duration: .25s;

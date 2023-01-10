@@ -6,8 +6,6 @@ $(function () {
         pw.classList.add('popups');
 
         document.body.appendChild(pw);
-
-        console.log("Added popup wrapper");
     }
     popup_wrapper = document.querySelector('.popups');
 
@@ -15,16 +13,20 @@ $(function () {
         const code_copy_pop = document.createElement('div');
         code_copy_pop.classList.add('popup');
         code_copy_pop.id = "code_copied";
-        code_copy_pop.innerHTML = "<h3>Code kopiert</h3><p>Du hast den Code erfolgreich in deine Zwischenablage kopiert.</p>";
+        code_copy_pop.innerHTML = "<h3>Code kopiert</h3><p>Du hast den Code erfolgreich in deine Zwischenablage kopiert.</p>" +
+            "<div style='margin-top: 1rem;' class='click-show' data-closed='Code anzeigen' data-opened='Code" +
+            " verstecken'><span></span><div><code" +
+            " id='copied-code' class='no-copy' style='margin:0;'>404</code></div></div>";
 
         popup_wrapper.appendChild(code_copy_pop);
+        reloadClickShows();
     }
 
     document.querySelectorAll('code:not(.no-copy)').forEach(code => {
         code.setAttribute('data-toggle-popup', 'code_copied');
-        console.log('Set attribute');
 
         code.addEventListener('click', () => {
+            document.querySelector("#copied-code").textContent = code.textContent;
             copyTextToClipboard(code.textContent);
         });
     });
