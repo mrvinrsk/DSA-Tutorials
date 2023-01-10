@@ -219,7 +219,6 @@ ul {
   overflow: hidden;
   background-color: utils.$col-primary;
   color: #fff;
-  border: 2px solid utils.$col-primary;
   border-radius: 3px;
   transition-duration: 0.25s;
   cursor: pointer;
@@ -227,7 +226,7 @@ ul {
   @media (hover: hover) {
     padding: 0.5rem 1.25rem;
 
-    &::after {
+    /*&::after {
       position: absolute;
       content: attr(data-hover-text);
       color: utils.$col-primary;
@@ -243,11 +242,12 @@ ul {
       transform: translateY(100%);
       background-color: utils.$col-white-element;
       transition-duration: .25s;
-    }
+    }*/
 
     &:hover {
+      background-color: darken(utils.$col-primary, utils.$col-modify);
       transform: translateY(-3px);
-      box-shadow: 0 3px 3px rgba(0 0 0 / 15%);
+      box-shadow: 0 3px 3px rgba(0 0 0 / 10%);
     }
 
     &[data-hover-text]:hover {
