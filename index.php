@@ -20,6 +20,7 @@ foreach ($data as $entry) {
         }
     }
 }
+sort($tags);
 
 ?>
 <!DOCTYPE html>
@@ -140,7 +141,10 @@ foreach ($data as $entry) {
                             <div class="title-container"><h2 class="title"><?php echo $entry["title"] ?></h2></div>
                             <p class="description"><?php echo $entry["description"] ?></p>
                             <div class="tags">
-                                <?php foreach ($entry["tags"] as $tag) { ?>
+                                <?php
+                                $entryTags = $entry["tags"];
+                                sort($entryTags);
+                                foreach ($entryTags as $tag) { ?>
                                     <a href='?tag=<?php echo $tag; ?>' class="tag"><?php echo $tag; ?></a>
                                 <?php } ?>
                             </div>
