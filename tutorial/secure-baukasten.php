@@ -42,13 +42,12 @@
             <div class="content">
                 <div
                         class="dsgvo-media"
-                        data-alt="SEO Bild"
+                        data-alt="Wordpress Dashboard"
                         data-custom-attribution="https://www.pexels.com/de-de/foto/arbeitsplatz-arbeitsstation-bildschirm-buro-265667/"
                         data-custom-attribution-link="https://www.pexels.com/de-de/foto/arbeitsplatz-arbeitsstation-bildschirm-buro-265667/"
-                        data-position='center 85%'
+                        data-position='center 35%'
                         data-src="https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        data-src-mobile="https://images.pexels.com/photos/265667/pexels-photo-265667
-                        .jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
+                        data-src-mobile="https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
                 ></div>
 
                 <div>
@@ -71,7 +70,7 @@
                         .de/hilfe/websites-e-shops/akkordeons-zu-mywebsite-now/bearbeitung-von-mywebsite-now-inhalten
                         /verwendung-von-html-und-javascript/?utm_source=search&utm_medium=global&utm_term=script&utm_campaign
                         =HELP_CENTER&utm_content=/hilfe/websites-e-shops/mywebsite-creator/#c208289' target='_blank'>IONOS
-                                                                                                           MyWebsite</a>
+                                                                                                                     MyWebsite</a>
                         </li>
 
                         <li>
