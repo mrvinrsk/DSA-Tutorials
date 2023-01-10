@@ -87,6 +87,7 @@ html .search-info-text {
     cursor: not-allowed;
     text-decoration: none;
     overflow: hidden;
+    border: 3px solid transparentize(utils.$col-font, .75);
 
     &::before {
       position: absolute;
@@ -98,7 +99,7 @@ html .search-info-text {
       top: 0;
       left: 0;
       background-color: transparentize(utils.$col-white, .4);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(2px);
     }
 
     &::after {
