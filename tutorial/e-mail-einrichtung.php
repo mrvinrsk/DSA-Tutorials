@@ -14,6 +14,7 @@
 
         <script src='../js/jquery-3.6.0.min.js'></script>
         <script src='../js/main.js'></script>
+        <script src='../js/accordions.js'></script>
         <script src='../js/popups.js'></script>
         <script src='../js/tutorial.js'></script>
         <script async src='../js/anime.min.js'></script>
@@ -75,7 +76,7 @@
                     <h2>Die Einrichtung</h2>
                     <p>
                         Die Einrichtung an sich kannst du ganz einfach mithilfe eines Tutorials, für die jeweilige
-                        E-Mail-Software, abfrühstücken. Wenn's keine Komplikationen
+                        E-Mail-Software, abfrühstücken. Wenn's keine <a href='#faq'>Komplikationen</a>
                         gibt, solltest du in maximal 15 Minuten mit der Geschichte durch sein.
                     </p>
 
@@ -149,6 +150,36 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Häufige Probleme</h2>
+
+                    <div class="accordions" id='faq' data-close-others>
+                        <div class="accordion">
+                            <span>E-Mails werden nicht gesendet/empfangen</span>
+                            <div>
+                                <p>
+                                    Wenn keine E-Mails gesendet und/oder empfangen werden können, kannst du nur prüfen, ob die
+                                    E-Mail richtig eingerichtet wurde (<strong>Postein- und Ausgangsserver</strong> &
+                                    <strong>Ports</strong>). Sollte dem so sein und das Problem bleibt weiterhin bestehen, lass
+                                    das Problem von den Entwicklern abchecken.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <span>Auf ein Problem gestoßen?</span>
+                            <div>
+                                <p>
+                                    Wenn du auf ein weiteres, hier noch nicht aufgelistetes Problem gestoßen bist und eine
+                                    Lösung für dieses hast, schreibe mir gerne eine E-Mail an
+                                    <a href='mailto:m.rosskothen@dsa-marketing.ag'>m.rosskothen@dsa-marketing.ag</a>, damit
+                                    ich die Problemlösung hier hinzufügen kann.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

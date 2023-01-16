@@ -56,6 +56,28 @@ function isInView(element) {
     );
 }
 
+function isVisibleByPercentage(el, percentage) {
+    const rect = el.getBoundingClientRect();
+    const visibleWidth = Math.min(rect.width, rect.right);
+    const visibleHeight = Math.min(rect.height, rect.bottom);
+    const visibleArea = visibleWidth * visibleHeight;
+    const totalArea = rect.width * rect.height;
+    const visiblePercentage = (visibleArea / totalArea) * 100;
+
+    console.log(el, "is visible by", visiblePercentage, "%");
+
+    return visiblePercentage >= percentage;
+}
+
+function scrollToElement(el) {
+    const rect = el.getBoundingClientRect();
+    window.scrollTo({
+        left: rect.left,
+        top: rect.top,
+        behavior: 'smooth'
+    });
+}
+
 function download(filename, text) {
     let element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
