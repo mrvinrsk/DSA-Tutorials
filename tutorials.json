@@ -1,5 +1,16 @@
 [
   {
+    "title": "Regular Expressions",
+    "description": "Einführung in Regular Expressions.",
+    "tags": [
+      "Allgemein",
+      "Regular Expressions",
+      "Web"
+    ],
+    "file": "tutorial/regex.php",
+    "permaLink": "tutorial/regex"
+  },
+  {
     "title": "Secure in Baukästen",
     "description": "Hier lernst du, wie du dsaSecure in einem Baukasten-System einbinden kannst.",
     "tags": [

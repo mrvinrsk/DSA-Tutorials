@@ -343,3 +343,21 @@ h2 + strong {
   display: block;
   margin-bottom: .75rem;
 }
+
+#regex_matches {
+  min-height: 10vh;
+  resize: vertical;
+
+  p {
+    display: inline-block;
+    line-height: 180%;
+    padding: .25em .5em;
+  }
+
+  .match {
+    background-color: utils.$col-primary;
+    color: utils.$col-white-element;
+    border-radius: 3px;
+    padding-inline: .15em;
+  }
+}

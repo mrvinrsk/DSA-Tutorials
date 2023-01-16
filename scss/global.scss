@@ -444,7 +444,7 @@ kbd {
   box-shadow: 0 2px 2px rgba(0 0 0 / 7.5%);
 }
 
-input[type=text], input[type=number], input[type=email], input[type=password], textarea {
+input[type=text], input[type=number], input[type=email], input[type=password], textarea, div[contenteditable] {
   background-color: utils.$col-white;
   border: 2px solid utils.$col-primary;
 
@@ -454,7 +454,7 @@ input[type=text], input[type=number], input[type=email], input[type=password], t
     padding: .5em;
   }
 
-  &:is(textarea) {
+  &:is(textarea, div[contenteditable]) {
     resize: vertical;
     min-height: 15ch;
     height: 15ch;
