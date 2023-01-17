@@ -40,8 +40,36 @@
 
                 <div id='playground'>
                     <h2>Playground</h2>
-                    <input type='text' id='regex' oninput='update();'>
-                    <div contenteditable='true' id='regex_matches' oninput='update();'></div>
+                    <div class='simpleflex column'>
+                        <div class='simpleflex row'>
+                            <span>/</span>
+                            <input type='text' id='regex' oninput='update();' value='[a-z]' placeholder='Regular Expression'>
+                            <div class='simpleflex row'>
+                                <span>/</span>
+                                <div class='simpleflex row'>
+                                    <div>
+                                        <input type='checkbox' id='mod_g' checked onchange='update();'>
+                                        <label for='mod_g'><strong>G</strong>lobal</label>
+                                    </div>
+
+                                    <div>
+                                        <input type='checkbox' id='mod_i' onchange='update();'>
+                                        <label for='mod_i'>Case <strong>i</strong>nsensitive</label>
+                                    </div>
+
+                                    <div>
+                                        <input type='checkbox' id='mod_m' onchange='update();'>
+                                        <label for='mod_m'><strong>M</strong>ultiline</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type='text' id='replace' oninput='update();' value='!$1' placeholder='Replacement'>
+                    </div>
+                    <div contenteditable='true' id='regex_matches' onchange='update();'></div>
+                    <div id='regex_replaced'></div>
+                    <button class='button' onclick='update();'>Matches aktualisieren</button>
                 </div>
 
                 <div>
@@ -189,22 +217,71 @@
                 }
             }
 
-            function wrapMatches(regex, str) {
-                return str.replace(regex, function(match) {
-                    return "<span>" + match + "</span>";
-                });
+            function wrapMatches(regex, string) {
+                return string.replace(regex, "<span class='match'>$&</span>");
+            }
+
+            function getRandomItem(arr) {
+                let randomIndex = Math.floor(Math.random() * arr.length);
+                return arr[randomIndex];
+            }
+
+            function loadText() {
+                let texts = [
+                    "Dies ist ein Test.\nDu kannst Ihn nach belieben ändern, er dient dem Zweck, dass du deine eingegebene " +
+                    "Regular Expression testen kannst."
+                ];
+
+                let matches = document.querySelector("#regex_matches");
+                matches.textContent = getRandomItem(texts);
+
+                update();
+            }
+
+            $(function () {
+                loadText();
+            });
+
+            function removeMatches(string) {
+                return string.replace(/<span class="match">(.*?)<\/span>/g, "$1");
             }
 
 
             function update() {
                 let matches = document.querySelector("#regex_matches");
-                let regexText = document.querySelector("#regex").value
+                let regexText = document.querySelector("#regex").value;
+                let regexReplaceText = document.querySelector("#replace").value;
+                let regexReplacedField = document.querySelector("#regex_replaced");
+
+                let mod_g = document.querySelector("#mod_g").checked;
+                let mod_i = document.querySelector("#mod_i").checked;
+                let mod_m = document.querySelector("#mod_m").checked;
+
+                console.log("update");
 
                 if (isValidRegex(regexText)) {
                     if (regexText.length > 0) {
-                        let regex = new RegExp(regexText);
+                        let regex = new RegExp(regexText, (mod_g ? "g" : "") + (mod_i ? "i" : "") + (mod_m ? "m" : ""));
+                        console.log("Regex:", regex);
 
                         matches.innerHTML = wrapMatches(regex, matches.textContent);
+
+                        if (regexReplaceText.length > 0) {
+                            regexReplacedField.style.display = "block";
+
+                            // Replace the text
+                            regexReplacedField.textContent = matches.textContent.replace(regex, function (match, ...captureGroups) {
+                                let replacement = regexReplaceText;
+                                captureGroups.forEach((captureGroup, index) => {
+                                    replacement = replacement.replace(`$${index + 1}`, match);
+                                });
+                                return replacement;
+                            });
+                        } else {
+                            regexReplacedField.style.display = "none";
+                        }
+                    } else {
+                        matches.innerHTML = removeMatches(matches.innerHTML);
                     }
                 }
             }
