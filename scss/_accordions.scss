@@ -39,6 +39,13 @@
   cursor: pointer;
 }
 
+.accordions {
+  .accordion {
+    &:not(:first-child) {
+      border-top: none;
+    }
+  }
+}
 
 .accordion {
   background-color: utils.$col-white-element;
