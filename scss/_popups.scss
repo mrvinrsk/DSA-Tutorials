@@ -91,3 +91,14 @@ body.popup-shown {
 .popup .close::before, .popup .close::after {
   transform: rotate(0);
 }
+
+.popup.explanation {
+  code {
+    margin-top: .75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+}

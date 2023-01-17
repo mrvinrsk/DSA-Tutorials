@@ -43,7 +43,7 @@
                     <div class='simpleflex column'>
                         <div class='simpleflex row'>
                             <span>/</span>
-                            <input type='text' id='regex' oninput='update();' value='[a-z]' placeholder='Regular Expression'>
+                            <input type='text' id='regex' oninput='update();' value='Test|[A-Z]' placeholder='Regular Expression'>
                             <div class='simpleflex row'>
                                 <span>/</span>
                                 <div class='simpleflex row'>
@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                        <input type='text' id='replace' oninput='update();' value='!$1' placeholder='Replacement'>
+                        <input type='text' id='replace' oninput='update();' placeholder='Replacement'>
                     </div>
                     <div contenteditable='true' id='regex_matches' onchange='update();'></div>
                     <div id='regex_replaced'></div>
@@ -77,128 +77,58 @@
                     <p>
                         Mit Regular Expressions kannst du anstatt nach einem spezifischen Text, wie zum Beispiel "Hallo", nach
                         einem Textformat suchen. So zum Beispiel nach allen Wörtern, die fünf Zeichen lang sind. Die dafür
-                        benötigte Regex wäre in diesem Fall <code>[a-z]</code>
+                        benötigte Regex wäre in diesem Fall <code class='inline'>[a-z]</code>
                     </p>
-
-                    <ul>
-                        <li>Zugangsdaten für die E-Mail Adresse</li>
-                        <li>Eine Fernwartungssoftware</li>
-                        <ul>
-                            <li><a href='https://anydesk.com/' target='_blank'>Anydesk</a></li>
-                            <li><a href='https://teamviewer.com/' target='_blank'>TeamViewer</a></li>
-                        </ul>
-                        <li><a href='https://www.zoiper.com/'>Zoiper</a></li>
-                        <li>ggf. unser Webmailer (<a href="https://post.deutsche-stadtauskunft.de/" target="_blank">post</a> / <a
-                                    href="https://mail.deutsche-stadtauskunft.de/" target="_blank">mail</a>)
-                        </li>
-                    </ul>
                 </div>
 
                 <div>
-                    <h2>Die Einrichtung</h2>
-                    <p>
-                        Die Einrichtung an sich kannst du ganz einfach mithilfe eines Tutorials, für die jeweilige
-                        E-Mail-Software, abfrühstücken. Wenn's keine <a href='#faq'>Komplikationen</a>
-                        gibt, solltest du in maximal 15 Minuten mit der Geschichte durch sein.
-                    </p>
-
-                    <div class='table'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Programm</th>
-                                    <th>Tutorial</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <th>Outlook</th>
-                                    <td>
-                                        <a href='https://support.microsoft.com/de-de/office/hinzuf%C3%BCgen-eines-e-mail-kontos-zu-outlook-6e27792a-9267-4aa4-8bb6-c84ef146101b#bkmk_advanced'
-                                           target='_blank'>Allgemein</a> | <span class='strike disabled-text'>Windows</span> |
-                                        <span class='strike disabled-text'>Mac</span></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Thunderbird</th>
-                                    <td><a href='https://support.mozilla.org/de/kb/manuell-ein-konto-konfigurieren'
-                                           target='_blank'>Allgemein</a> | <span class='strike disabled-text'>Windows</span> |
-                                        <span class='strike disabled-text'>Mac</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div>
-                    <h2>Einstellungen</h2>
-                    <p>
-                        Die folgenden Daten benötigst du für eine E-Mail-Einrichtung.
-                    </p>
-
-                    <div class='table'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Daten</th>
-                                    <th>Wert</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <th>Nutzername & Passwort</th>
-                                    <td colspan='2'>Beides im <a href='http://172.17.0.12:3000/'
-                                                                 target='_blank'>Zugangsdatentool</a> unter dem Tab "E-Mail" zu
-                                                    finden
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <th>Ein- und Ausgangsserver</th>
-                                    <td colspan='2'>Ebenfalls im <a href='http://172.17.0.12:3000/' target='_blank'>Zugangsdatentool</a>
-                                                    zu finden, je nach Mail entweder <a
-                                                onclick='copyTextToClipboard("mail.deutsche-stadtauskunft.de")'>mail.deutsche-stadtauskunft.de</a>
-                                                    oder <a onclick='copyTextToClipboard("post.deutsche-stadtauskunft.de")'>post.deutsche-stadtauskunft.de</a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Ports</td>
-                                    <td colspan='1'>Eingang: 143 (STARTTLS) oder 993 (SSL)</td>
-                                    <td colspan='1'>Ausgang: 587 (STARTTLS) oder 465 (SSL)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div>
-                    <h2>Häufige Probleme</h2>
+                    <h2>Häufig genutzte Regular Expressions</h2>
 
                     <div class="accordions" id='faq' data-close-others>
                         <div class="accordion">
-                            <span>E-Mails werden nicht gesendet/empfangen</span>
+                            <span>Username</span>
                             <div>
                                 <p>
-                                    Wenn keine E-Mails gesendet und/oder empfangen werden können, kannst du nur prüfen, ob die
-                                    E-Mail richtig eingerichtet wurde (<strong>Postein- und Ausgangsserver</strong> &
-                                    <strong>Ports</strong>). Sollte dem so sein und das Problem bleibt weiterhin bestehen, lass
-                                    das Problem von den Entwicklern abchecken.
+                                    Usernames sind sehr variabel, basierend auf Ihren Anforderungen, daher hier nur ein Beispiel:
                                 </p>
+
+                                <code>[a-zA-Z0-9]{3,15}</code>
+
+                                <div class='buttons'>
+                                    <button class='button no-underline' data-toggle-popup='regexplain-username'>Erklärung</button>
+                                    <button class='button no-underline apply'>
+                                        Im Playground übernehmen
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="accordion">
-                            <span>Auf ein Problem gestoßen?</span>
+                            <span>E-Mails</span>
                             <div>
                                 <p>
-                                    Wenn du auf ein weiteres, hier noch nicht aufgelistetes Problem gestoßen bist und eine
-                                    Lösung für dieses hast, schreibe mir gerne eine E-Mail an
-                                    <a href='mailto:m.rosskothen@dsa-marketing.ag'>m.rosskothen@dsa-marketing.ag</a>, damit
-                                    ich die Problemlösung hier hinzufügen kann.
+                                    E-Mails können teilweise sehr komplex sein und verschiedene Formate aufweisen, daher ist es
+                                    schwierig eine perfekte Regular Expression dafür zu kreieren. Diese hier sollte allerdings
+                                    die gängisten Formate abdecken:
+                                </p>
+
+                                <code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</code>
+
+                                <div class='buttons'>
+                                    <button class='button no-underline' data-toggle-popup='regexplain-mail'>Erklärung</button>
+                                    <button class='button no-underline apply'>
+                                        Im Playground übernehmen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <span>Noch eine nützliche Regex auf Lager?</span>
+                            <div>
+                                <p>
+                                    Hast du noch eine Regex gefunden/geschrieben, die hier fehlt? Maile sie mir an:
+                                    <a href='mailto:m.rosskothen@dsa-marketing.ag'>m.rosskothen@dsa-marketing.ag</a>
                                 </p>
                             </div>
                         </div>
@@ -206,6 +136,33 @@
                 </div>
             </div>
         </main>
+
+        <div class='popups'>
+            <div class='popup explanation' id='regexplain-username'>
+                <h3>Regex: Username – erklärt</h3>
+
+                <code>[a-zA-Z0-9]{3,15}</code>
+
+                <p>
+                    <strong>[a-zA-Z0-9]</strong>
+                    Alle Zeichen von a–z, A–Z und 0–9
+                </p>
+                <p><strong>{3,15}</strong> 3–15 Zeichen</p>
+            </div>
+
+            <div class='popup explanation' id='regexplain-mail'>
+                <h3>Regex: Mail – erklärt</h3>
+
+                <code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</code>
+
+                <p>
+                    <strong>[a-zA-Z0-9._%+-]+</strong>
+                    Ein, oder mehrere Zeichen von A–Z, 0–9, oder Punkt, Unterstrich, Prozent, Plus, Minus
+                </p>
+                <p><strong>@</strong> Ein @ Zeichen</p>
+                <p><strong>\.[a-zA-Z]{2,}</strong> Ein Punkt (.), gefolgt von mindestens zwei Zeichen von A–Z</p>
+            </div>
+        </div>
 
         <script>
             function isValidRegex(pattern) {
@@ -240,6 +197,13 @@
 
             $(function () {
                 loadText();
+
+                document.querySelectorAll(".apply").forEach(apply => {
+                    apply.addEventListener('click', () => {
+                        document.querySelector("#regex").value = apply.parentElement.parentElement.querySelector("code").textContent;
+                        update();
+                    });
+                });
             });
 
             function removeMatches(string) {
