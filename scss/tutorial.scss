@@ -362,3 +362,26 @@ h2 + strong {
     margin-inline: .05em;
   }
 }
+
+#regex-userinput-explanation {
+  ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: .75rem;
+  }
+
+  strong {
+    margin-right: .5rem;
+    padding: .1em .5em;
+    border-radius: 3px;
+    background-color: utils.$col-primary;
+    color: utils.$col-white-element;
+  }
+}
+
+.highlight {
+  background-color: utils.$col-primary;
+  color: utils.$col-white-element;
+  border-radius: 3px;
+}

@@ -224,9 +224,7 @@ ul {
   cursor: pointer;
   transition-duration: 0.25s;
 
-  @media (hover: hover) {
-    padding: 0.5rem 1.25rem;
-
+  @media (hover: hover) and (min-width: utils.$bp-tablet) {
     /*&::after {
       position: absolute;
       content: attr(data-hover-text);
@@ -273,7 +271,7 @@ ul {
   color: lighten(utils.$col-font, 20%);
 }
 
-code {
+code, div.code-display {
   padding: .25em 1.5em;
   font-family: monospace;
   display: block;
@@ -281,8 +279,10 @@ code {
   margin-block: 1rem;
   background-color: utils.$col-gray;
 
-  &:not(.no-copy) {
-    cursor: pointer;
+  &:is(code) {
+    &:not(.no-copy) {
+      cursor: pointer;
+    }
   }
 
   &.inline {

@@ -77,7 +77,14 @@
                     </div>
                     <div contenteditable='true' id='regex_matches' onchange='update();'></div>
                     <div id='regex_replaced'></div>
-                    <button class='button' onclick='update();'>Matches aktualisieren</button>
+
+                    <div class='buttons let'>
+                        <button class='button' onclick='update();'>Aktualisieren</button>
+                        <button class='button' onclick='explainRegex(document.querySelector("#regex").value);'>
+                            Erklären
+                        </button>
+                        <button class='button' onclick='copyRegex();'>Kopieren</button>
+                    </div>
                 </div>
 
                 <div>
@@ -146,6 +153,21 @@
         </main>
 
         <div class='popups'>
+            <div class='popup explanation' id='regexplain-userinput'>
+                <h3>Regex: Deine Eingabe – erklärt</h3>
+                <p class='disabled-text'>
+                    <strong>Achtung:</strong>
+                    Diese Funktion ist aktuell noch in der Beta und kann Fehler aufweisen.
+                </p>
+
+                <div class='code-display' id='regex-userinput'></div>
+
+                <p>Diese Regular Expression setzt sich aus den folgenden Elementen zusammen:</p>
+                <div id='regex-userinput-explanation'></div>
+
+                <p class='disabled-text'>Fahre mit der Maus über ein Element, um es in der Expression hervorzuheben.</p>
+            </div>
+
             <div class='popup explanation' id='regexplain-username'>
                 <h3>Regex: Username – erklärt</h3>
 
@@ -218,6 +240,9 @@
                 return string.replace(/<span class="match">(.*?)<\/span>/g, "$1");
             }
 
+            function copyRegex() {
+                copyTextToClipboard(document.querySelector("#regex").value);
+            }
 
             function update() {
                 let matches = document.querySelector("#regex_matches");
@@ -256,6 +281,269 @@
                         matches.innerHTML = removeMatches(matches.innerHTML);
                     }
                 }
+            }
+
+            function getCharRanges(charset) {
+                let ranges = [];
+                charset = charset.slice(1, -1);
+                let range = charset.split('').filter(x => x != '-').join('');
+                ranges = ranges.concat(range.split(/[,]+/));
+                return ranges;
+            }
+
+            function wrapInSpan(str, start, end, classString) {
+                let wrappedString = str.slice(0, start) +
+                    `<span class="${classString}">` +
+                    str.slice(start, end) +
+                    '</span>' +
+                    str.slice(end);
+                return wrappedString;
+            }
+
+            function explainRegex() {
+                let mod_g = document.querySelector("#mod_g").checked;
+                let mod_i = document.querySelector("#mod_i").checked;
+                let mod_m = document.querySelector("#mod_m").checked;
+
+                let explanation = [];
+
+                let regex = new RegExp(document.querySelector("#regex").value, (mod_g ? "g" : "") + (mod_i ? "i" : "") + (mod_m ? "m" : ""));
+                console.log("Regular expression: " + regex);
+                console.log("");
+
+                let pattern = regex.source;
+                let flags = regex.flags;
+                let groups = 0;
+
+                let captureGroup = /\(([^?])/g;
+                let captureGroupMatch = pattern.match(captureGroup);
+                if (captureGroupMatch) {
+                    for (let i = 0; i < captureGroupMatch.length; i++) {
+                        let group = captureGroupMatch[i];
+
+                        groups++;
+                        explanation.push({
+                            type: 'group',
+                            index: pattern.indexOf(group),
+                            description: `Gruppe $${groups}`
+                        });
+                    }
+                }
+
+                let nonCaptureGroup = /\((\?[^:])/g;
+                let nonCaptureGroupMatch = pattern.match(nonCaptureGroup);
+                if (nonCaptureGroupMatch) {
+                    for (let i = 0; i < nonCaptureGroupMatch.length; i++) {
+                        let group = nonCaptureGroupMatch[i];
+
+                        explanation.push({
+                            type: 'non-capturing group',
+                            index: pattern.indexOf(group),
+                            description: `Ungewertete Gruppe`
+                        });
+                    }
+                }
+
+                let charClass = /\[[^\]]*]/g;
+                let charClassMatch = pattern.match(charClass);
+                if (charClassMatch) {
+                    for (i = 0; i < charClassMatch.length; i++) {
+                        let charClassPart = charClassMatch[i];
+                        if (charClassPart.includes("-")) {
+                            let range = charClassPart.split("-");
+                            let ranges = getCharRanges(charClassPart).join(", ");
+
+                            explanation.push({
+                                type: 'charrange',
+                                index: pattern.indexOf(charClassPart),
+                                description: `<strong>${charClassPart}</strong> Beliebiges Zeichen von ` + ranges
+                            });
+                        } else {
+                            explanation.push({
+                                type: 'charset',
+                                index: pattern.indexOf(charClassPart),
+                                description: `<strong>${charClassPart}</strong> Beliebiges Zeichen aus Liste: ` + charClassPart.replace("[", "").replace("]", "").split("").join(", ")
+                            });
+                        }
+                    }
+                }
+
+                let quantifiers = /{[0-9]+,?[0-9]*}/g;
+                let quantifiersMatch = pattern.match(quantifiers);
+                if (quantifiersMatch) {
+                    for (i = 0; i < quantifiersMatch.length; i++) {
+                        let quantifier = quantifiersMatch[i];
+                        if (quantifier.includes(",")) {
+                            let range = quantifier.slice(1, -1).split(",");
+                            if (range[1] === "") {
+                                explanation.push({
+                                    type: 'quantifier',
+                                    index: pattern.indexOf(quantifier),
+                                    description: `<strong>${quantifier}</strong> Mindestens ` + range[0] + ` Wiederholungen des vorangegangenen Elements`
+                                });
+                            } else {
+                                explanation.push({
+                                    type: 'quantifier',
+                                    index: pattern.indexOf(quantifier),
+                                    description: `<strong>${quantifier}</strong> Zwischen ` + range[0] + ` und ` + range[1] + ` Wiederholungen des vorangegangenen Elements`
+                                });
+                            }
+                        } else {
+                            explanation.push({
+                                type: 'quantifier',
+                                index: pattern.indexOf(quantifier),
+                                description: "Genau " + quantifier.slice(1, -1) + " Wiederholungen des vorangegangenen Elements"
+                            });
+                        }
+                    }
+                }
+
+                let or = /[|]/g;
+                let orMatch = pattern.match(or);
+                if (orMatch) {
+                    for (i = 0; i < orMatch.length; i++) {
+                        let currentOr = orMatch[i];
+                        explanation.push({
+                            type: 'or',
+                            index: pattern.indexOf(currentOr),
+                            description: `<strong>${orMatch}</strong> Oder`
+                        });
+                    }
+                }
+
+                let plus = /[^\\]\+/g;
+                let plusMatch = pattern.match(plus);
+                if (plusMatch) {
+                    for (i = 0; i < plusMatch.length; i++) {
+                        let currentPlus = plusMatch[i];
+
+                        explanation.push({
+                            type: 'plus',
+                            index: pattern.indexOf(currentPlus),
+                            description: `<strong>${currentPlus}</strong> Ein- oder mehrmals das vorangegangene Element`
+                        });
+                    }
+                }
+
+                let star = /[^\\]\*/g;
+                let starMatch = pattern.match(star);
+                if (starMatch) {
+                    for (i = 0; i < starMatch.length; i++) {
+                        let currentStar = starMatch[i];
+
+                        explanation.push({
+                            type: 'star',
+                            index: pattern.indexOf(currentStar),
+                            description: `<strong>${currentStar}</strong>Keine oder mehr Wiederholungen des vorangegangenen Elements`
+                        });
+                    }
+                }
+
+                let wordBoundary = /\\b.*?\\b/g;
+                let wordBoundaryMatch = pattern.match(wordBoundary);
+                if (wordBoundaryMatch) {
+                    for (i = 0; i < wordBoundaryMatch.length; i++) {
+                        let currentWordBoundary = wordBoundaryMatch[i];
+                        let w = currentWordBoundary.replace(/\\b/g, "");
+
+                        explanation.push({
+                            type: 'wordboundary',
+                            index: pattern.indexOf(currentWordBoundary),
+                            description: `<strong>${currentWordBoundary}</strong>Wort: ${w}`
+                        });
+                    }
+                }
+
+                let ws = /\\s/g;
+                let wsMatch = pattern.match(ws);
+                if (wsMatch) {
+                    for (i = 0; i < wsMatch.length; i++) {
+                        let currentWS = wsMatch[i];
+
+                        explanation.push({
+                            type: 'non whitespace',
+                            index: pattern.indexOf(currentWS),
+                            description: `<strong>${currentWS}</strong>Whitespace`
+                        });
+                    }
+                }
+
+                let plain = /(?<!\\)(?<!\/)([^\[\]\{\}\(\)\*\+\?\|\.\^\$\\\/]+)(?=\||$)/g;
+                let plainMatch = pattern.match(plain);
+                if(plainMatch) {
+                    for (i = 0; i < plainMatch.length; i++) {
+                        let currentPlain = plainMatch[i];
+
+                        explanation.push({
+                            type: 'plain text',
+                            index: pattern.indexOf(currentPlain),
+                            description: `<strong>${currentPlain}</strong>Exakt: ${currentPlain}`
+                        });
+                    }
+                }
+
+                let nonWS = /\\S/g;
+                let nonWSMatch = pattern.match(nonWS);
+                if (nonWSMatch) {
+                    for (i = 0; i < nonWSMatch.length; i++) {
+                        let currentNonWS = nonWSMatch[i];
+
+                        explanation.push({
+                            type: 'non whitespace',
+                            index: pattern.indexOf(currentNonWS),
+                            description: `<strong>${currentNonWS}</strong>Beliebiges Zeichen, das kein Whitespace ist`
+                        });
+                    }
+                }
+
+                let word = /\\w/g;
+                let wordMatch = pattern.match(word);
+                if (wordMatch) {
+                    for (i = 0; i < wordMatch.length; i++) {
+                        let currentWord = wordMatch[i];
+
+                        explanation.push({
+                            type: 'word',
+                            index: pattern.indexOf(currentWord),
+                            description: `<strong>${currentWord}</strong>Beliebiges alphabetisches oder numerisches Zeichen`
+                        });
+                    }
+                }
+
+
+                let userinputregex = document.querySelector("#regex-userinput");
+                let expl = document.querySelector("#regex-userinput-explanation");
+
+                userinputregex.innerHTML = document.querySelector("#regex").value;
+                expl.innerHTML = "";
+
+                let ul = document.createElement("ul");
+
+                explanation = explanation.sort((a, b) => {
+                    return a.index - b.index;
+                });
+
+                explanation.forEach((el) => {
+                    let li = document.createElement("li");
+                    li.innerHTML = el.description;
+                    li.addEventListener('mouseenter', () => {
+                        let completeRegex = pattern;
+                        let index = el.index;
+                        let part = li.querySelector("strong").textContent;
+
+                        let marked = wrapInSpan(completeRegex, index, (index + part.length), 'highlight');
+                        userinputregex.innerHTML = marked;
+                    });
+
+                    li.addEventListener('mouseleave', () => {
+                        userinputregex.innerHTML = pattern;
+                    });
+
+                    ul.appendChild(li);
+                });
+
+                expl.appendChild(ul);
+                togglePopup("regexplain-userinput");
             }
         </script>
     </body>

@@ -1,49 +1,21 @@
-/* Popups, load after all */
-function reload() {
+$(function () {
+    document.querySelectorAll(".popup").forEach((popup) => {
+        const close = document.createElement("div");
+        close.classList.add("close");
+        close.addEventListener("click", () => {
+            togglePopup(popup.id);
+        });
+
+        popup.appendChild(close);
+    });
+
+    document.querySelectorAll("[data-toggle-popup]").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            togglePopup(toggle.getAttribute("data-toggle-popup"));
+        });
+    });
+
     if (document.querySelector('.popups')) {
-        let popupShown = false;
-
-        document.querySelectorAll(".popup").forEach((popup) => {
-            if (!popup.querySelector('.close')) {
-                const close = document.createElement("div");
-                close.classList.add("close");
-                close.addEventListener("click", () => {
-                    popup.classList.remove("show");
-                    popupShown = document.querySelector(".popup.show");
-
-                    if (!popupShown) {
-                        document.querySelector(".popups").classList.remove("show");
-                        document.body.classList.remove('popup-shown');
-                    }
-                });
-
-                popup.appendChild(close);
-            }
-        });
-
-        let added = [];
-        document.querySelectorAll("[data-toggle-popup]:not(.popup-toggle)").forEach((toggle) => {
-
-            function clickListener() {
-                let selector = ".popup#" + toggle.getAttribute("data-toggle-popup");
-
-                let popup = document.querySelector(selector);
-
-                if (popup) {
-                    popup.classList.toggle("show");
-
-                    if (popup.classList.contains("show")) {
-                        popupShown = true;
-                        document.body.classList.add('popup-shown');
-                        document.querySelector('.popups').classList.add('show');
-                    }
-                }
-            }
-
-            toggle.addEventListener("click", clickListener);
-            toggle.classList.add('popup-toggle');
-        });
-
         document.querySelector('.popups').addEventListener('click', () => {
             document.querySelectorAll('.popup').forEach(popup => {
                 popup.classList.remove('show');
@@ -51,21 +23,36 @@ function reload() {
 
             document.querySelector('.popups').classList.remove('show');
             document.body.classList.remove('popup-shown');
-            popupShown = false;
         });
+    }
 
+    if (document.querySelector('.popup')) {
         document.querySelectorAll('.popup').forEach(popup => {
             popup.addEventListener('click', e => {
-                e.preventDefault();
                 e.stopImmediatePropagation();
                 e.stopPropagation();
             });
         });
     }
+});
+
+// function for toggling the popup
+function togglePopup(id) {
+    document.getElementById(id).classList.toggle("show");
+
+    if (document.getElementById(id).classList.contains("show")) {
+        document.body.classList.add('popup-shown');
+        document.querySelector('.popups').classList.add('show');
+    } else {
+        document.body.classList.remove('popup-shown');
+        document.querySelector('.popups').classList.remove('show');
+    }
 }
 
-$(function () {
-    setTimeout(() => {
-        reload();
-    }, 100);
-});
+function popupShown(id = null) {
+    if (id) {
+        return document.getElementById(id).classList.contains("show");
+    } else {
+        return document.querySelector('.popup.show') !== null;
+    }
+}
