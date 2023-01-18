@@ -494,10 +494,6 @@ blockquote {
 ul {
   list-style-position: outside;
   list-style-type: disc;
-
-  li {
-    margin-left: 1em;
-  }
 }
 
 @mixin tooltip {
