@@ -110,7 +110,7 @@
                                 <code>[a-zA-Z0-9]{3,15}</code>
 
                                 <div class='buttons'>
-                                    <button class='button no-underline' data-toggle-popup='regexplain-username'>Erklärung</button>
+                                    <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
                                     <button class='button no-underline apply'>
                                         Im Playground übernehmen
                                     </button>
@@ -130,7 +130,41 @@
                                 <code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</code>
 
                                 <div class='buttons'>
-                                    <button class='button no-underline' data-toggle-popup='regexplain-mail'>Erklärung</button>
+                                    <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
+                                    <button class='button no-underline apply'>
+                                        Im Playground übernehmen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <span>Passwörter</span>
+                            <div>
+                                <p>
+                                    Diese Regular Expression dient nur als Beispiel und sollte je nach individuellen Anforderungen angepasst werden.
+                                </p>
+
+                                <code>(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}</code>
+
+                                <div class='buttons'>
+                                    <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
+                                    <button class='button no-underline apply'>
+                                        Im Playground übernehmen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <span>URLs</span>
+                            <div>
+                                <p>URLs treten in vielen verschiedenen Formaten auf, daher ist es schwierig alle abzudecken. Diese Regex sollte dennoch den größten Teil abdecken.</p>
+
+                                <code>(https?|ftp):\/\/[.a-z]+\.domain\.com[.a-z0-9/-]+</code>
+
+                                <div class='buttons'>
+                                    <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
                                     <button class='button no-underline apply'>
                                         Im Playground übernehmen
                                     </button>
@@ -168,29 +202,12 @@
                 <p class='disabled-text'>Fahre mit der Maus über ein Element, um es in der Expression hervorzuheben.</p>
             </div>
 
-            <div class='popup explanation' id='regexplain-username'>
-                <h3>Regex: Username – erklärt</h3>
-
-                <code>[a-zA-Z0-9]{3,15}</code>
-
+            <div class='popup explanation' id='explanation-moved'>
+                <h3>Regex: Deine Eingabe – erklärt</h3>
                 <p>
-                    <strong>[a-zA-Z0-9]</strong>
-                    Alle Zeichen von a–z, A–Z und 0–9
+                    Die Erklärung der Regular Expressions wurde verschoben. Übernehme die gewünschte Expression in den Playground, indem du den
+                    dafür vorgesehenen Button drückst, und klicke dann im Playground auf "Erklären"
                 </p>
-                <p><strong>{3,15}</strong> 3–15 Zeichen</p>
-            </div>
-
-            <div class='popup explanation' id='regexplain-mail'>
-                <h3>Regex: Mail – erklärt</h3>
-
-                <code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</code>
-
-                <p>
-                    <strong>[a-zA-Z0-9._%+-]+</strong>
-                    Ein, oder mehrere Zeichen von A–Z, 0–9, oder Punkt, Unterstrich, Prozent, Plus, Minus
-                </p>
-                <p><strong>@</strong> Ein @ Zeichen</p>
-                <p><strong>\.[a-zA-Z]{2,}</strong> Ein Punkt (.), gefolgt von mindestens zwei Zeichen von A–Z</p>
             </div>
         </div>
 
@@ -283,11 +300,55 @@
                 }
             }
 
-            function getCharRanges(charset) {
-                let ranges = [];
-                charset = charset.slice(1, -1);
-                let range = charset.split('').filter(x => x != '-').join('');
-                ranges = ranges.concat(range.split(/[,]+/));
+            function joinWithOr(arr) {
+                const allButLast = arr.slice(0, -1).join(", ");
+                const last = arr.slice(-1);
+                return allButLast.length > 0 ? allButLast + ", oder " + last : last;
+            }
+
+            function getRange(str) {
+                const range = str.split("-");
+                const start = range[0];
+                const end = range[1];
+                const characters = [];
+                for (let i = start.charCodeAt(0); i <= end.charCodeAt(0); i++) {
+                    characters.push(String.fromCharCode(i));
+                }
+                return characters;
+            }
+
+            function getCharRanges(str) {
+                const ranges = [];
+                const regex = /\[([^\]]+)\]/g;
+                let match;
+                while ((match = regex.exec(str)) !== null) {
+                    const range = match[1];
+                    const rangeArr = range.split('');
+                    let currentRange = rangeArr[0];
+                    for (let i = 1; i < rangeArr.length; i++) {
+                        const char = rangeArr[i];
+                        if (char === "-") {
+                            if (i + 1 < rangeArr.length) {
+                                currentRange += char + rangeArr[i + 1];
+                                i++;
+                            } else {
+                                ranges.push(currentRange);
+                                ranges.push(char);
+                                currentRange = "";
+                            }
+                        } else {
+                            if (currentRange.length > 0) {
+                                ranges.push(currentRange);
+                                currentRange = char;
+                            } else {
+                                currentRange = char;
+                            }
+                        }
+                    }
+                    if (currentRange.length > 0) {
+                        ranges.push(currentRange);
+                    }
+                }
                 return ranges;
             }
 
@@ -350,8 +411,16 @@
                     for (i = 0; i < charClassMatch.length; i++) {
                         let charClassPart = charClassMatch[i];
                         if (charClassPart.includes("-")) {
-                            let range = charClassPart.split("-");
-                            let ranges = getCharRanges(charClassPart).join(", ");
+                            let rangesLi = getCharRanges(charClassPart);
+                            let ranges = [];
+                            rangesLi.forEach(range => {
+                                if (range.includes("-")) {
+                                    ranges.push("<span class='code-display inline' title='" + getRange(range).join(", ") + "'>" + range + "</span>");
+                                } else {
+                                    ranges.push("<span class='code-display inline'>" + range + "</span>");
+                                }
+                            });
+                            ranges = joinWithOr(ranges);
 
                             explanation.push({
                                 type: 'charrange',
@@ -470,7 +539,7 @@
 
                 let plain = /(?<!\\)(?<!\/)([^\[\]\{\}\(\)\*\+\?\|\.\^\$\\\/]+)(?=\||$)/g;
                 let plainMatch = pattern.match(plain);
-                if(plainMatch) {
+                if (plainMatch) {
                     for (i = 0; i < plainMatch.length; i++) {
                         let currentPlain = plainMatch[i];
 
