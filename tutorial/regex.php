@@ -161,7 +161,35 @@
                             <div>
                                 <p>URLs treten in vielen verschiedenen Formaten auf, daher ist es schwierig alle abzudecken. Diese Regex sollte dennoch den größten Teil abdecken.</p>
 
-                                <code>(https?|ftp):\/\/[.a-z]+\.domain\.com[.a-z0-9/-]+</code>
+                                <code>(((s*)(ftp)(s*)|(http)(s*)|mailto|news|file|webcal):(\S*))|((www.)(\S*))</code>
+
+                                <div class='buttons'>
+                                    <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
+                                    <button class='button no-underline apply'>
+                                        Im Playground übernehmen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <span>Hexcode</span>
+                            <div>
+                                <code>#?([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?</code>
+
+                                <div class='buttons'>
+                                    <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
+                                    <button class='button no-underline apply'>
+                                        Im Playground übernehmen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <span>HTML Tags</span>
+                            <div>
+                                <code><.([^>]*[^/])></code>
 
                                 <div class='buttons'>
                                     <button class='button no-underline' data-toggle-popup='explanation-moved'>Erklärung</button>
@@ -278,7 +306,7 @@
                         let regex = new RegExp(regexText, (mod_g ? "g" : "") + (mod_i ? "i" : "") + (mod_m ? "m" : ""));
                         console.log("Regex:", regex);
 
-                        matches.innerHTML = wrapMatches(regex, matches.textContent);
+                        matches.innerHTML = wrapMatches(regex, matches.textContent.replace("<", "&lt;").replace(">", "&gt;"));
 
                         if (regexReplaceText.length > 0) {
                             regexReplacedField.style.display = "block";
