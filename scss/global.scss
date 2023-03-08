@@ -257,7 +257,7 @@ ul {
   }
 
   &.small {
-    padding: .25em .75em;
+    padding: .05em .95em;
   }
 
   &.inline {
@@ -494,6 +494,11 @@ blockquote {
 ul {
   list-style-position: outside;
   list-style-type: disc;
+  margin-left: 1em;
+
+  ul {
+    margin-left: 2em;
+  }
 }
 
 @mixin tooltip {

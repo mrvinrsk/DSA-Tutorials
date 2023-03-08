@@ -85,10 +85,14 @@ function importProgress(checklist) {
             let ids = result.split(';');
 
             checklist.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+                let wrapper = checkbox.closest('.checkbox-wrapper');
+
                 if (ids.includes(checkbox.id)) {
                     checkbox.checked = true;
+                    wrapper.classList.add("checked");
                 } else {
                     checkbox.checked = false;
+                    wrapper.classList.remove("checked");
                 }
             });
 

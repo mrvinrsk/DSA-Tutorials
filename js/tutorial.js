@@ -1,5 +1,3 @@
-let popup_wrapper = null;
-
 $(function () {
     if (!document.querySelector('.popups')) {
         let pw = document.createElement('div');
@@ -73,9 +71,11 @@ $(function () {
     });
 
     if (localStorage.getItem("media") == null || localStorage.getItem("media") !== "yes") {
-        let c = document.createElement('div');
-        c.classList.add('mediatogglecontainer');
-        document.body.appendChild(c);
+        if (!document.querySelector(".mediatogglecontainer")) {
+            let c = document.createElement('div');
+            c.classList.add('mediatogglecontainer');
+            document.body.appendChild(c);
+        }
 
         $('.mediatogglecontainer').load("../element/media-toggle.html");
     }

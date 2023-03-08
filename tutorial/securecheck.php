@@ -359,37 +359,6 @@
                 download("securecheck-" + kdnr + ".txt", text);
             }
 
-            function updateHTMLValidate() {
-                let html_status = document.querySelector("#html-status");
-                let html_validate = document.querySelector("#html-validate");
-                let html_validation_check = document.querySelector("#html-validation-check");
-                let validation_content = html_validate.value;
-
-                if (validation_content.length >= 1) {
-                    html_status.classList = "processing";
-                    html_status.textContent = "Eingabe erkannt, verarbeite...";
-
-                    let valid = checkHTML(validation_content);
-
-                    if (valid) {
-                        html_status.classList = "ok";
-                        html_status.textContent = "Valide";
-
-                        // html_validation_check.classList.add("checked");
-                        // html_validation_check.querySelector("input").checked = true;
-                    } else {
-                        html_status.classList = "not-ok";
-                        html_status.textContent = "Nicht valide";
-
-                        // html_validation_check.classList.remove("checked");
-                        // html_validation_check.querySelector("input").checked = false;
-                    }
-                } else {
-                    html_status.classList = "waiting";
-                    html_status.textContent = "Warte auf Eingabe...";
-                }
-            }
-
             updateHTMLValidate();
         </script>
     </body>

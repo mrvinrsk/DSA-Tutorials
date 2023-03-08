@@ -27,13 +27,37 @@
         <script src="../js/anime.min.js"></script>
         <script src="../js/jquery.waypoints.min.js"></script>
         <script src="../js/main.js"></script>
+        <script src="../js/popups.js"></script>
         <script src="../js/media.js"></script>
+        <script src="../js/seo.js"></script>
         <!-- <script src='../js/slide.js' async></script> -->
 
         <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
         <script src="../js/checklist.js"></script>
     </head>
     <body class='tutorial'>
+        <div class='popups'>
+            <div class='popup' id='minify'>
+                <h3>Minifizieren</h3>
+                <p>Füge den zu minifizierenden Code in das Textfeld ein, der Output wird on the fly aktualisiert. </p>
+
+                <textarea id='minify-input'></textarea>
+                <div id='minify-output'>
+                    <textarea readonly></textarea>
+                </div>
+            </div>
+
+            <div class='popup' id='html-validator'>
+                <h3>HTML Validator</h3>
+
+                <textarea id='html-validate' oninput='updateHTMLValidate();'
+                          placeholder='Code einfügen...' style='margin-bottom: 0;'></textarea>
+                <p>Status: <span class='waiting' id='html-status'></span></p>
+
+                <span><strong>Achtung:</strong> Der Validator ist noch nicht zu 100% zuverlässig, alternativ kannst du den <a href='https://validator.w3.org' target='_blank'>W3 Validator</a> nutzen.</span>
+            </div>
+        </div>
+
         <main class="slide">
             <div class="heading">
                 <div class='heading-content'>
@@ -245,6 +269,15 @@
                         <a class='button small' data-hover-text='Download' download href='../_robots.txt' target='_blank'>robots.txt</a>
                     </div>
                     <span class='notice'><strong>Achtung:</strong> Bei den Dateinamen der heruntergeladenen Dateien muss jeweils der Unterstrich ("_") entfernt werden.</span>
+                </div>
+
+                <div id='tools'>
+                    <h2>Tools</h2>
+
+                    <div class='dl-list'>
+                        <a class='button small' data-toggle-popup='minify'>Minify</a>
+                        <a class='button small' data-toggle-popup='html-validator'>HTML Validator</a>
+                    </div>
                 </div>
 
                 <div>

@@ -169,19 +169,12 @@ sort($tags);
 
             <h4>Hinzugefügt</h4>
             <ul>
-                <li>Checklist-Erklärung wird bei fertigstellung versteckt</li>
-                <li>Securecheck-Generator hinzugefügt</li>
-                <li>Zurückbutton auf den Tutorial-Seiten</li>
+                <li>Minifizierer (CSS, JS) und HTML Validator auf <a href='tutorial/seo#tools'>SEO/SUMO-Seite</a> hinzugefügt</li>
             </ul>
 
             <h4>Geändert</h4>
             <ul>
-                <li>Checklist-Boxen Design geändert</li>
-                <li>Neutralere Farben (UX)</li>
-                <li>Bessere Popups (z.B. beim Kopieren von Code & Zugangsdaten)</li>
-                <li>Table-Styling</li>
-                <li>Tutorial-Tags werden alphabetisch sortiert</li>
-                <li>Mehr Platz für Tutorials auf der Startseite</li>
+                <li>Bug behoben, wodurch die Seiten "Empfohlene Tools" und "Empfohlene Frameworks" nicht erreichbar waren.</li>
             </ul>
 
             <h4>Entfernt</h4>
