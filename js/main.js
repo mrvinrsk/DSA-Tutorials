@@ -69,6 +69,41 @@ function isVisibleByPercentage(el, percentage) {
     return visiblePercentage >= percentage;
 }
 
+function hasOverflow(selector) {
+    const element = document.querySelector(selector);
+    return element.scrollWidth > element.clientWidth || element.scrollHeight > element.clientHeight;
+}
+
+const OverflowDirection = Object.freeze({
+    LEFT: -2,
+    RIGHT: 2,
+    TOP: -1,
+    BOTTOM: 1,
+});
+
+function getOverflowDirections(id) {
+    const element = document.getElementById(id);
+    const results = [];
+
+    if (element.scrollWidth > element.clientWidth && element.scrollLeft > 0) {
+        results.push(OverflowDirection.LEFT);
+    }
+
+    if (element.scrollWidth > element.clientWidth && element.scrollLeft + element.clientWidth < element.scrollWidth) {
+        results.push(OverflowDirection.RIGHT);
+    }
+
+    if (element.scrollHeight > element.clientHeight && element.scrollTop > 0) {
+        results.push(OverflowDirection.TOP);
+    }
+
+    if (element.scrollHeight > element.clientHeight && element.scrollTop + element.clientHeight < element.scrollHeight) {
+        results.push(OverflowDirection.BOTTOM);
+    }
+
+    return results;
+}
+
 function updateHTMLValidate() {
     let html_status = document.querySelector("#html-status");
     let html_validate = document.querySelector("#html-validate");
@@ -242,4 +277,55 @@ $(function () {
     }
 
     reloadClickShows();
+
+    if (document.querySelector(".drag-move")) {
+        console.log("drag-move found");
+
+        let velocityTreshold = 10;
+        document.querySelectorAll(".drag-move").forEach(dm => {
+            ['mousedown', 'touchstart'].forEach(listener => {
+                dm.addEventListener(listener, (e) => {
+                    dm.setAttribute("data-dragging", "true");
+                    dm.setAttribute("data-start-drag-x", e.clientX);
+                    dm.setAttribute("data-start-drag-y", e.clientY);
+                    dm.setAttribute("data-velocity", "1");
+                    dm.setAttribute("data-velocity-treshold", velocityTreshold.toString());
+                });
+            });
+        });
+
+        ['mousemove', 'touchmove'].forEach(listener => {
+            if(window.innerWidth >= 768) {
+                document.addEventListener(listener, (e) => {
+                    if (document.querySelector(".drag-move[data-dragging]")) {
+                        let drag = document.querySelector(".drag-move[data-dragging]");
+                        let differenceX = e.clientX - drag.dataset.startDragX;
+                        let differenceY = e.clientY - drag.dataset.startDragY;
+
+                        drag.scrollLeft -= (differenceX * parseFloat(drag.dataset.velocity));
+                        drag.scrollTop -= (differenceY * parseFloat(drag.dataset.velocity));
+
+                        if (drag.dataset.velocityTreshold > 1) {
+                            drag.dataset.velocityTreshold = (parseInt(drag.dataset.velocityTreshold) - 1).toString();
+                        } else {
+                            if (drag.dataset.velocity > .5) {
+                                drag.dataset.velocity = (parseFloat(drag.dataset.velocity) - .25).toString();
+                            }
+                            drag.setAttribute("data-velocity-treshold", velocityTreshold.toString());
+                        }
+                    }
+                });
+            }
+        });
+
+        ['mouseup', 'touchend'].forEach(listener => {
+            document.addEventListener(listener, (e) => {
+                let drag = document.querySelector(".drag-move[data-dragging]");
+                delete drag.dataset.dragging;
+                delete drag.dataset.startDragX;
+                delete drag.dataset.startDragY;
+                delete drag.dataset.velocity;
+            });
+        });
+    }
 });

@@ -75,7 +75,7 @@ sort($tags);
                     ?>
                 </span>
 
-                <div class='search-buttons'>
+                <div class='search-buttons drag-move'>
                     <?php foreach ($tags as $tag) {
                         if (!$filter) {
                             ?>
@@ -156,8 +156,7 @@ sort($tags);
                                     <a href='?tag=<?php echo $tag; ?>' class="tag"><?php echo $tag; ?></a>
                                 <?php } ?>
                             </div>
-                            <a class="button" data-hover-text="Lesen" href="<?php echo $entry['permaLink']; ?>">
-                                Tutorial anzeigen</a>
+                            <a class="button" data-hover-text="Lesen" href="<?php echo $entry['permaLink']; ?>">Tutorial anzeigen</a>
                         </div>
                     <?php }
                 } ?>

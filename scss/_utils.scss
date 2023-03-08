@@ -30,6 +30,7 @@
 $btn-padding: .45em 1.45em;
 
 $col-primary: #cc0000;
+$col-primary-muted: rgb(224, 213, 213);
 $col-warn: #f6cd37;
 $col-gray: #cfcfd1;
 $col-white: #e8e9eb;
@@ -42,6 +43,7 @@ $col-modify: 15%;
 
 $colors: (
         'primary': $col-primary,
+        'primary-muted': $col-primary-muted,
         'gray': $col-gray,
         'font': $col-font
 );
