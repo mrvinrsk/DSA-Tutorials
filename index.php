@@ -168,7 +168,8 @@ sort($tags);
 
             <h4>Hinzugefügt</h4>
             <ul>
-                <li>Minifizierer (CSS, JS) und HTML Validator auf <a href='tutorial/seo#tools'>SEO/SUMO-Seite</a> hinzugefügt</li>
+                <li>Minifizierer (CSS, JS) und HTML Validator auf <a href="tutorial/seo#tools" target="_blank">SEO/SUMO-Seite</a> hinzugefügt</li>
+                <li>Tool zum <a href="tool/word-to-html" target="_blank">Konvertieren von formatierten Word-Texten in HTML</a> hinzugefügt.</li>
             </ul>
 
             <h4>Geändert</h4>
