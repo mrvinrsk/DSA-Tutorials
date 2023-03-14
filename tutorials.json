@@ -1,150 +1,125 @@
 [
-  {
-    "title": "Regular Expressions",
-    "description": "Einführung in Regular Expressions.",
-    "tags": [
-      "Allgemein",
-      "Regular Expressions",
-      "Web"
-    ],
-    "file": "tutorial/regex.php",
-    "permaLink": "tutorial/regex"
-  },
-  {
-    "title": "Secure in Baukästen",
-    "description": "Hier lernst du, wie du dsaSecure in einem Baukasten-System einbinden kannst.",
-    "tags": [
-      "Intern",
-      "DSA Secure",
-      "Web"
-    ],
-    "file": "tutorial/secure-baukasten.php",
-    "permaLink": "tutorial/secure-baukasten"
-  },
-  {
-    "title": "E-Mail Signatur",
-    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten einer E-Mail-Signatur für einen Kunden.",
-    "tags": [
-      "QM",
-      "E-Mail"
-    ],
-    "file": "tutorial/e-mail-signatur.php",
-    "permaLink": "tutorial/email-signatur",
-    "unavailable": true
-  },
-  {
-    "title": "Securecheck durchführen",
-    "description": "Was vor dem Upload einer Website zu beachten ist.",
-    "tags": [
-      "Intern",
-      "Web",
-      "Checkliste"
-    ],
-    "file": "tutorial/securecheck.php",
-    "permaLink": "tutorial/securecheck"
-  },
-  {
-    "title": "Detaileinträge löschen",
-    "description": "Wie man Detaileinträge löscht – hauptsächlich in Verbindung mit Kündigungen.",
-    "tags": [
-      "Intern",
-      "QM",
-      "Detaileintrag"
-    ],
-    "file": "tutorial/detaileintrag-loeschen.php",
-    "permaLink": "tutorial/detaileintrag-loeschen"
-  },
-  {
-    "title": "Secure Einbettungscode erstellen",
-    "description": "Eine simple Erklärung, wie man einen Einbettungscode erhält.",
-    "tags": [
-      "Intern",
-      "DSA Secure",
-      "Web"
-    ],
-    "file": "tutorial/secure-einbettungscode.php",
-    "permaLink": "tutorial/secure-einbettungscode"
-  },
-  {
-    "title": "Neuro-Analyse",
-    "description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
-    "tags": [
-      "Print",
-      "Neuro",
-      "Checkliste"
-    ],
-    "file": "tutorial/neuro-erstellen.php",
-    "beta": true,
-    "permaLink": "tutorial/neuro-erstellen"
-  },
-  {
-    "title": "Reinzeichnung",
-    "description": "Eine Checkliste für das Vorbereiten von Dateien für den Druck.",
-    "tags": [
-      "Print",
-      "Checkliste"
-    ],
-    "file": "tutorial/reinzeichnung.php",
-    "permaLink": "tutorial/reinzeichnung"
-  },
-  {
-    "title": "SEO / SUMO",
-    "description": "Eine Erklärung und Checkliste für das Bearbeiten von SEOs und SUMOs.",
-    "tags": [
-      "SEO/SUMO",
-      "Checkliste"
-    ],
-    "file": "tutorial/seo-sumo.php",
-    "permaLink": "tutorial/seo"
-  },
-  {
-    "title": "Empfohlene Tools",
-    "description": "Finde neue und hilfreiche Tools für die tägliche Arbeit.",
-    "tags": [
-      "Tools"
-    ],
-    "file": "resource/tools.php",
-    "permaLink": "resource/tools"
-  },
-  {
-    "title": "Empfohlene Frameworks",
-    "description": "Finde neue und hilfreiche Frameworks für die tägliche Arbeit.",
-    "tags": [
-      "Web",
-      "Framework"
-    ],
-    "file": "resource/frameworks.php",
-    "permaLink": "resource/frameworks"
-  },
-  {
-    "title": "Matomo einbinden",
-    "description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
-    "tags": [
-      "Web"
-    ],
-    "file": "tutorial/matomo-einbinden.php",
-    "permaLink": "tutorial/matomo"
-  },
-  {
-    "title": "Secure anlegen",
-    "description": "In diesem Tutorial wird das Anlegen eines Secure-Eintrags Schritt-für-Schritt erklärt.",
-    "tags": [
-      "Intern",
-      "DSA Secure",
-      "Web"
-    ],
-    "file": "tutorial/secure-anlegen.php",
-    "unavailable": true,
-    "permaLink": "tutorial/secure-anlegen"
-  },
-  {
-    "title": "E-Mail Einrichtung",
-    "description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten eines E-Mail-Postfachs für einen Kunden.",
-    "tags": [
-      "QM",
-      "E-Mail"
-    ],
-    "file": "tutorial/e-mail-einrichtung.php",
-    "permaLink": "tutorial/email-einrichten"
-  }
+	{
+		"title": "Word 2 HTML",
+		"description": "Konvertiere formatierten Text aus einer Word-Datei in HTML-Code.",
+		"tags": ["SEO/SUMO", "Web"],
+		"file": "tool/word-to-html.php",
+		"permaLink": "tool/word-to-html",
+    "type": "Tool"
+	},
+	{
+		"title": "Regular Expressions",
+		"description": "Einführung in Regular Expressions.",
+		"tags": ["Allgemein", "Regular Expressions", "Web"],
+		"file": "tool/regex.php",
+		"permaLink": "tool/regex",
+		"type": "Tool"
+	},
+	{
+		"title": "Secure in Baukästen",
+		"description": "Hier lernst du, wie du dsaSecure in einem Baukasten-System einbinden kannst.",
+		"tags": ["Intern", "DSA Secure", "Web"],
+		"file": "tutorial/secure-baukasten.php",
+		"permaLink": "tutorial/secure-baukasten",
+		"type": "Tutorial"
+	},
+	{
+		"title": "E-Mail Signatur",
+		"description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten einer E-Mail-Signatur für einen Kunden.",
+		"tags": ["QM", "E-Mail"],
+		"file": "tutorial/e-mail-signatur.php",
+		"permaLink": "tutorial/email-signatur",
+		"unavailable": true,
+		"type": "Tutorial"
+	},
+	{
+		"title": "Securecheck durchführen",
+		"description": "Was vor dem Upload einer Website zu beachten ist.",
+		"tags": ["Intern", "Web", "Checkliste"],
+		"file": "tutorial/securecheck.php",
+		"permaLink": "tutorial/securecheck",
+		"type": "Checklist"
+	},
+	{
+		"title": "Detaileinträge löschen",
+		"description": "Wie man Detaileinträge löscht – hauptsächlich in Verbindung mit Kündigungen.",
+		"tags": ["Intern", "QM", "Detaileintrag"],
+		"file": "tutorial/detaileintrag-loeschen.php",
+		"permaLink": "tutorial/detaileintrag-loeschen",
+		"type": "Tutorial"
+	},
+	{
+		"title": "Secure Einbettungscode erstellen",
+		"description": "Eine simple Erklärung, wie man einen Einbettungscode erhält.",
+		"tags": ["Intern", "DSA Secure", "Web"],
+		"file": "tutorial/secure-einbettungscode.php",
+		"permaLink": "tutorial/secure-einbettungscode",
+		"type": "Tutorial"
+	},
+	{
+		"title": "Neuro-Analyse",
+		"description": "Eine Schritt-für-Schritt-Anleitung für das Erstellen einer Zielgruppen-Analyse.",
+		"tags": ["Print", "Neuro", "Checkliste"],
+		"file": "tutorial/neuro-erstellen.php",
+		"beta": true,
+		"permaLink": "tutorial/neuro-erstellen",
+		"type": "Tutorial"
+	},
+	{
+		"title": "Reinzeichnung",
+		"description": "Eine Checkliste für das Vorbereiten von Dateien für den Druck.",
+		"tags": ["Print", "Checkliste"],
+		"file": "tutorial/reinzeichnung.php",
+		"permaLink": "tutorial/reinzeichnung",
+		"type": "Tutorial"
+	},
+	{
+		"title": "SEO / SUMO",
+		"description": "Eine Erklärung und Checkliste für das Bearbeiten von SEOs und SUMOs.",
+		"tags": ["SEO/SUMO", "Checkliste"],
+		"file": "tutorial/seo-sumo.php",
+		"permaLink": "tutorial/seo",
+		"type": "Checklist"
+	},
+	{
+		"title": "Empfohlene Tools",
+		"description": "Finde neue und hilfreiche Tools für die tägliche Arbeit.",
+		"tags": ["Tools"],
+		"file": "resource/tools.php",
+		"permaLink": "resource/tools",
+		"type": "Resource"
+	},
+	{
+		"title": "Empfohlene Frameworks",
+		"description": "Finde neue und hilfreiche Frameworks für die tägliche Arbeit.",
+		"tags": ["Web", "Framework"],
+		"file": "resource/frameworks.php",
+		"permaLink": "resource/frameworks",
+		"type": "Resource"
+	},
+	{
+		"title": "Matomo einbinden",
+		"description": "Lerne in 5 Minuten, wie du Matomo auf einer Seite einbaust.",
+		"tags": ["Web"],
+		"file": "tutorial/matomo-einbinden.php",
+		"permaLink": "tutorial/matomo",
+		"type": "Tutorial"
+	},
+	{
+		"title": "Secure anlegen",
+		"description": "In diesem Tutorial wird das Anlegen eines Secure-Eintrags Schritt-für-Schritt erklärt.",
+		"tags": ["Intern", "DSA Secure", "Web"],
+		"file": "tutorial/secure-anlegen.php",
+		"unavailable": true,
+		"permaLink": "tutorial/secure-anlegen",
+		"type": "Tutorial"
+	},
+	{
+		"title": "E-Mail Einrichtung",
+		"description": "Dieses Tutorial enthält eine ausführliche Schritt-für-Schritt-Anleitung für das Einrichten eines E-Mail-Postfachs für einen Kunden.",
+		"tags": ["QM", "E-Mail"],
+		"file": "tutorial/e-mail-einrichtung.php",
+		"permaLink": "tutorial/email-einrichten",
+		"type": "Tutorial"
+	}
 ]

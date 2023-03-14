@@ -29,6 +29,7 @@
         <script src="../js/tutorial.js"></script>
         <script src="../js/media.js"></script>
         <script src="../js/popups.js"></script>
+        <script src="../js/pdfmake.min.js"></script>
         <!-- <script src='../js/slide.js' async></script> -->
 
         <!-- <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script> -->
@@ -173,9 +174,18 @@
 
                                 <div>
                                     <div class='check'>
+                                        <div class="checkbox-wrapper"
+                                             data-missing='Mailto von Secure einbinden'><input
+                                                    type='checkbox'></div>
+                                        <div>Secure Mailto eingebunden?</div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class='check'>
                                         <div class="checkbox-wrapper" data-missing='Matomo auf jeder Unterseite einbinden'><input
                                                     type='checkbox'></div>
-                                        <div>Matomo eingebunden</div>
+                                        <div>Matomo eingebunden?</div>
                                     </div>
                                 </div>
 
@@ -229,7 +239,7 @@
                                     <div class='check'>
                                         <div class="checkbox-wrapper" data-missing='Bildquellen im Impressum eintragen'><input
                                                     type='checkbox'></div>
-                                        <div>Bildquellen im Impressum</div>
+                                        <div>Bildquellen im Impressum?</div>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +259,7 @@
                                     <div class='check'>
                                         <div class="checkbox-wrapper" data-missing='Impressum unvollständig'><input
                                                     type='checkbox'></div>
-                                        <div>Impressum vollständig</div>
+                                        <div>Impressum vollständig?</div>
                                     </div>
                                 </div>
 
@@ -318,7 +328,7 @@
                     </p>
 
                     <div class='buttons left small'>
-                        <button class='button' id='generate-check-file' onclick='generateCheck();'>Generieren</button>
+                        <button class='button' id='generate-check-file' onclick='downloadPDF();'>Generieren</button>
                     </div>
                 </div>
             </div>
@@ -360,6 +370,80 @@
             }
 
             updateHTMLValidate();
+
+
+            function addTextWithPadding(pdf, text, padding) {
+                // Set the font size and type
+                pdf.setFontSize(12);
+                pdf.setFont("helvetica", "normal");
+
+                // Set the x and y position of the text
+                var x = padding;
+                var y = padding;
+
+                // Loop through the text and add it to the PDF with line wrapping
+                var lineHeight = 15;
+                var maxWidth = pdf.internal.pageSize.width - padding * 2;
+                var words = text.split(' ');
+                for (var n = 0; n < words.length; n++) {
+                    var testLine = words[n];
+                    var metrics = pdf.getStringUnitWidth(testLine) * pdf.internal.getFontSize();
+                    while (n < words.length - 1 && metrics < maxWidth) {
+                        n++;
+                        testLine += ' ' + words[n];
+                        metrics = pdf.getStringUnitWidth(testLine) * pdf.internal.getFontSize();
+                    }
+                    if (y + lineHeight > pdf.internal.pageSize.height - padding) {
+                        pdf.addPage();
+                        y = padding;
+                    }
+                    pdf.text(testLine, x, y);
+                    y += lineHeight;
+                }
+            }
+
+
+            function downloadPDF() {
+                let missing = document.querySelectorAll("[data-name='securecheck'] [data-missing]:not(.checked)");
+                let kdnr = (document.querySelector("#kdnr").value.length > 0 ? document.querySelector("#kdnr").value : 0);
+                let allMissings = [];
+                let padding = 10;
+
+                missing.forEach(missing => {
+                    let missingText = missing.dataset.missing;
+
+                    allMissings.push(missingText);
+                });
+
+                let list = "";
+                if (missing.length >= 1) {
+                    list = allMissings.map(item => `- ${item}\n`).join("");
+                } else {
+                    list = "- Nichts, herzlichen Glückwunsch!"
+                }
+
+                $.ajax({
+                    url: '../php/fw/create-securecheck.php',
+                    method: 'POST',
+                    data: {
+                        kd: kdnr,
+                        list: list,
+                        url: encodeURIComponent(window.location)
+                    },
+                    xhrFields: {
+                        responseType: 'blob'
+                    },
+                    success: function (data) {
+                        var url = window.URL.createObjectURL(new Blob([data]));
+                        var a = document.createElement('a');
+                        a.href = url;
+                        a.download = `securecheck-${kdnr}.pdf`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }
+                });
+            }
         </script>
     </body>
 </html>

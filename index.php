@@ -174,6 +174,7 @@ sort($tags);
             <h4>Geändert</h4>
             <ul>
                 <li>Bug behoben, wodurch die Seiten "Empfohlene Tools" und "Empfohlene Frameworks" nicht erreichbar waren.</li>
+                <li><a href='tutorial/securecheck.php'>Securechecks</a> werden jetzt als PDF runtergeladen.</li>
             </ul>
 
             <h4>Entfernt</h4>

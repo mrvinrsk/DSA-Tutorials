@@ -190,7 +190,11 @@
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Text einfügen u. gestalten</span>
+                                        <div>Text einfügen und gestalten
+                                            <div class='explanation'>
+                                                Beim einfügen der Texte darauf achten, dass die fetten Wörter 1:1 übernommen werden. Dazu kannst du ganz einfach den Text aus der Word-Datei kopieren, <a href="../tool/word-to-html" target="_blank">hier</a> einfügen und dir das fertige HTML dafür kopieren.
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class='check'>
