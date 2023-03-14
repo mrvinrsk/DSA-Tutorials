@@ -5,7 +5,7 @@
 		"tags": ["SEO/SUMO", "Web"],
 		"file": "tool/word-to-html.php",
 		"permaLink": "tool/word-to-html",
-    "type": "Tool"
+		"type": "Tool"
 	},
 	{
 		"title": "Regular Expressions",

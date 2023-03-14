@@ -156,7 +156,26 @@ sort($tags);
                                     <a href='?tag=<?php echo $tag; ?>' class="tag"><?php echo $tag; ?></a>
                                 <?php } ?>
                             </div>
-                            <a class="button" data-hover-text="Lesen" href="<?php echo $entry['permaLink']; ?>">Tutorial anzeigen</a>
+
+                            <?php 
+                            $what = "Artikel anzeigen";
+
+                            switch (strtolower($entry["type"])) {
+                                case 'tutorial':
+                                    $what = "Tutorial anzeigen";
+                                    break;
+                                    
+                                case 'tool':
+                                    $what = "Tool öffnen";
+                                    break;
+
+                                case 'checklist':
+                                    $what = "Checkliste aufrufen";
+                                    break;
+                            }
+                            ?>
+
+                            <a class="button" data-hover-text="Lesen" href="<?php echo $entry['permaLink']; ?>"><?php echo $what; ?></a>
                         </div>
                     <?php }
                 } ?>
