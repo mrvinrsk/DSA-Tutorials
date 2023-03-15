@@ -196,7 +196,8 @@ sort($tags);
             <h4>Geändert</h4>
             <ul>
                 <li>Bug behoben, wodurch die Seiten "Empfohlene Tools" und "Empfohlene Frameworks" nicht erreichbar waren.</li>
-                <li><a href='tutorial/securecheck.php'>Securechecks</a> werden jetzt als PDF runtergeladen.</li>
+                <li><a href='tutorial/securecheck'>Securechecks</a> werden jetzt als PDF runtergeladen.</li>
+                <li>Auffrischung des Startseiten-Layouts</li>
             </ul>
 
             <h4>Entfernt</h4>
@@ -204,6 +205,8 @@ sort($tags);
                 <li>-</li>
             </ul>
         </div>
+
+        <?php include_once('element/footer.php'); ?>
 
         <script src='js/popups.js' defer async></script>
         <script>

@@ -133,6 +133,7 @@ a,
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .25em;
+  font-family: "Merriweather", Times, serif;
 
   @media screen and (min-width: utils.$bp-tablet) {
     margin-bottom: .5em;
@@ -154,9 +155,30 @@ body {
 }
 
 main, html .center, body.tutorial .content, body.tutorial .heading-content {
-  width: min(90%, 60rem);
+  width: min(95%, 50rem);
   margin-inline: auto;
-  padding-block: 5%;
+  padding-block: 2.5%;
+}
+
+.title-container .title, h2 {
+  font-size: 1.5rem;
+  @media screen and (utils.$bp-tablet) {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 1.2rem;
+  @media screen and (utils.$bp-tablet) {
+    font-size: 1.5rem;
+  }
+}
+
+h4 {
+  font-size: 1.1rem;
+  @media screen and (utils.$bp-tablet) {
+    font-size: 1.25rem;
+  }
 }
 
 html body.tutorial .heading-content, html body.tutorial .content {
@@ -214,12 +236,12 @@ ul {
   }
 }
 
-.button {
+html body .button {
   position: relative;
   display: inline-block;
   text-align: center;
   padding: utils.$btn-padding;
-  text-decoration: none;
+  text-decoration: none !important;
   overflow: hidden;
   background-color: transparent;
   border: 1px solid utils.$col-primary;
@@ -436,14 +458,13 @@ $pulseSpeed: (
 
   @media screen and (min-width: utils.$bp-tablet) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
   }
 
   @media screen and (min-width: utils.$bp-desktop) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 2.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
   }
 }
 
@@ -661,6 +682,11 @@ ul {
   &.row {
     flex-direction: row;
   }
+}
+
+footer {
+  background-color: utils.$col-primary-dark;
+  color: utils.$col-white-element;
 }
 
 @import "popups";
