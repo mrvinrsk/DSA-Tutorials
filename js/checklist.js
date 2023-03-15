@@ -17,12 +17,20 @@ function finished(checklist) {
     return checked === total;
 }
 
+function getPercentage(checklist) {
+    let checked = checklist.querySelectorAll('input[type=checkbox]:checked').length;
+    let total = checklist.querySelectorAll('input[type=checkbox]').length;
+    let completion = (checked * 100) / total;
+
+    return completion.toFixed(0);
+}
+
 function getProgress(checklist) {
     let checked = checklist.querySelectorAll('input[type=checkbox]:checked').length;
     let total = checklist.querySelectorAll('input[type=checkbox]').length;
     let completion = (checked * 100) / total;
 
-    let string = `Fortschritt: ${checked}/${total} (${completion.toFixed(0)}%)`;
+    let string = `Fortschritt: ${checked}/${total} (${getPercentage(checklist)}%)`;
     if (checked === total) {
         string += ` – ${congratulations[Math.floor(Math.random() * congratulations.length)]}`;
     }
@@ -123,14 +131,26 @@ function updateList(checklist) {
         progress.classList.add('progress');
         progress.innerHTML = `${getProgress(checklist)}`;
 
+        const progressBar = (checklist.querySelector('.progress-bar') ? checklist.querySelector('.progress-bar') : document.createElement('div'));
+        progressBar.classList.add('progress-bar');
+        progressBar.style.width = getPercentage(checklist) + '%';
+
+
         if (finished(checklist)) {
-            progress.classList.add('finished');
+            checklist.classList.add('finished');
         } else {
-            progress.classList.remove('finished');
+            checklist.classList.remove('finished');
         }
 
         const firstCheck = checklist.firstChild;
-        checklist.insertBefore(progress, firstCheck);
+
+        if(!checklist.querySelector(".progress")) {
+            checklist.insertBefore(progress, firstCheck);
+        }
+
+        if(!checklist.querySelector(".progress-bar")) {
+            checklist.insertBefore(progressBar, firstCheck);
+        }
     }
 
     if (finished(checklist)) {
@@ -143,7 +163,7 @@ function updateList(checklist) {
 $(function () {
     document.querySelectorAll('.checklist').forEach(checklist => {
         checklist.querySelectorAll('.check').forEach(check => {
-            if(hasChild(check, '.explanation')) {
+            if (hasChild(check, '.explanation')) {
                 check.classList.add('has-explanation');
             }
         });

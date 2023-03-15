@@ -335,73 +335,7 @@
         </main>
 
         <script defer>
-            function generateCheck() {
-                let missing = document.querySelectorAll("[data-name='securecheck'] [data-missing]:not(.checked)");
-                let kdnr = (document.querySelector("#kdnr").value.length > 0 ? document.querySelector("#kdnr").value : 0);
-                let allMissings = [];
-
-                missing.forEach(missing => {
-                    let missingText = missing.dataset.missing;
-
-                    allMissings.push(missingText);
-                });
-
-                let list = "";
-                if (missing.length >= 1) {
-                    list = allMissings.map(item => `- ${item}\n`).join("");
-                } else {
-                    list = "- Nichts, herzlichen Glückwunsch!"
-                }
-                let text = [
-                    "Securecheck",
-                    "Beim Securecheck zum Kunden " + kdnr + " sind folgende Dinge aufgefallen, die noch erledigt werden müssen bevor du das Projekt umstellen kannst:",
-                    "",
-                    list,
-                    "",
-                    "Bitte beachte allgemein, dass Dinge wie SEO-Texte von alten HPs übernommen werden und vor dem Upload von der alten Seite ein Backup gemacht werden muss.",
-                    "",
-                    "",
-                    "Generiert durch: " + window.location,
-                    "(Entwickelt von Marvin Roßkothen)"
-                ];
-
-                text = text.join("\n");
-                download("securecheck-" + kdnr + ".txt", text);
-            }
-
             updateHTMLValidate();
-
-
-            function addTextWithPadding(pdf, text, padding) {
-                // Set the font size and type
-                pdf.setFontSize(12);
-                pdf.setFont("helvetica", "normal");
-
-                // Set the x and y position of the text
-                var x = padding;
-                var y = padding;
-
-                // Loop through the text and add it to the PDF with line wrapping
-                var lineHeight = 15;
-                var maxWidth = pdf.internal.pageSize.width - padding * 2;
-                var words = text.split(' ');
-                for (var n = 0; n < words.length; n++) {
-                    var testLine = words[n];
-                    var metrics = pdf.getStringUnitWidth(testLine) * pdf.internal.getFontSize();
-                    while (n < words.length - 1 && metrics < maxWidth) {
-                        n++;
-                        testLine += ' ' + words[n];
-                        metrics = pdf.getStringUnitWidth(testLine) * pdf.internal.getFontSize();
-                    }
-                    if (y + lineHeight > pdf.internal.pageSize.height - padding) {
-                        pdf.addPage();
-                        y = padding;
-                    }
-                    pdf.text(testLine, x, y);
-                    y += lineHeight;
-                }
-            }
-
 
             function downloadPDF() {
                 let missing = document.querySelectorAll("[data-name='securecheck'] [data-missing]:not(.checked)");

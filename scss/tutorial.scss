@@ -135,19 +135,37 @@ ul li div {
     font-size: 1.15rem;
     font-weight: 600;
     color: utils.$col-primary;
-    margin-bottom: 1em;
     width: 100%;
     transition-duration: .25s;
 
     @media screen and (min-width: utils.$bp-tablet) {
       width: unset;
     }
+  }
 
-    &.finished {
-      color: utils.$col-gray;
+  .progress-bar {
+    height: 3px;
+    border-radius: 3px;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    background-color: utils.$col-primary;
+    overflow: hidden;
+    transition-duration: .25s;
+  }
+
+  &.finished {
+    .progress {
+      max-height: 0;
+      color: utils.$col-white;
       background-color: utils.$col-primary;
       margin-bottom: 0;
       padding: .5em 1em;
+    }
+
+    .progress-bar {
+      height: 2px;
+      margin: 0;
+      background-color: transparent;
     }
   }
 
