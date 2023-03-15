@@ -31,6 +31,7 @@ sort($tags);
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <link rel="stylesheet" href="flaticon/flaticon_dsa_tutorials.css">
         <link rel="stylesheet" href="css/global.min.css">
         <link rel="stylesheet" href="css/index.min.css">
 
@@ -57,13 +58,10 @@ sort($tags);
             </div>
         </div>
 
-        <main>
+        <main id='start'>
             <div class='heading'>
                 <h1>DSA-Tutorials</h1>
-                <p>DSA-Tutorials ist eine, von Marvin Roßkothen erstellte, Sammlung an Tutorials und Ressourcen welche den
-                   Mitarbeitern der <a href='https://dsa-marketing.ag/' target='_blank'>dsa&nbsp;Marketing&nbsp;AG</a> zugute
-                   kommen soll. Sämtliches Feedback bitte per Mail an <a href='mailto:m.rosskothen@dsa-marketing.ag'>m.rosskothen@dsa-marketing.ag</a>.
-                </p>
+                <i id='top' class='flaticon-up-arrow'></i>
             </div>
 
             <div class='search-buttons-container'>
@@ -157,16 +155,20 @@ sort($tags);
                                 <?php } ?>
                             </div>
 
-                            <?php 
+                            <?php
                             $what = "Artikel anzeigen";
 
                             switch (strtolower($entry["type"])) {
                                 case 'tutorial':
                                     $what = "Tutorial anzeigen";
                                     break;
-                                    
+
                                 case 'tool':
                                     $what = "Tool öffnen";
+                                    break;
+
+                                case 'resource':
+                                    $what = "Resource ansehen";
                                     break;
 
                                 case 'checklist':
@@ -204,5 +206,44 @@ sort($tags);
         </div>
 
         <script src='js/popups.js' defer async></script>
+        <script>
+            const heading = document.querySelector('.heading');
+            let isSticky = false;
+            let timeoutId;
+
+            function handleScroll() {
+                if (heading.getBoundingClientRect().top <= heading.style.top) {
+                    if (!isSticky) {
+                        heading.classList.add('sticked');
+                        isSticky = true;
+                        timeoutId = setTimeout(() => {
+                            isSticky = false;
+                        }, 300);
+                    }
+                } else {
+                    heading.classList.remove('sticked');
+                    clearTimeout(timeoutId);
+                    isSticky = false;
+                }
+            }
+
+            function handleClassChange(mutationsList, observer) {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class' && !mutation.target.classList.contains('sticked')) {
+                        clearTimeout(timeoutId);
+                        isSticky = false;
+                    }
+                }
+            }
+
+            const observer = new MutationObserver(handleClassChange);
+            observer.observe(heading, { attributes: true });
+
+            document.addEventListener('scroll', handleScroll, false);
+
+            document.querySelector('#top').addEventListener('click', () => {
+                scrollToElement(document.querySelector('#start'));
+            });
+        </script>
     </body>
 </html>

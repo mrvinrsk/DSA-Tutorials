@@ -288,3 +288,82 @@ html .search-info-text {
 html body .changelog {
   padding-top: 0;
 }
+
+.heading {
+  position: sticky;
+  z-index: 997;
+  top: 0;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  border-radius: 10px;
+  background-color: utils.$col-primary;
+  overflow: hidden;
+  transition-duration: .25s;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    margin-bottom: 3.5em;
+  }
+
+  &.sticked {
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
+
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.75rem;
+      text-align: left;
+
+      margin: .5rem 1rem;
+
+      @media screen and (min-width: utils.$bp-tablet) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+      }
+
+      @media screen and (min-width: utils.$bp-desktop) {
+        font-size: 3.25rem;
+        line-height: 3.25rem;
+      }
+    }
+
+    #top {
+      pointer-events: auto;
+      cursor: pointer;
+      right: 0;
+    }
+  }
+
+  h1 {
+    color: utils.$col-white;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin: 1rem 2rem;
+    transition-duration: .25s;
+
+    @media screen and (min-width: utils.$bp-tablet) {
+      font-size: 3.75rem;
+      line-height: 3.75rem;
+    }
+
+    @media screen and (min-width: utils.$bp-desktop) {
+      font-size: 5rem;
+      line-height: 5rem;
+    }
+  }
+
+  #top {
+    position: absolute;
+    top: 0;
+    right: -20%;
+    height: 100%;
+    padding: .5rem;
+    pointer-events: none;
+    background-color: utils.$col-white;
+    color: utils.$col-primary;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1/1;
+    transition-duration: .25s;
+  }
+}

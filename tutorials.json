@@ -1,5 +1,13 @@
 [
 	{
+		"title": "Terminal Commands",
+		"description": "Alle möglichen nützlichen Commands für Mac.",
+		"tags": ["Mac"],
+		"file": "resource/terminal-commands.php",
+		"permaLink": "resource/mac-commands",
+		"type": "Resource"
+	},
+	{
 		"title": "Word 2 HTML",
 		"description": "Konvertiere formatierten Text aus einer Word-Datei in HTML-Code.",
 		"tags": ["SEO/SUMO", "Web"],

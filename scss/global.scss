@@ -16,6 +16,10 @@ html, body {
   line-height: 175%;
 }
 
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+  display: block;
+}
+
 .icon {
   font-family: "Material Symbols Outlined";
   font-weight: normal;

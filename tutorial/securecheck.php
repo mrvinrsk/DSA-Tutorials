@@ -29,7 +29,6 @@
         <script src="../js/tutorial.js"></script>
         <script src="../js/media.js"></script>
         <script src="../js/popups.js"></script>
-        <script src="../js/pdfmake.min.js"></script>
         <!-- <script src='../js/slide.js' async></script> -->
 
         <!-- <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script> -->
@@ -71,9 +70,9 @@
             <div class="content">
                 <div
                         class="dsgvo-media"
-                        data-alt="SEO Bild"
-                        data-custom-attribution="https://www.pexels.com/de-de/foto/stift-kalender-tun-kontroll-liste-3243/"
-                        data-custom-attribution-link="https://www.pexels.com/de-de/foto/stift-kalender-tun-kontroll-liste-3243/"
+                        data-alt="Terminal"
+                        data-custom-attribution="https://www.pexels.com/de-de/foto/computercodes-207580/"
+                        data-custom-attribution-link="https://www.pexels.com/de-de/foto/computercodes-207580/"
                         data-position='center 85%'
                         data-src="https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         data-src-mobile="https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=900&dpr=1"
@@ -328,7 +327,7 @@
                     </p>
 
                     <div class='buttons left small'>
-                        <button class='button' id='generate-check-file' onclick='downloadPDF();'>Generieren</button>
+                        <button class='button' id='generate-check-file'>Generieren</button>
                     </div>
                 </div>
             </div>
@@ -337,7 +336,7 @@
         <script defer>
             updateHTMLValidate();
 
-            function downloadPDF() {
+            document.querySelector('#generate-check-file').addEventListener('click', () => {
                 let missing = document.querySelectorAll("[data-name='securecheck'] [data-missing]:not(.checked)");
                 let kdnr = (document.querySelector("#kdnr").value.length > 0 ? document.querySelector("#kdnr").value : 0);
                 let allMissings = [];
@@ -352,32 +351,15 @@
                 let list = "";
                 if (missing.length >= 1) {
                     list = allMissings.map(item => `- ${item}\n`).join("");
-                } else {
-                    list = "- Nichts, herzlichen Glückwunsch!"
                 }
 
-                $.ajax({
-                    url: '../php/fw/create-securecheck.php',
-                    method: 'POST',
-                    data: {
-                        kd: kdnr,
-                        list: list,
-                        url: encodeURIComponent(window.location)
-                    },
-                    xhrFields: {
-                        responseType: 'blob'
-                    },
-                    success: function (data) {
-                        var url = window.URL.createObjectURL(new Blob([data]));
-                        var a = document.createElement('a');
-                        a.href = url;
-                        a.download = `securecheck-${kdnr}.pdf`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                    }
-                });
-            }
+                let dat = {
+                    kd: kdnr,
+                    list: list
+                };
+
+                downloadPDF('../php/fw/create-securecheck.php', `securecheck-${kdnr}`, dat);
+            });
         </script>
     </body>
 </html>

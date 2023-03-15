@@ -295,7 +295,7 @@ $(function () {
         });
 
         ['mousemove', 'touchmove'].forEach(listener => {
-            if(window.innerWidth >= 768) {
+            if (window.innerWidth >= 768) {
                 document.addEventListener(listener, (e) => {
                     if (document.querySelector(".drag-move[data-dragging]")) {
                         let drag = document.querySelector(".drag-move[data-dragging]");
@@ -329,3 +329,28 @@ $(function () {
         });
     }
 });
+
+function downloadPDF(path, filename, data) {
+    if(!data) {
+        data = {};
+    }
+    data['url'] = encodeURIComponent(window.location);
+
+    $.ajax({
+        url: path,
+        method: 'POST',
+        data: data,
+        xhrFields: {
+            responseType: 'blob'
+        },
+        success: function (data) {
+            var url = window.URL.createObjectURL(new Blob([data]));
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = `${filename}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    });
+}
