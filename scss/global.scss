@@ -627,6 +627,17 @@ ul {
   }
 }
 
+.cbw {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+
+  input[type=checkbox] {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
 .copy-button {
   position: relative;
   text-decoration: underline;

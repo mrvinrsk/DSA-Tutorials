@@ -86,6 +86,9 @@
 
                     <div class='step-set'>
                         <div class='step product-type active'>
+                            <h3>Um welchen Kunden geht es?</h3>
+                            <input type='text' pattern='[0-9]' placeholder='Kundennummer' id='kdnr'>
+
                             <h3>Um was für eine Art Produkt handelt es sich?</h3>
 
                             <div class='button-set'>
@@ -112,7 +115,7 @@
                             </div>
                         </div>
 
-                        <div class='step fill-website-1'>
+                        <div class='step website fill-website-1'>
                             <h3 class='mb-4'>Geht es um eine ganze Website, oder Onepage?</h3>
 
                             <div class='simpleflex radio_wrapper horizontal mb-2'>
@@ -131,53 +134,53 @@
                             </div>
                         </div>
 
-                        <div class='step fill-website-2'>
+                        <div class='step website fill-website-2'>
                             <h3>Funktionalität</h3>
 
                             <div class='accordion-flex'>
-                                <div class='accordion-grid mb-3'>
+                                <div class='accordion-grid functionality mb-3'>
                                     <div class="cbw">
                                         <input type='checkbox' id='contact' data-what='contact-form' data-text='Kontaktformular'>
                                         <label for='contact'>Kontaktformular</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='call' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='call' data-what='call' data-text='Direktanruf'>
                                         <label for='call'>Direktanruf</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='editable' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='editable' data-what='editable' data-text='Editierbare Seite'>
                                         <label for='editable'>Editierbare Seite</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='cms' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='cms' data-what='cms' data-text='CMS'>
                                         <label for='cms'>CMS</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='shop' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='shop' data-what='shop' data-text='Shop'>
                                         <label for='shop'>Shop-System</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='gallery' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='gallery' data-what='gallery' data-text='Bildergalerie'>
                                         <label for='gallery'>Bildergalerie</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='slider' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='slider' data-what='slider' data-text='Slider'>
                                         <label for='slider'>Slider</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='maps' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='maps' data-what='maps' data-text='Google Maps'>
                                         <label for='maps'>Google Maps</label>
                                     </div>
 
                                     <div class="cbw">
-                                        <input type='checkbox' id='video' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='video' data-what='video' data-text='Video'>
                                         <label for='video'>Video</label>
                                     </div>
                                 </div>
@@ -194,7 +197,7 @@
                             </div>
                         </div>
 
-                        <div class='step fill-website-3'>
+                        <div class='step website fill-website-3'>
                             <h3>Navigation</h3>
                             <p>
                                 Welche Navigationspunkte wünscht sich der Kunde?
@@ -213,7 +216,7 @@
                             </div>
                         </div>
 
-                        <div class='step fill-website-4'>
+                        <div class='step website fill-website-4'>
                             <h3>Material</h3>
 
                             <div class='accordion-flex'>
@@ -283,7 +286,7 @@
 
                             <div class='navigation'>
                                 <span class='previous' data-step='fill-website-2'>Zurück</span>
-                                <span class='next' data-step='fill-website-4'>Weiter</span>
+                                <span class='next' id='pdf-website'>Test PDF</span>
                             </div>
                         </div>
 
@@ -320,5 +323,24 @@
         </main>
 
         <script async src='../js/stepsets.js'></script>
+        <script>
+            document.querySelector("#pdf-website").addEventListener("click", () => {
+                let kdnr = document.querySelector('#kdnr').value;
+                let func = "";
+
+                each(".functionality", (el) => {
+                    func = func.join("- " + el.dataset.text + "<br>");
+                });
+
+
+                let data = {
+                    kd: kdnr,
+                    website_type: document.querySelector('.website .radio_wrapper .radio.checked').dataset.what,
+                    functionality: func
+                };
+
+                downloadPDF("../php/fw/briefing-website.php", `briefing-${kdnr}-website`, data);
+            });
+        </script>
     </body>
 </html>

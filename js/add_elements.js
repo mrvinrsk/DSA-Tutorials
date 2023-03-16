@@ -3,6 +3,8 @@ function updateListeners(ae) {
         if (!listElement.dataset.listenersAttached) {
             listElement.querySelector("input").addEventListener("keyup", (keyboard) => {
                 if (keyboard.key === "Enter") {
+                    keyboard.preventDefault();
+
                     if (!listElement.nextElementSibling) {
                         if (!listElement.parentElement.dataset.canAdd || listElement.parentElement.dataset.canAdd <= 0) {
                             const addedLI = document.createElement("li");
