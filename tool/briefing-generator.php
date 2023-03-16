@@ -85,36 +85,12 @@
                     <?php } ?>
 
                     <div class='step-set'>
-                        <div class='step start active'>
-                            <span class='small-headline'>Das wichtigste zuerst:</span>
-                            <h3>Gibt es eine Deadline?</h3>
-
-                            <div class='conditional-cb'>
-                                <div class="cbw">
-                                    <input type='checkbox' id='shop' data-what='contact-form' data-text='Kontaktformular'>
-                                    <label for='shop'>Ja, für den...</label>
-                                </div>
-
-                                <div class='conditional-content' data-checked>
-                                    <input type='text' placeholder='Deadline'>
-                                </div>
-                            </div>
-
-                            <div class='navigation'>
-                                <span class='next' data-step='product-type'>Weiter</span>
-                            </div>
-                        </div>
-
-                        <div class='step product-type'>
+                        <div class='step product-type active'>
                             <h3>Um was für eine Art Produkt handelt es sich?</h3>
 
                             <div class='button-set'>
                                 <span class='button' data-step='specify-digital'>Digital</span>
                                 <span class='button' data-step='unavailable'>Print</span>
-                            </div>
-
-                            <div class='navigation'>
-                                <span class='previous' data-step='start'>Zurück</span>
                             </div>
                         </div>
 
@@ -132,7 +108,7 @@
                             </div>
 
                             <div class='navigation'>
-                                <span class='previous' data-step='start'>Zurück</span>
+                                <span class='previous' data-step='product-type'>Zurück</span>
                             </div>
                         </div>
 
@@ -308,6 +284,26 @@
                             <div class='navigation'>
                                 <span class='previous' data-step='fill-website-2'>Zurück</span>
                                 <span class='next' data-step='fill-website-4'>Weiter</span>
+                            </div>
+                        </div>
+
+                        <div class='step deadline'>
+                            <span class='small-headline'>Das wichtigste zuerst:</span>
+                            <h3>Gibt es eine Deadline?</h3>
+
+                            <div class='conditional-cb'>
+                                <div class="cbw">
+                                    <input type='checkbox' id='shop' data-what='contact-form' data-text='Kontaktformular'>
+                                    <label for='shop'>Ja, für den...</label>
+                                </div>
+
+                                <div class='conditional-content' data-checked>
+                                    <input type='text' placeholder='Deadline'>
+                                </div>
+                            </div>
+
+                            <div class='navigation'>
+                                <span class='next' data-step='product-type'>Weiter</span>
                             </div>
                         </div>
 
