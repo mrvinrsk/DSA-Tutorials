@@ -1,0 +1,12 @@
+@use "utils";
+
+.add-elements {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+
+  input {
+    border: none;
+    background-color: utils.$col-gray;
+  }
+}

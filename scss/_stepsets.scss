@@ -1,0 +1,37 @@
+@use "utils";
+
+.step-set {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  transition-duration: 0.5s;
+
+  .step {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 110%;
+    transition-duration: 0.5s;
+
+    &.active {
+      left: 0;
+    }
+
+    &.finished {
+      left: -110%;
+    }
+  }
+
+  [data-previous-step],
+  [data-next-step],
+  [data-step] {
+    cursor: pointer;
+  }
+
+  .navigation {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}

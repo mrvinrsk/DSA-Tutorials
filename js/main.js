@@ -328,10 +328,24 @@ $(function () {
             });
         });
     }
+
+    if (document.querySelector(".radio")) {
+        document.querySelectorAll(".radio_wrapper").forEach(radio_wrapper => {
+            radio_wrapper.querySelectorAll(".radio").forEach(radio => {
+                radio.addEventListener('click', () => {
+                    radio_wrapper.querySelectorAll(".radio").forEach(r => {
+                        r.classList.remove("checked");
+                    });
+
+                    radio.classList.add("checked");
+                });
+            });
+        });
+    }
 });
 
 function downloadPDF(path, filename, data) {
-    if(!data) {
+    if (!data) {
         data = {};
     }
     data['url'] = encodeURIComponent(window.location);
@@ -353,4 +367,9 @@ function downloadPDF(path, filename, data) {
             document.body.removeChild(a);
         }
     });
+}
+
+function each(selector, callback, searchFrom = document) {
+    const elements = searchFrom.querySelectorAll(selector);
+    elements.forEach(callback);
 }

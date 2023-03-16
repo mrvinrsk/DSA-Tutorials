@@ -1,0 +1,17 @@
+@use "utils";
+
+.conditional-cb {
+
+  .conditional-content {
+    border-left: 1px solid utils.$col-primary;
+    padding-left: 1rem;
+    margin-left: .4rem;
+    padding-top: .75rem;
+    padding-bottom: .25rem;
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+}

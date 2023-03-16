@@ -12,10 +12,6 @@ html, body {
   background-color: utils.$col-white;
 }
 
-:root {
-  line-height: 175%;
-}
-
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
   display: block;
 }
@@ -95,11 +91,6 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  color: utils.$col-font;
-  font-family: "PT Sans", sans-serif;
 }
 
 /* Hide animated elements on beginning */
@@ -233,6 +224,17 @@ ul {
 
   @media screen and (min-width: 768px) {
     margin-bottom: 3.5rem;
+  }
+}
+
+.button-set {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -437,6 +439,10 @@ code, .code-display {
 
 :root {
   --pulse-color: #343434;
+  color: utils.$col-font;
+  font-family: "PT Sans", sans-serif;
+  line-height: 160%;
+  accent-color: utils.$col-primary;
 }
 
 $pulseSpeed: (
@@ -477,11 +483,25 @@ kbd {
   box-shadow: 0 2px 2px rgba(0 0 0 / 7.5%);
 }
 
-input[type=text], input[type=number], input[type=email], input[type=password], textarea, div[contenteditable] {
+.small-headline {
+  margin-bottom: 0;
+  color: utils.$col-gray;
+}
+
+html body .small-headline + :is(h1,h2,h3,h4,h5,h6) {
+  margin-top: 0;
+}
+
+input[type=text], input[type=number], input[type=email], input[type=password], input[type=url], textarea, div[contenteditable] {
   background-color: utils.$col-white;
   border: 2px solid utils.$col-primary;
+  border-radius: 3px;
 
   outline: none;
+
+  &.full {
+    width: 100%;
+  }
 
   &:is(input) {
     padding: .5em;
@@ -493,6 +513,7 @@ input[type=text], input[type=number], input[type=email], input[type=password], t
     height: 15ch;
     max-height: 50ch;
     margin-block: 1rem;
+    border-radius: 5px;
     padding: 1em;
     width: 100%;
     overflow-y: auto;
@@ -689,5 +710,82 @@ footer {
   color: utils.$col-white-element;
 }
 
+/* Radiobuttons */
+.radio_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+
+  &.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  &.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .radio {
+    border: 1px solid transparentize(utils.$col-primary, .9);
+    border-radius: 5px;
+    background-color: transparent;
+    color: utils.$col-primary;
+    text-align: center;
+    padding: .2em .6em;
+    transition-duration: 250ms;
+
+    &:hover {
+      border-color: transparentize(utils.$col-primary, .4);
+      cursor: pointer;
+    }
+
+    &.checked {
+      border-color: utils.$col-primary;
+      background-color: transparentize(utils.$col-primary, .9);
+    }
+  }
+}
+
+
+@for $x from 0 through 10 {
+  .mt-#{$x} {
+    margin-top: $x * .5rem;
+  }
+
+  .mb-#{$x} {
+    margin-bottom: $x * .5rem;
+  }
+}
+
+.overlay-button {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: .25rem .5rem;
+  text-align: center;
+  background-color: utils.$col-primary-dark;
+  color: utils.$col-white;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 250ms;
+
+  @media screen and (min-width: utils.$bp-tablet) {
+    width: unset;
+    left: unset;
+    right: 0;
+    bottom: 3rem;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+
 @import "popups";
 @import "accordions";
+@import "stepsets";
+@import "add-elements";
+@import "conditional-checkbox";
