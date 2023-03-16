@@ -329,7 +329,7 @@
                 let func = "";
 
                 each(".functionality", (el) => {
-                    func = func.join("- " + el.dataset.text + "<br>");
+                    func = func + "- " + el.dataset.text + "<br>";
                 });
 
 
