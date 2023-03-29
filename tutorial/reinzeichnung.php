@@ -28,6 +28,7 @@
         <script src="../js/jquery.waypoints.min.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/media.js"></script>
+
         <!-- <script src='../js/slide.js' async></script> -->
 
         <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
@@ -36,6 +37,17 @@
     <body class="tutorial">
         <div class='back icon-text'><span class='icon'>arrow_back</span><span>Zurück</span></div>
 
+        <div class='popups'>
+            <div class='popup' id='copied_auftragsbestaetigung'>
+                <h3>Erfolgreich kopiert</h3>
+                <p>Du hast die Vorlage zum Weiterleiten einer Auftragsbestätigung erfolgreich in deine Zwischenablage kopiert.</p>
+            </div>
+
+            <div class='popup' id='copied_rechnung'>
+                <h3>Erfolgreich kopiert</h3>
+                <p>Du hast die Vorlage zum Weiterleiten einer Rechnung erfolgreich in deine Zwischenablage kopiert.</p>
+            </div>
+        </div>
 
         <main class="slide">
             <div class="heading">
@@ -200,6 +212,39 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class='check'>
+                                        <div class="checkbox-wrapper"><input type='checkbox'></div>
+                                        <div>Auftragsbestätigung weiterleiten
+                                            <div class='explanation'>
+                                                <p>
+                                                    Die Auftragsbestätigung muss per Mail an Frau Rohr (<a href='mailto:a.rohr@dsa-marketing.ag'>a.rohr@dsa-marketing.ag</a>) weitergeleitet werden.
+                                                    <br><br>
+                                                    Gebe dabei bitte folgendes mit an:
+                                                </p>
+
+                                                <ul>
+                                                    <li>Kunde (Kundennummer, Firmierung)</li>
+                                                    <li>Produkt (Flyer, Broschüre, Briefbogen, ...)</li>
+                                                    <li>Zahlart (Vorkasse, bereits per PayPal bezahlt, ...)</li>
+                                                    <li>Wir übernehmen die Kosten / Bitte dem Kunden in Rechnung stellen</li>
+                                                    <li>Dein Name</li>
+                                                </ul>
+
+                                                <p>
+                                                    Im Tagesgeschäft kauft der Kunde ein Produkt inkl. Druckkosten, das heißt <strong>wir übernehmen die Kosten</strong>, wenn nichts anderes in der Internen steht.
+                                                </p>
+
+                                                <p>Rechnungen kommen ein paar Tage später und können "wortlos" weitergeleitet werden. Bitte nur darauf achten, dass Frau Rohr weiß, von wem die Mail kommt.</p>
+
+
+                                                <h3>Textvorlagen</h3>
+                                                <div class='button-set'>
+                                                    <button id='copy_auftrag' class='button small'>Auftragsbestätigung</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -210,6 +255,15 @@
         </main>
 
         <script src='../js/tutorial.js'></script>
+        <script src="../js/popups.js"></script>
+        <script>
+            document.querySelector('#copy_auftrag').addEventListener('click', () => {
+                console.log("Auf Kopier-Button für die Auftragsbestätigung gedrückt.");
+
+                copyButtonFile(this, "../text/reinzeichnung-auftragsbestaetigung.txt");
+                togglePopup("copied_auftragsbestaetigung");
+            });
+        </script>
 
     </body>
 </html>

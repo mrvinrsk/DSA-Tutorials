@@ -369,7 +369,24 @@ function downloadPDF(path, filename, data) {
     });
 }
 
-function each(selector, callback, searchFrom = document) {
+function each(selector, callback = () => {
+    console.error(`#each() for '${selector}' is missing a callback function.`);
+}, searchFrom = document) {
     const elements = searchFrom.querySelectorAll(selector);
-    elements.forEach(callback);
+    elements.forEach((el) => {
+        callback(el);
+    });
+}
+
+function join_list(arr, last = 'und') {
+    if (!Array.isArray(arr) || arr.length === 0) {
+        return '';
+    }
+
+    if (arr.length === 1) {
+        return arr[0];
+    }
+
+    const lastElement = arr.pop();
+    return arr.join(', ') + ` ${last} ` + lastElement;
 }

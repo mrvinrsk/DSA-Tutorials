@@ -11,5 +11,7 @@ foreach ($data as $entry) {
     $route->add("/" . $entry["permaLink"], $entry["file"]);
 }
 
+$route->add("/playground", "playground.php");
+
 $route->notFound("errors/404.php");
 ?>

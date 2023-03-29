@@ -87,7 +87,7 @@ class dsaPDF extends FPDF
     // Define a function for printing formatted text
     function writeHTML($html)
     {
-        $elements = preg_split('#(<b>|</b>|<br>)#i', $html, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+        $elements = preg_split('#(<b>|</b>|<br>|<a href="(.+?)">|</a>)#i', $html, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 
         foreach ($elements as $element) {
             if (strcasecmp($element, '<b>') == 0) {
@@ -96,12 +96,24 @@ class dsaPDF extends FPDF
                 $this->SetFont('', '');
             } else if (strcasecmp($element, '<br>') == 0) {
                 $this->Ln();
+            } else if (preg_match('#^<a href="(.+?)">$#i', $element, $matches)) {
+                $link = $matches[1];
+                $this->SetTextColor(0, 0, 255); // Set link color, for example to blue
+                $this->SetFont('', 'U'); // Set underline
+                $linkStartPosition = $this->GetX(); // Store the starting X position of the link
+            } else if (strcasecmp($element, '</a>') == 0) {
+                $linkEndPosition = $this->GetX(); // Store the ending X position of the link
+                $linkWidth = $linkEndPosition - $linkStartPosition; // Calculate the link width
+                $this->Link($linkStartPosition, $this->GetY(), $linkWidth, $this->lineheight, $link); // Create the link
+                $this->SetTextColor(0, 0, 0); // Reset text color
+                $this->SetFont('', ''); // Remove underline
             } else {
                 $this->Write($this->lineheight, iconv('UTF-8', 'windows-1252', $element));
                 $this->SetFont('', '');
             }
         }
     }
+
 
 
     /**

@@ -1,5 +1,15 @@
 [
   {
+    "title": "ResizeIMG",
+    "description": "Ändere die Größe mehrerer Bilder gleichzeitig.",
+    "tags": [
+      "Bilder"
+    ],
+    "file": "tool/image-resize.php",
+    "permaLink": "tool/resizeimg",
+    "type": "Tool"
+  },
+  {
     "title": "Service Gespräch",
     "description": "(Hoffentlich) die Zukunft der Servicegespräche...",
     "tags": [

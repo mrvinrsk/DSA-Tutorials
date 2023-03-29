@@ -1,0 +1,21 @@
+@use "utils";
+
+.floaty-hidden {
+  transform: scale(.8);
+  opacity: 0;
+  transition-duration: 250ms;
+}
+
+.floaty-container {
+  position: fixed;
+  z-index: 987;
+  padding: .75rem;
+  border-radius: 5px;
+  background-color: utils.$col-white-higher;
+  box-shadow: 0 5px 15px rgba(0 0 0 / 10%);
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: none;
+  transition-duration: 250ms;
+}
+

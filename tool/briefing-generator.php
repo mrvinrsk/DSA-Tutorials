@@ -203,12 +203,12 @@
                                 Welche Navigationspunkte wünscht sich der Kunde?
                             </p>
 
-                            <ul class='add-elements'>
+                            <ul class='add-elements navi'>
                                 <li><input type='text' placeholder='Tippe etwas...'></li>
                             </ul>
 
                             <h3 class='mt-4'>Optik</h3>
-                            <textarea placeholder='Hat der Kunde eigene Ideen?'></textarea>
+                            <textarea placeholder='Hat der Kunde eigene Ideen?' class='own-idea'></textarea>
 
                             <div class='navigation'>
                                 <span class='previous' data-step='fill-website-2'>Zurück</span>
@@ -222,7 +222,7 @@
                             <div class='accordion-flex'>
                                 <div class='conditional-cb'>
                                     <div class="cbw">
-                                        <input type='checkbox' id='shop' data-what='contact-form' data-text='Kontaktformular'>
+                                        <input type='checkbox' id='logo_yes' data-what='contact-form' data-text='Kontaktformular'>
                                         <label for='shop'>Logo vorhanden?</label>
                                     </div>
 
@@ -231,7 +231,7 @@
                                             Bitte nehme uns ein wenig Arbeit ab und verlinke uns das Logo des Kunden bei WeTransfer, oder gib uns einen Direktlink zur Logo-Datei auf dem Server des Kunden. Ist
                                             natürlich keine Pflicht, aber du kannst dir ein lächelndes Klebesticker-Gesicht damit verdienen<span class='col-gray'>, denke ich...</span>
                                         </p>
-                                        <input type='url' class='full mt-1' placeholder='URL zum Logo (WeTransfer, Website d. Kunden)'>
+                                        <input id='logo_link' type='url' class='full mt-1' placeholder='URL zum Logo (WeTransfer, Website d. Kunden)'>
                                     </div>
                                 </div>
 
@@ -328,15 +328,24 @@
                 let kdnr = document.querySelector('#kdnr').value;
                 let func = "";
 
-                each(".functionality", (el) => {
+                each(".functionality input[type=checkbox]", (el) => {
                     func = func + "- " + el.dataset.text + "<br>";
                 });
 
+                navigation = [];
+                each('.navi input', (el) => {
+                    navigation.push(el.value);
+                })
 
                 let data = {
                     kd: kdnr,
                     website_type: document.querySelector('.website .radio_wrapper .radio.checked').dataset.what,
-                    functionality: func
+                    functionality: func,
+                    other: document.querySelector('.website textarea').value.trim(),
+                    navigation: join_list(navigation),
+                    ownIdeas: document.querySelector('.website .own-idea').value.trim(),
+                    logo: document.querySelector('.website #logo_yes').checked,
+                    logoLink: document.querySelector('.website #logo_link').value
                 };
 
                 downloadPDF("../php/fw/briefing-website.php", `briefing-${kdnr}-website`, data);
