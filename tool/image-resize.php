@@ -1,3 +1,11 @@
+<?php
+ini_set('upload_max_filesize', '70M');
+ini_set('post_max_size', '2G');
+ini_set('max_file_uploads', '50');
+ini_set('memory_limit', '256M');
+set_time_limit(180);
+?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -49,6 +57,7 @@
                     <h2>Bilder auswählen</h2>
                     <form id="uploadForm" enctype="multipart/form-data">
                         <div id="dropZone">Drag & Drop</div>
+                        <span class='disabled-text'>Maximale Dateigröße <?php echo ini_get("upload_max_filesize"); ?>, Maximale Gesamtgröße <?php echo ini_get("post_max_size"); ?></span>
                         <input type="file" name="images[]" id="images" multiple hidden>
                         <br>
                         <input name='width' id='wanted_width' type='number' min='1' placeholder='Breite'>
@@ -57,6 +66,9 @@
                         <ul id='uploadList'></ul>
                         <div id="downloadLinks"></div>
                     </form>
+
+                    <?php echo "Memory Limit: " . ini_get("memory_limit"); ?>
+                    <?php echo "Max Uploads: " . ini_get("max_file_uploads"); ?>
                 </div>
             </div>
         </main>
@@ -106,13 +118,13 @@
                     if (event.lengthComputable) {
                         const fileList = imagesInput.files;
                         for (let i = 0; i < fileList.length; i++) {
-                            const progressElement = document.getElementById('progress_' + i);
+                            const progressElement = document.getElementById('progress_' + i).querySelector(".actual_progress");
                             const percentComplete = Math.round((event.loaded / event.total) * 100);
 
-                            if(percentComplete !== 100) {
-                                progressElement.textContent = ` [Hochladen: ${percentComplete}%]`;
-                            }else {
-                                progressElement.textContent = ` [Hochgeladen]`;
+                            progressElement.style.width = `${percentComplete}%`;
+
+                            if (percentComplete === 100) {
+                                progressElement.classList.add("finished");
                             }
                         }
                     }
@@ -135,7 +147,7 @@
                             document.getElementById('downloadLinks').removeChild(link);
                         });
                     } else {
-                        console.error('Error processing images.');
+                        console.error('Error processing images – [' + request.status + "]: " + request.statusText);
                     }
                 };
 
@@ -165,9 +177,11 @@
                 const fileList = imagesInput.files;
                 for (let i = 0; i < fileList.length; i++) {
                     const listItem = document.createElement('li');
-                    listItem.textContent = fileList[i].name;
-                    const progressElement = document.createElement('span');
+                    listItem.innerHTML = `<span>${fileList[i].name}</span>`;
+                    const progressElement = document.createElement('div');
+                    progressElement.innerHTML = `<div class="actual_progress"></div>`;
                     progressElement.id = 'progress_' + i;
+                    progressElement.classList.add('progress_bar_wrapper');
                     listItem.appendChild(progressElement);
                     uploadList.appendChild(listItem);
                 }

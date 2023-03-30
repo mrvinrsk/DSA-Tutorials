@@ -1,7 +1,15 @@
 <?php
-header('Content-Type: application/json');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// header('Content-Type: application/json');
 
 if (!empty($_FILES['images'])) {
+    ini_set('upload_max_filesize', '70M');
+    ini_set('post_max_size', '2G');
+    ini_set('max_file_uploads', '50');
+    ini_set('memory_limit', '256M');
+    set_time_limit(180);
+
     $uploadedFiles = $_FILES['images'];
     $outputFiles = [];
     $tempDir = '../temp/';
