@@ -1,5 +1,15 @@
 [
   {
+    "title": "Telefon-Tag",
+    "description": "Lasse dir aus einer Telefonnummer einen fertigen Tag generieren.",
+    "tags": [
+      "Web"
+    ],
+    "file": "tool/telefon-tag.php",
+    "permaLink": "tool/telefon-tag",
+    "type": "Tool"
+  },
+  {
     "title": "ResizeIMG",
     "description": "Ändere die Größe mehrerer Bilder gleichzeitig.",
     "tags": [
