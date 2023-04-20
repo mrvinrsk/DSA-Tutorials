@@ -268,9 +268,9 @@
                     </p>
 
                     <div class='dl-list'>
-                        <a class='button small' data-hover-text='Download' download href='../_.htaccess'
+                        <a class='button small' data-hover-text='Download' download href='../dl/_.htaccess'
                            target='_blank'>.htaccess</a>
-                        <a class='button small' data-hover-text='Download' download href='../_robots.txt' target='_blank'>robots.txt</a>
+                        <a class='button small' data-hover-text='Download' download href='../dl/_robots.txt' target='_blank'>robots.txt</a>
                     </div>
                     <span class='notice'><strong>Achtung:</strong> Bei den Dateinamen der heruntergeladenen Dateien muss jeweils der Unterstrich ("_") entfernt werden.</span>
                 </div>

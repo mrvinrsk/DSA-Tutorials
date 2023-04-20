@@ -1,5 +1,16 @@
 [
   {
+    "title": "DPMA-Eintragung",
+    "description": "Lasse dir aus einer Telefonnummer einen fertigen Tag generieren.",
+    "tags": [
+      "Logo",
+      "DPMA"
+    ],
+    "file": "tutorial/dpma-eintragung.php",
+    "permaLink": "tutorial/telefon-tag",
+    "type": "Tutorial"
+  },
+  {
     "title": "Telefon-Tag",
     "description": "Lasse dir aus einer Telefonnummer einen fertigen Tag generieren.",
     "tags": [
