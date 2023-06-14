@@ -182,6 +182,16 @@
     .explanation {
       overflow: hidden;
       transition-duration: .5s;
+
+      img {
+        &:not(:first-child) {
+          margin-top: .75rem;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+      }
     }
 
     &.finished {
@@ -257,7 +267,7 @@
   &.checked {
     + div .explanation {
       padding-block: 0;
-      max-height: 0;
+      height: 0 !important;
       margin: 0;
     }
 

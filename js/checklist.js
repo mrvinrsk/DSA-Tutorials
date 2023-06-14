@@ -144,11 +144,11 @@ function updateList(checklist) {
 
         const firstCheck = checklist.firstChild;
 
-        if(!checklist.querySelector(".progress")) {
+        if (!checklist.querySelector(".progress")) {
             checklist.insertBefore(progress, firstCheck);
         }
 
-        if(!checklist.querySelector(".progress-bar")) {
+        if (!checklist.querySelector(".progress-bar")) {
             checklist.insertBefore(progressBar, firstCheck);
         }
     }
@@ -160,11 +160,23 @@ function updateList(checklist) {
     }
 }
 
+function resizeExplanation(explanation) {
+    explanation.style.height = explanation.offsetHeight + 'px';
+}
+
 $(function () {
+    document.addEventListener('resize', () => {
+        document.querySelectorAll('.explanation').forEach(explanation => resizeExplanation(explanation));
+    });
+
     document.querySelectorAll('.checklist').forEach(checklist => {
         checklist.querySelectorAll('.check').forEach(check => {
             if (hasChild(check, '.explanation')) {
                 check.classList.add('has-explanation');
+
+                resizeExplanation(check.querySelector('.explanation'));
+
+
             }
         });
 

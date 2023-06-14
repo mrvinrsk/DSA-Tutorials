@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta
-                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-                name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
         />
         <meta content="ie=edge" http-equiv="X-UA-Compatible" />
 
@@ -72,10 +72,10 @@
 
             <div class="content">
                 <div
-                        class="dsgvo-media"
-                        data-alt="SEO Bild"
-                        data-src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=1"
-                        data-src-mobile="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=768&dpr=1"
+                    class="dsgvo-media"
+                    data-alt="SEO Bild"
+                    data-src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=1"
+                    data-src-mobile="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=768&dpr=1"
                 ></div>
 
                 <div>
@@ -97,20 +97,20 @@
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <span>Seitentitel: individuell pro Seite, max. 55 Zeichen (<a
-                                                    href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
+                                                href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
                                     </div>
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <span>Description: individuell pro Seite, max. 155 Zeichen (<a
-                                                    href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
+                                                href='https://app.sistrix.com/de/serp-snippet-generator' target='_blank'>SISTRIX</a>)</span>
                                     </div>
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <span>Meta-Robots: Auf jeder Seite (<a
-                                                    href='https://seo-gold.com/meta-robots-seo-tutorial/meta-name-robots-content-index-follow/'
-                                                    target='_blank'>index, follow</a>)</span>
+                                                href='https://seo-gold.com/meta-robots-seo-tutorial/meta-name-robots-content-index-follow/'
+                                                target='_blank'>index, follow</a>)</span>
                                     </div>
 
                                     <div class='check'>
@@ -127,8 +127,8 @@
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <span>CSS auslagern (<a href='https://validator.w3.org/' target='_blank'>validieren</a> u. <a
-                                                    href='https://10015.io/tools/css-minifier'
-                                                    target='_blank'>komprimieren</a>)</span>
+                                                href='https://10015.io/tools/css-minifier'
+                                                target='_blank'>komprimieren</a>)</span>
                                     </div>
 
                                     <div class='check'>
@@ -192,7 +192,8 @@
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
                                         <div>Text einfügen und gestalten
                                             <div class='explanation'>
-                                                Beim einfügen der Texte darauf achten, dass die fetten Wörter 1:1 übernommen werden. Dazu kannst du ganz einfach den Text aus der Word-Datei kopieren, <a href="../tool/word-to-html" target="_blank">hier</a> einfügen und dir das fertige HTML dafür kopieren.
+                                                Beim einfügen der Texte darauf achten, dass die fetten Wörter 1:1 übernommen werden. Dazu kannst du ganz einfach den Text aus der Word-Datei kopieren, <a
+                                                    href="../tool/word-to-html" target="_blank">hier</a> einfügen und dir das fertige HTML dafür kopieren.
                                             </div>
                                         </div>
                                     </div>
@@ -235,8 +236,17 @@
 
                                     <div class='check'>
                                         <div class="checkbox-wrapper"><input type='checkbox'></div>
-                                        <span>Sitemap.xml <a href='https://www.xml-sitemaps.com' target='_blank'>erzeugen</a> u. über <a
-                                                    href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einreichen</span>
+                                        <div>Sitemap.xml <a href='https://www.xml-sitemaps.com' target='_blank'>erzeugen</a> u. über <a
+                                                href='https://search.google.com/search-console/' target='_blank'>Webmastertools</a> einreichen
+                                            <div class='explanation'>
+                                                <p>
+                                                    Lege eine neue Property an, nutze dafür die Variante "URL-Präfix" und füge die URL deiner Seite ein.
+                                                    Anschließend kannst du die Sitemap einreichen.
+                                                </p>
+
+                                                <img src='../images/google-property.jpg' alt='Google Property erstellen'>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class='check'>

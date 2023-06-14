@@ -1,5 +1,16 @@
 [
   {
+    "title": "Simple Secure",
+    "description": "Erhalte die benötigten Code-Schnipsel für dsaSecure",
+    "tags": [
+      "Secure",
+      "Web"
+    ],
+    "file": "tool/simple-secure.php",
+    "permaLink": "tool/simple-secure",
+    "type": "Tool"
+  },
+  {
     "title": "DPMA-Eintragung",
     "description": "Lasse dir aus einer Telefonnummer einen fertigen Tag generieren.",
     "tags": [
@@ -7,7 +18,7 @@
       "DPMA"
     ],
     "file": "tutorial/dpma-eintragung.php",
-    "permaLink": "tutorial/telefon-tag",
+    "permaLink": "tutorial/logo-dpma",
     "type": "Tutorial"
   },
   {

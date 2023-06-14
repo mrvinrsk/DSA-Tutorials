@@ -1,3 +1,11 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.select-all').forEach(sa => {
+        sa.addEventListener('click', () => {
+            sa.setSelectionRange(0, sa.value.length);
+        });
+    });
+});
+
 function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
     textArea.value = text;
